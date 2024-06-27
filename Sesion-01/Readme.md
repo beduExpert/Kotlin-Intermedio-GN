@@ -79,19 +79,13 @@ Mostrar imágenes en un ImageView por medio de URLS, utilizando la librería coi
 
 ### 3. Proyecto :hammer:
 
-Con los temas anteriores, construye una pantalla de login para la aplicación definida.
+Con los temas anteriores, construye una pantalla de login y register para la aplicación definida.
 
 - [**`PROYECTO SESIÓN 1`**](Proyecto/Readme.md)
 
-### 4. Postwork :memo:
-
-Con lo aprendido en esta sesión, implementa Views adicionales a tu primera pantalla.
-
-- [**`POSTWORK SESIÓN 1`**](Postwork/Readme.md)
-
 <br/>
 
-[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-03/Readme.md)      
+[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)      
 
 </div>
 
