@@ -1,127 +1,90 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Ejemplo 3`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 3`
 
-## Ejemplo 3: Imágenes mediante URL
+## Ejemplo 3: Constraint layout Pte 2
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Instalar dependencias mediante _gradle_/
-- extender _ImageView_ para recuperar imágenes por medio de una URL.
+- Explotar el uso del _Layout Editor_.
+- Utilizar las propiedades que nos brinda ConstraintLayout.
+- Agrupar de forma inteligente nuestras _Views_.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
-2. Coil instalado en el proyecto.
 2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Para que un ImageView pueda cargar una imagen remota a través de una URL, tenemos qué instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado). Las opciones más populares son:
+#### 
 
-- Fresco
-- Picasso
-- Glide
+1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: ___coil___ ( COroutine Image Loader), que como dice su nombre, utiliza las populares coroutines de Kotlin. 
+2. Abrir el archivo ___main_activity.xml___, por defecto tendremos un ___ConstraintLayout___ como _ViewGroup_ principal.
 
-1. Insertamos la implementación de la dependencia en el archivo ___app/buid.grade___ la siguiente línea:
+3. En el ejercicio pasado, aprendimos a hacer constraints entre _Views_, sin embargo, esta es apenas una de sus funcionalidades, puesto que este _layout_ es hasta el momento el más completo entre todos, eliminando _views anidados_, optimizando el _layout_ y dando mayor flexibilidad a nuestros diseños. Vamos a analizar el _layout editor_:
 
-```kotlin
-dependencies{
-	implementation"io.coil-kt:coil:0.11.0"
-}
-```
+<img src="images/1.png" width="85%">
 
-nótese que esta línea va dentro del bloque ___dependencies___, aquí es donde se declara la implementación de dependencias de la app. Cada dependencia se vaja de un repositorio; en este caso, coil se encuentra alojado en __Maven Central___, pero también en el _Jcenter Maven Repository de Bintray_ y podemos ver que ese repositorio se incluye en nuestro proyecto entrando en el archivo ___build.gradle___ en la carpeta raíz.
+4. Eliminamos el _TextView_ "Hello World" que viene por defecto. click derecho sobre el _View_ >  _Delete_.
 
-```kotlin
-buildscript {
-    ext.kotlin_version = '1.3.71'
-    repositories {
-        google()
-        jcenter() // de aquí se obtiene nuestra librería
-        
-    }
-    ...
-    }
+<img src="images/delete.gif" width="50%"> 
 
-```
+5. Verificamos que este símbolo en el Toolbar esté habilitado, de lo contrario, dar click sobre él. Esto nos permitirá hacer autoconexiones con respecto a nuestro _ConstraintLayout_. Arrastraremos un nuevo _TextView_ hasta el centro, procurando que se muestre unas guías interlineadas en el centro; soltar y verificar lo que sucede.
 
-2. En ___app/build.gradle/___, agregaremos compatibilidad con Java 8:
+<img src="images/center.gif" width="50%"> 
 
-```kotlin
-android{
-...
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_1_8
-		targetCompatibility JavaVersion.VERSION_1_8
-	    }
-}
+Lo haremos de forma manual ahora, eliminamos los constraints dando click a los puntos del constraint y presionando _ctrl_ al mismo tiempo (_command_ en mac).
+Ahora damos click derecho en el _TextView_ > center > Vertically y Horizontally respectivamente.
 
-...
+<img src="images/center_manual.gif" width="50%"> 
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-```
+Cuando tenemos dos extremos colineales, nos saldrá en la sección _Layout_ de la barra _Attributes_ un bias (horizontal o vertical), esta indica un porcentaje de posición relativo a los dos extremos.
 
-3. Con todos los cambios hechos en ___gradle___, sincronizamos nuestro proyecto. Cada vez que se modifican los archivos ___gradle___, emerge esta barra superior: 
+<img src="images/bias.gif" width="80%"> 
 
-<img src="images/0.png" width="90%"/>
+6. En otros layouts, hemos abordado el uso de los atributos _layout_width_ y _layout_height_, con las opciones _match_parent_, _wrap_content_ y un tamaño fijo.
+Para este caso, tenemos opciones similares:
 
-Podemos dar click en ___Sync now___ en la parte derecha de esa barra, o sincronizamos mediante la herramienta (dicha opción es un elefante con una flecha azul).
+- <img src="images/3.png"> ___Wrap Content___, el tamaño se ajusta a la dimensión del contenido.
+- <img src="images/4.png"> ___Fixed___, donde determinamos una medida fija.
+- <img src="images/5.png"> ___Match Constraints___, abarca el tamaño de extremo a extremo con la alineación de sus constraints. __Nota: match_parent nunca debe usarse en un ConstraintLayout__.
 
-<img src="images/1.png" width="55%"/>
+Daremos click en las distintas opciones:
 
-4. Requeriremos permisos de internet, por lo que entramos al manifest en ___app/src/main/AndroidManifest.xml___ e insertamos el permiso:
+<img src="images/layout_width.gif" width="75%"> 
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="NOMBRE.DEL.PAQUETE">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    ...
-</manifest>
+Si observamos la propiedad _layout_width_ visible en la animación, veremos que conforme cambiemos la forma de dimensionares, cambiamos de _wrap_content_, luego a _58dp_ (tamaño fijo) y luego a _0dp_ (que realmente expresa que toma el tamaño de los límites).
 
-<img src="images/2.png" width="55%"/>
+7. Los _Views_ con texto pueden tener una propiedad llamada _baseline_, que es la línea del texto y permite también la posibilidad de alinearse mediante este constraint. Eliminaremos nuestro _TextView_ y arrastraremos otros dos, uno de ellos pegado a la esquina superior derecha del _parent_.Para el segundo, damos click derecho > _Show Baseline_; cuando el ícono del constraint aparezca, arrástralo hacia el baseline del texto pegado en la esquina.
 
-5. Agregamos el código de setup inicial de [la sesión](../Readme.md)
+<img src="images/baseline.gif" width="50%"> 
 
-6. Dentro del _LinearLayout_, insertar el siguiente _ImageView_:
+8. Los chains son formas de agrupar vertical y horizontalmente elementos a una distancia dividida entre los views que lo componen. Estos tienen tres modos:
 
-```xml
-<ImageView
-        android:id="@+id/imageView"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-/>
-```
+- <img src="images/6.png"> ___Spread___, se dividen en intervalos de espacio iguales.
+- <img src="images/7.png"> ___Spread Inside___, Similar al anterior, pero no existe espaciamiento externo.
+- <img src="images/8.png"> ___Packed___, Los elementos van juntos.
 
-7. Por último, agregamos la variable para el _ImageView_.
+A continuación agrupamos tres _TextViews_ en cadena y variamos entre los 3 modos:
 
-```kotlin
-private lateinit var imageView: ImageView
-```
-
-asignamos valor a un campo:
-
-```kotlin
-imageView = findViewById(R.id.imageView)
-```
-
-y utilizamos la función _load_ (es un método que extiende de _ImageView_) para cargar imágenes desde URLS etc.
-
-```kotlin
-imageView.load("https://raw.githubusercontent.com/beduExpert/Kotlin-Intermedio-2020/master/images/android-kotlin.png")
-```
-
-Corremos el código y comprobamos!
-
-<img src="images/3.png" width="55%"/>
+<img src="images/chains.gif" width="50%"> 
 
 
+[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-04)
 
-[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
+9. Por último, agregaremos ___Guidelines___, que son altamente recomendadas para diseños flexibles. Podemos elegir entre una orientación vertical u horizontal y hay dos formas de agregarlos: Arrastrándolo desde la sección _Layouts_ del _Palette_ o dando _click derecho > Helpers > Add Vertical/Horizontal Guideline_.
+
+<img src="images/9.png" width="50%"> 
+
+<img src="images/10.png" width="50%"> 
+
+Los _Guidelines_ pueden posicionarse con respecto a un lado inicial con un parámetro fijo o el porcentaje de la posición que ocupa en el parent, de acuerdo a la orientación escogida para la guía. Los _Views_ que se posicionen sobre la línea de guía, se moverán con ella.
+
+<img src="images/guideline.gif" width="50%"> 
+
+
+[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-04/Readme.md)
 </div>

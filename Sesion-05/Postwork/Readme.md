@@ -1,44 +1,36 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Postwork`
+
+
+[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Postwork`
 
 ## Postwork
 
 <div style="text-align: justify;">
 
+
 ### 1. Objetivos :dart:
 
-- Orientarse en la implementación de _fragments_ para el proyecto.
+- Implementar una transición vista en el ejemplo 3 para la tienda
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
 
-
 ### 3. Desarrollo :computer:
 
-#### Definir el uso del fragment
+Saltarse esta línea si se resolvió previamente el [Postwork 2](../../Sesion-02/Postwork), si no, crear una actividad sencilla consistente en una imagen y un botón "ir a detalles" que comunique a la actividad de Detalles y en dicha Actividad, insertar una imagen como cabecera de la pantalla. En el Postwork 2 el comportamiento descrito abajo será implementado en la lista de productos y en su respectivo detalle.
 
-A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
+Desarrollar cualquiera o las dos tareas listadas a continuación, Al dar click en algún producto de la lista:
 
-Para conseguir implementar _fragments_ de manera natural en nuestro proyecto, buscaremos la forma de cómo encajarla.
+* Deberemos crear una transición similar a esta con la imagen del producto:
 
-- Si es una app que implique la compra de un producto, podemos hacer un flujo de _fragments_ que impliquen la selección del producto, después el ingreso de la dirección de envío, y por último la captura del método de pago.
+<img src="../Ejemplo-02/Images/shared-transition.gif" width="50%">
 
-- Si es una app tipo spotify, podemos crear una interfaz donde se muestre un patrón lista-detalle para seleccionar música y en el detalle los datos de la canción (esto aplica también para apps como imdb, etc.)
+* Animar la entrada y salida de nuevos elementos con este tipo de instrucción (tomar ejemplo del [Ejemplo 2](../Ejemplo-02) ):
 
-- Un clon de una app de entregas a domicilio podría implementar un flujo.
-
-- Al abrir un video en youtube, se puede ver cómo salta un _fragment_ emergente donde se reproduce el video. Podemos hacer una simulación básica de ese comportamiento.
-
-
-### Tips
-
-El uso del ___DialogFrament___ es permitido en este módulo, en [Este artículo](https://guides.codepath.com/android/using-dialogfragment) se explica un poco más de cómo implementarlo (el lenguaje es Java, pero es bastante comprensible).
-
-<img src="images/1.png" width="35%">
+```kotlin
+window.enterTransition = Slide() 
+```
 
 
 
-
-[`Anterior`](../Readme.md#Proyecto) | [`Siguiente`](../../Sesion-06)
-
-</div>
+[`Anterior`](../Proyecto/Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)

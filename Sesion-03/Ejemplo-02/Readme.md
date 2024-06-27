@@ -1,12 +1,12 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 2`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Ejemplo 2`
+
+## Ejemplo 2: Spinners
 
 <div style="text-align: justify;">
 
-## Ejemplo 2: Constraint Layout
+### 1. Objetivos :dart:
 
-### 1. Objetivos :dart: 
-
-- Ordenar Componentes por medio de anclajes en un Constraint layout.
+- Utilizar los spinners y sus limitados casos de uso.
 
 ### 2. Requisitos :clipboard:
 
@@ -15,85 +15,93 @@
 
 ### 3. Desarrollo :computer:
 
-El objetivo es apilar las Views como la siguiente imagen:
+1.- Crear un proyecto con Activity vacía.
 
-
-<img src="images/00.png" width="35%">
-
-
-1.- Abrir un nuevo proyecto con Activity vacía
-
-2.- El trabajo será únicamente con Layouts, así que ir directamente a activity_main.xml
-
-3.- Los proyectos empiezan con Constraint Layout por defecto, así que sólo requerimos meter las vistas que teníamos en el reto anterior, por lo cual sólo hay qué borrar el Text y reemplazar por el siguiente fracción de XML
-
+2.- Generar un Layout, incluyendo un Spinner con su respectivo id para poder ser identificado posteriormente.
 
 ```xml
- <View
-        android:id="@+id/green"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#00FF00"
-        />
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/blue"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#0000FF"
-       />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:background="#EDEDED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <View
-        android:id="@+id/red"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF0000"
-         />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:textSize="24sp"
+        android:text="Selecciona tu idioma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/pink"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@color/colorAccent"
-       />
-
-    <View
-        android:id="@+id/yellow"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFFF00"
-        />
-
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-El código debe quedar similar a la imagen: 
+3.- En el MainActivity, crear una variable de clase que almacene un arreglo de Strings con idiomas dentro.
 
-<img src="images/01.png" width="70%">
+```kotlin
+ var language = arrayOf("Inglés", "Español", "Chino", "Ruso", "Coreano", "Alemán", "Francés", "Holandés")
+ ```
+ 
+ 4.- Debemos setear el listener del spinner, para poder mostrar un mensaje cuando el usuario halla seleccionado un idioma.
+ 
+ ```kotlin
+ spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Toast.makeText(applicationContext ,language[position] , Toast.LENGTH_LONG).show()
+            }
+        }
+ ```
 
-No hay que preocuparse por los errores, esto sucede porque dentro de un constraint layout, los hijos deben de anclarse a algún lugar.
+5.- Sin embargo, en este listener podemos ver un callback llamado *onNothingSelected()*. Este callback es llamado si el usuario hizo click en algún elemento que ya no existe en la lista. Llamaremos un alert en caso de que eso ocurra.
 
-4.- Selecciona la pestaña **Design**, con ella la interacción de Constraint Layout es mucho más interactiva y eficaz.
+```kotlin
+override fun onNothingSelected(parent: AdapterView<*>?) {
+        showDialog("No seleccionaste idioma","Vuelve a desplegar la lista y asegúrate de elegir correctamente a alguna")
+}
+            
+            ...
+            
+private fun showDialog(title:String,message:String){
+        AlertDialog.Builder(this)
+             .setTitle(title)
+             .setMessage(message)
+             .setPositiveButton("OK"){dialogInterface, which -> }
+             .create()
+             .show()
+}
+```
 
-<img src="images/02.png" width="70%">
+La app se tiene qué ver parecido a la sig. imagen:
 
-5.- Los Views aparecerán de forma desordenada, acércate a uno, verás cuatro puntos de anclaje, si arrastras desde ahí verás salir una flecha, esos son los puntos de anclaje y los puedes poner sobre otros puntos, sobre líneas de guía, barreras o sobre los límites del layout. Arrastra el View amarillo al límite inferior del layout.
-
-<img src="images/03.png" width="35%">
-
-6.- Ahora arrastra los puntos de anclaje laterales a los límites laterales del layout para que este quede centrado.
-
-7.- Arrastra el punto de anclaje inferior del View verde al superior del amarillo para unirlos
-
-<img src="images/04.png" width="35%">
-
-8.- Termina de apilar todas las cajas ¡Felicidades!
+<img src="result.png" width="33%">
 
 
 
-Puedes estudiar el código generado para comprender un poco cómo funciona el xml generado.
+
+[`Anterior`](../Ejemplo-01a/Readme.md) | [`Siguiente`](../Reto-01/Readme.md)
 
 
-Continúen experimentando con la UI y Constraint Layout para seguir enriqueciendo su conocimiento.
 
-[`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
+
 </div>
+

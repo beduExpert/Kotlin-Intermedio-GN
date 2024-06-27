@@ -1,33 +1,41 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Proyecto`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Proyecto`
 
-## Proyecto: Activities y Layouts
+## Proyecto
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Crear un flujo entre Activities.
-- Diseñar los layouts de las _Activities_ con ___ConstraintLayout___.
+- Aplicar el conocimiento de Listas a nuestro proyecto.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
+2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-En este reto final, vamos a crear un flujo entre las primeras pantallas de nuestra aplicación. 
+Las listas son elementos recurrentes en las aplicaciones. En nuestra aplicación de galeria, tenemos un grid de fotos que al pulsar sobre un elemento, se despliega la imagen para abarcar toda la pantalla. En una app bancaria, el historial de transacciones se muestran en lista. Para una app de cine, las pelí
+culas están listadas de forma vertical. 
 
-La primera pantalla de nuestra aplicación ya fue creada durante la ___Sesión 2___, por lo que ahora queda definir qué sigue después de la primera pantalla que diseñamos.
+<img src="images/1.png" width="35%">
+
+Ejemplo de la app gallery go, donde tenemos un listado de nuestras imágenes y videos. 
+
+En general, la implementación de una lista en el proyeto es esencial y prácticamente para cualquier ejemplo de aplicación tendremos una forma de utilizarla.
 
 
 ### Lineamientos
 
-1. Se debe generar al menos una nueva _Activity_ que interactúe con la _Activity_ previamente creada.
-2. el o los _layouts_ generados, deben ser maquetados con el _Viewgroup_ ___ConstraintLayout___.
-3. Cada _layout_ debe tener más de 3 Views, y es sugerido que la distribución de las _Views_ no sea lineal.
-4. Las Activites deben de implementar alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones). 
+1. El proyecto debe utilizar al menos un _RecyclerView_.
+2. Al pulsar sobre cualquier elemento del _RecyclerView_, debemos navegar a una nueva pantalla para los detalles del elemento (las acciones a realizar en ella son libres).
+3. Cada elemento debe tener en su _layout_ al menos dos textos y una imagen.
+4. La distribución del _layout_ preferentemente no debe ser lineal.
 
 
-[`Anterior`](../Ejemplo-05/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+
+
+
 
 </div>

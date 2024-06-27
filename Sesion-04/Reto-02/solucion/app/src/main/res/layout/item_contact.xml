@@ -8,10 +8,10 @@
     android:paddingVertical="16dp">
 
     <ImageView
-        android:id="@+id/userImage"
+        android:id="@+id/imgProduct"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/unknown"
+        android:src="@drawable/kobo"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -45,32 +45,34 @@
         app:layout_constraintGuide_percent="0.26" />
 
     <TextView
-        android:id="@+id/tvNombre"
+        android:id="@+id/tvProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Nombre bato"
+        android:text="Producto"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
     <TextView
-        android:id="@+id/tvStatus"
+        android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="8dp"
-        android:text="Ya fue"
+        android:text="Descripción"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/tvPhone"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:text="Ya fue"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="$1,000"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/tvNombre" />
+        app:layout_constraintTop_toTopOf="@+id/tvProduct" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

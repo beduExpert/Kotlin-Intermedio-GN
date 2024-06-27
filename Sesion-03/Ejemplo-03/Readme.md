@@ -1,14 +1,14 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 3`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Ejemplo 3`
 
-## Ejemplo 3: Constraint layout Pte 2
+## Ejemplo 3: RecyclerView
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Explotar el uso del _Layout Editor_.
-- Utilizar las propiedades que nos brinda ConstraintLayout.
-- Agrupar de forma inteligente nuestras _Views_.
+- Comprender el concepto y funcionamiento de un RecyclerView
+- Ventajas y desventajas
+- Cuál es el núcleo de la diferencia con una ListView
 
 ### 2. Requisitos :clipboard:
 
@@ -17,74 +17,247 @@
 
 ### 3. Desarrollo :computer:
 
-#### 
+En este proyecto, crearemos una lista de contactos de teléfono sencilla con un RecyclerView.
 
-1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
+1.- Abrir un proyecto con una Actividad Básica (Basic Activity), para dejar preparado el terreno del [Reto 02](../Reto-02)
 
-2. Abrir el archivo ___main_activity.xml___, por defecto tendremos un ___ConstraintLayout___ como _ViewGroup_ principal.
+2.- A diferencia de las Actividades vacías, en este caso lo que modificaremos será el archivo ***content_main.xml***, y se ingresará un simple RecyclerView ocupando todo el layout:
 
-3. En el ejercicio pasado, aprendimos a hacer constraints entre _Views_, sin embargo, esta es apenas una de sus funcionalidades, puesto que este _layout_ es hasta el momento el más completo entre todos, eliminando _views anidados_, optimizando el _layout_ y dando mayor flexibilidad a nuestros diseños. Vamos a analizar el _layout editor_:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
 
-<img src="images/1.png" width="85%">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerContacts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-4. Eliminamos el _TextView_ "Hello World" que viene por defecto. click derecho sobre el _View_ >  _Delete_.
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
 
-<img src="images/delete.gif" width="50%"> 
+3.- Crear el layout para cada contacto de teléfono en la lista. Usaremos una imagen de perfil gris:
 
-5. Verificamos que este símbolo en el Toolbar esté habilitado, de lo contrario, dar click sobre él. Esto nos permitirá hacer autoconexiones con respecto a nuestro _ConstraintLayout_. Arrastraremos un nuevo _TextView_ hasta el centro, procurando que se muestre unas guías interlineadas en el centro; soltar y verificar lo que sucede.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="16dp">
 
-<img src="images/center.gif" width="50%"> 
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/unknown"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-Lo haremos de forma manual ahora, eliminamos los constraints dando click a los puntos del constraint y presionando _ctrl_ al mismo tiempo (_command_ en mac).
-Ahora damos click derecho en el _TextView_ > center > Vertically y Horizontally respectivamente.
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
 
-<img src="images/center_manual.gif" width="50%"> 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
 
-Cuando tenemos dos extremos colineales, nos saldrá en la sección _Layout_ de la barra _Attributes_ un bias (horizontal o vertical), esta indica un porcentaje de posición relativo a los dos extremos.
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 
-<img src="images/bias.gif" width="80%"> 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.26" />
 
-6. En otros layouts, hemos abordado el uso de los atributos _layout_width_ y _layout_height_, con las opciones _match_parent_, _wrap_content_ y un tamaño fijo.
-Para este caso, tenemos opciones similares:
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Nombre bato"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
-- <img src="images/3.png"> ___Wrap Content___, el tamaño se ajusta a la dimensión del contenido.
-- <img src="images/4.png"> ___Fixed___, donde determinamos una medida fija.
-- <img src="images/5.png"> ___Match Constraints___, abarca el tamaño de extremo a extremo con la alineación de sus constraints. __Nota: match_parent nunca debe usarse en un ConstraintLayout__.
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        android:text="Ya fue"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-Daremos click en las distintas opciones:
-
-<img src="images/layout_width.gif" width="75%"> 
-
-Si observamos la propiedad _layout_width_ visible en la animación, veremos que conforme cambiemos la forma de dimensionares, cambiamos de _wrap_content_, luego a _58dp_ (tamaño fijo) y luego a _0dp_ (que realmente expresa que toma el tamaño de los límites).
-
-7. Los _Views_ con texto pueden tener una propiedad llamada _baseline_, que es la línea del texto y permite también la posibilidad de alinearse mediante este constraint. Eliminaremos nuestro _TextView_ y arrastraremos otros dos, uno de ellos pegado a la esquina superior derecha del _parent_.Para el segundo, damos click derecho > _Show Baseline_; cuando el ícono del constraint aparezca, arrástralo hacia el baseline del texto pegado en la esquina.
-
-<img src="images/baseline.gif" width="50%"> 
-
-8. Los chains son formas de agrupar vertical y horizontalmente elementos a una distancia dividida entre los views que lo componen. Estos tienen tres modos:
-
-- <img src="images/6.png"> ___Spread___, se dividen en intervalos de espacio iguales.
-- <img src="images/7.png"> ___Spread Inside___, Similar al anterior, pero no existe espaciamiento externo.
-- <img src="images/8.png"> ___Packed___, Los elementos van juntos.
-
-A continuación agrupamos tres _TextViews_ en cadena y variamos entre los 3 modos:
-
-<img src="images/chains.gif" width="50%"> 
-
-
-[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-04)
-
-
-9. Por último, agregaremos ___Guidelines___, que son altamente recomendadas para diseños flexibles. Podemos elegir entre una orientación vertical u horizontal y hay dos formas de agregarlos: Arrastrándolo desde la sección _Layouts_ del _Palette_ o dando _click derecho > Helpers > Add Vertical/Horizontal Guideline_.
-
-<img src="images/9.png" width="50%"> 
-
-<img src="images/10.png" width="50%"> 
-
-Los _Guidelines_ pueden posicionarse con respecto a un lado inicial con un parámetro fijo o el porcentaje de la posición que ocupa en el parent, de acuerdo a la orientación escogida para la guía. Los _Views_ que se posicionen sobre la línea de guía, se moverán con ella.
-
-<img src="images/guideline.gif" width="50%"> 
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:text="Ya fue"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/tvNombre" />
 
 
-[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-04/Readme.md)
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+4.- Tendremos qué crear un Modelo de datos para nuestro arreglo, Por el momento desplegamos nombre, estado, teléfono y foto (es la misma siempre), por lo que nuestro Modelo queda así: 
+
+```kotlin
+package org.bedu.recyclercontacts
+
+data class Contact (
+    var name: String,
+    var status: String,
+    var phone: String,
+    var idImage: Int
+)
+```
+
+5.- Con esto, vamos a crear el adaptador de nuestro RecyclerView; aquí veremos la diferencia de estructura con un ListView.
+
+```kotlin
+package org.bedu.recyclercontacts
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+
+//Declaración con constructor
+class RecyclerAdapter(
+    var context:Context,
+    var contacts: MutableList<Contact>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+    //Aquí atamos el ViewHolder
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = contacts.get(position)
+        holder.bind(item, context)
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return ViewHolder(layoutInflater.inflate(R.layout.item_contact, parent, false))
+    }
+
+    override fun getItemCount(): Int {
+        return contacts.size
+    }
+
+    //El ViewHolder ata los datos del RecyclerView a la Vista para desplegar la información
+    //También se encarga de gestionar los eventos de la View, como los clickListeners
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //obteniendo las referencias a las Views
+        val nombre = view.findViewById(R.id.tvNombre) as TextView
+        val status = view.findViewById(R.id.tvStatus) as TextView
+        val phone = view.findViewById(R.id.tvPhone) as TextView
+        val image = view.findViewById(R.id.userImage) as ImageView
+
+        //"atando" los datos a las Views
+        fun bind(contact: Contact, context: Context){
+            nombre.text = contact.name
+            status.text = contact.status
+            phone.text = contact.phone
+            image.setImageResource(contact.idImage)
+
+            //Gestionando los eventos e interacciones con la vista
+            itemView.setOnClickListener{
+                Toast.makeText(context, "Llamando a ${contact.name}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+}
+```
+
+- La primera diferencia que observamos, es que nuestro RecyclerAdapter no ereda de un basicAdapter() como las listas de los otros dos ejemplos; sino de un RecyclerView.Adapter
+- Tiene una clase nueva llamada ViewHolder, que asigna los valores de los datos a las vistas correspondientes en el Item, sin crear diversas instancias de esta (reciclando así este recurso).
+- sobreescribe el callback onCreateViewHolder, que infla y devuelve la vista. Como no la personaliza, se podrían asignar diferentes vistas para diversos Items.
+- contiene onBindViewHolder, que personaliza el tipo de ViewHolder según su posición.
+
+5.- En el *MainActivity*, seteamos el adaptador como un lateinit para poder recuperar su valor en cualquier momento.
+
+```kotlin
+private lateinit var mAdapter : RecyclerAdapter
+```
+
+6.- Para generar datos dummy, declaramos una función con un arreglo de Contacts predeterminados.
+```kotlin
+//generamos datos dummy con este método
+    private fun getContacts(): MutableList<Contact>{
+        var contacts:MutableList<Contact> = ArrayList()
+
+        contacts.add(Contact("Pablo Perez", "disponible", "5535576823",R.drawable.unknown))
+        contacts.add(Contact("Juan Magaña", "on smash", "553552432",R.drawable.unknown))
+        contacts.add(Contact("Leticia Pereda", "disponible", "5553454363",R.drawable.unknown))
+        contacts.add(Contact("Manuel Lozano", "livin' la vida loca", "9613245432",R.drawable.unknown))
+        contacts.add(Contact("Ricardo Belmonte", "disponible", "6332448739",R.drawable.unknown))
+        contacts.add(Contact("Rosalina", "lookin' to the stars", "7546492750",R.drawable.unknown))
+        contacts.add(Contact("Thalía Fernandez", "no fear", "5587294655",R.drawable.unknown))
+        contacts.add(Contact("Sebastián Cárdenas", "no molestar", "4475655578",R.drawable.unknown))
+
+        return contacts
+    }
+```
+
+7.- Embebemos todo el código para configurar y lanzar nuestro RecyclerView en un método que llamaremos en *onCreate()*:
+
+```kotlin
+//configuramos lo necesario para desplegar el RecyclerView
+    private fun setUpRecyclerView(){
+        recyclerContacts.setHasFixedSize(true)
+        //nuestro layout va a ser de una sola columna
+        recyclerContacts.layoutManager = LinearLayoutManager(this)
+        //seteando el Adapter
+        mAdapter = RecyclerAdapter( this,getContacts())
+        //asignando el Adapter al RecyclerView
+        recyclerContacts.adapter = mAdapter
+    }
+```
+
+8.- Finalmente, ejecutamos dicho método en onCreate().
+
+La app debe quedar similar a esto:
+
+<img src="result.png" width="33%">
+
+
+
+[`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)
+
+
+
+
 </div>

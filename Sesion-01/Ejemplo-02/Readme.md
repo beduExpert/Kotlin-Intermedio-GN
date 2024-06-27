@@ -1,66 +1,220 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejemplo 2`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejemplo 1`
 
-## Ejemplo 2: Estructura del proyecto
+## Ejemplo 2: Inputs e imágenes
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Analizar la estructura de un proyecto en blanco.
-- Correr el proceso de _Make Project_
+- Posicionar imágenes en el layout a través de un View.
+- Explorar los atributos básicos de un View.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
+2. Seguir la instrucciones para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-1. Abre __Android Studio__
+### ImageView
 
-2. Vamos a abrir nuestro proyecto del [Ejemplo 1](../Ejemplo-01). En esta ventana, tenemos dos opciones para abrir nuestro proyecto. 
-	- La __Opción A__, es un shortcut (atajo) para abrir un proyecto abierto recientemente. Basta con dar click a la sección.
-	- La __Opción B__, abrir nuestro proyecto seleccionando la ruta.
+1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-   ![imagen](images/01.png)
+2. Abrimos el archivo XML en la carpeta _layout_.
+
+    Utiliza el siguiente código para sustituir el _ViewGroup_ actual por _LinearLayout_
+
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      tools:context=".MainActivity">
+      {COLOCA AQUI EL CONTENIDO DEL LAYOUT}
+   </LinearLayout>
+   ```
    
-3. Al abrirse la IDE, visualizaremos una estructura de directorios que conforman nuestro proyecto. Explicamos cada directorio:
+3. Agrega un ImageView, mediante el siguiente código:
 
-- **manifest**: Contiene el archivo AndroidManifest.xml.
-- **java**: Contiene los archivos Java, o en este caso Kotlin, de código fuente separados por nombres de paquetes, incluido el código de prueba JUnit.
-- **res**: Contiene todos los recursos de nuestro proyecto, tales como archivos XML que almacenan colores, strings y elementos gráficos: imágenes de mapa de bits, divididos en subdirectorios pertinentes.
-	- **drawable**: Archivos de mapas de bits (.png, .9.png, .jpg y .gif) o archivos XML.
-	- **layout**: Aquí se almacenan los archivos XML de nuestra Interfaz de Usuario, donde se declaran las Vistas a utilizar, sin definir funcionalidad alguna.
-	- **mipmap**: Archivos de elementos de diseño para diferentes densidades de los íconos de selectores.
-	- **values**: Archivos XML que contienen valores simples, como strings, valores enteros y colores.
-	
+    ```xml
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/beto"
+        />
+    ```
 
-   ![imagen](images/02.png)
+4. Existe un atributo ___src___ con un drawable llamado _beto_, por lo que tenemos qué agregar una imagen con ese nombre en el directorio ___res/drawable/___.
+
+    <img src="images/0.png" width="40%">
+
+5. Nuestro diseño se visualiza así:
+
+    <img src="images/wrap_content.png" width="40%">
+
+    El tamaño excesivo se debe a que el ImageView por asignarle _wrap_content_ al ancho y alto, se ajusta al tamaño de la imagen.
+
+    Vamos a definir un tamaño específico para nuestro _View_:
+
+    ```xml
+    android:layout_height="48dp"
+    android:layout_width="120dp"
+    ```
+
+6. Aunque la imagen se alcanza a ver completamente, las dimensiones del _ImageView_ no corresponden a la escala de la imagen. En este _View_ tenemos disponible un atributo para describir el escalamiento que llevará nuestra imagen:
+
+    VALOR | ENUM en ImageView.ScaleType | DESCRIPCION | EJEMPLO
+    ------|------------------|-------------|----------
+    center | CENTER | centra la imagen sin escalamiento |   <img src="images/center.png" width="80%">
+    centerCrop | CENTER_CROP | centra la imagen y mantiene su proporción, haciendo un recorte si la imagen es más grande que el _View_ | <img src="images/center_crop.png" width="80%">
+    centerInside | CENTER_INSIDE | redimensiona la imagen manteniendo su proporción para que sus medidas quepan en el _View_ (igual o menor). |  <img src="images/center_inside.png" width="80%">
+    fitEnd | FIT_START | redimensiona la imagen manteniendo su proporción para que quepa y se alinee al principio del _View_ | <img src="images/fit_end.png" width="80%">
+    fitCenter | FIT_CENTER | redimension la imagen manteniendo su proporción para que quepa y se centre en el _View_ | <img src="images/fit_center.png" width="80%">
+    fitEnd | FIT_END | reescala la imagen manteniendo su proporción para que quepa y se alinee al final del _View_ | <img src="images/fit_end.png" width="80%">
+    fitEnd | FIT_END | redimensiona la imagen cambiando su proporción para ajustarse a las medidas del _View_ | <img src="images/fit_xy.png" width="80%">
+
+    Experimenta con cada una de estas opciones. Finalmente, utiliza la opción ___centerInside___.
+
+### EditText
+
+1. Ahora agrega un EditText con las siguientes líneas de código después del ImageView:
+
+    ```xml
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    ```
+
+    <img src="images/edit_text.gif" width="40%">
+
+2. Como el tamaño lo ponemos en función del contenido, este se redimensiona al agregar texto, esto no es deseable así que tenemos qué determinar un tamaño fijo, por lo que modificaremos el EditText:
+
+    ```xml
+    <EditText
+        android:id="@+id/editText"
+        android:hint="@string/add_text"
+        android:textColorHint="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:inputType="text"
+        android:drawableStart="@drawable/boy"
+        android:drawablePadding="12dp
+        />
+    ```
+
+3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el ___inputType___ como text (con eso evitamos un texto multilínea), este último atributo regula el tipo de dato que introducimos y por ende modifica el teclado, de modo que si nuestro InputType es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. El texto de descripción se controla por la propiedad ___hint___ y su color por ___textColorHint___. En este caso, haría falta agregar un string llamado _add_text_ para que funcione correctamente. finalmente, ___drawableLeft___ nos da la posibilidad de poner una imagen del lado izquierdo para personalizarlo, existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con ___drawablePadding___.
+
+4. Ahora revisemos el concepto de _focus_. El foco determina si un elemento está activo, en el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor en este y mostrándose el teclado para edición. Se puede deshabilidar la propiedad _focusable_ de un EditText, pero por ahora esto no es requerido. Cuando tenemos varios campos, podemos seleccionar qué elemento se va a enfocar después de terminar de editar en un _EditText_. Por defecto, esto está seteado de arriba para abajo. 
+
+    Agregamos un nuevo _EditText_ que pida un teléfono, para esto, limitaremos los caracteres a 10 y agregaremos y declararemos el tipo de input a ___phone___:
+
+    ```xml
+    <EditText
+        android:id="@+id/editText2"
+        android:hint="@string/phone"
+        android:textColorHint="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:maxLength="10"
+        android:layout_marginHorizontal="24dp"
+        android:inputType="phone"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="12dp"
+        />
+    ```
+
+    Al correr el código tenemos lo siguiente:
+
+    <img src="images/inputs.gif" width="40%">
+
+    Podemos determinar los siguientes campos manualmente mediante los siguientes atributos:
+
+
+    ATRIBUTO | DESCRIPCION 
+    ---------|-------------
+    nextFocusDown | determina el siguiente campo navegando hacia abajo
+    nextFocusUp | determina el siguiente campo navegando hacia arriba
+    nextFocusLeft | determina el siguiente campo navegando hacia la izquierda
+    nextFocusRight | determina el siguiente campo navegando hacia la derecha
+
+    también esto se puede hacer de forma programática.
+
+
+5. Ahora, nos queda manejar algunos eventos del _EditText_, primero vamos a detonar una acción cuando el texto se modifique. Para eso utilizaremos un _TextWatcher_.
+
+   Agregamos las variables:
+
+    ```kotlin
+    private lateinit var editText: EditText
+    private lateinit var editText2: EditText
+    ```
+
+   relacionamos las variables con los id's del layout:
    
-> La raíz __Gradle Scripts__ forman parte de nuestro proyecto, pero los analizaremos adelante con detalle.
- 
- La estructura anterior es una representación simplificada de nuestro proyecto y no muestra la estructura de directorios y archivos en nuestro proyecto, por lo tanto, si queremos visualizarla tal cual es, haremos lo siguiente: En la ventana _Project_, podremos ver un selector que tiene elegido la opción android por defecto, dar click a este y elegir __Project__.
+    ```kotlin
+    textView = findViewById(R.id.textView)
+    editText = findViewById(R.id.editText)
+    editText2 = findViewById(R.id.editText2)
+    ```
 
-   ![imagen](images/03.png)
+   Y agregamos el _listener_ para los eventos de cuando el texto cambia:
    
-Esta versión contiene la organización real del proyecto. Algunas cosas a notar, son las carpetas repetidas en ___res___ tales como __drawable__ o __mipmap__. Tomando como ejemplo el anterior, observamos una nomenclatura como ___hdpi___ o ___mdpi___. Se organiza así para definir imágenes con distintas densidades y que el sistema asigne el recurso para un dispositivo android de acuerdo a la resolución de su pantalla. Existen nomenclaturas para otros tipos de clasificación como el idioma o versión.
+    ```kotlin
+    editText.addTextChangedListener(object : TextWatcher {
+        override fun afterTextChanged(s: Editable) {}
+        override fun beforeTextChanged(
+            s: CharSequence, start: Int,
+            count: Int, after: Int
+        ) {
+        }
 
-   ![imagen](images/04.png)
-   
-En general, la opciones de visualización del proyecto adecuado dependerá del objetivo que tengas en el momento al abrir la IDE.
+        override fun onTextChanged(
+            s: CharSequence, start: Int,
+            before: Int, count: Int
+        ) {
+            Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
+        }
+    })
+    ```
 
-#### MainActivity.kt y activity_main.xml
+    Como vemos anteriormente, hay tres callbacks a definir (_afterTextChanged, beforeTextChanged_ y _onTextChanged_), utilizamos el último callback y asignaremos el texto del _EditText_ en nuestro _TextView_.
 
-Al momento de crear tu proyecto, estos dos archivos estaban abiertos. Si damos click en _activity_main.xml_, visualizaremos lo que parece ser una pantalla de una aplicación y su _Blueprint_. En el archivo _MainActivity.kt_, encontraremos código en Kotlin definiendo un *Activity* definiendo un callback *onCreate* que setea el contenido del archivo xml. Por ahora, podemos describir esto:
+    y listo! lo que aparezca en el EditText lo visualizamos en el TextView!
 
-- __activity_main.xml__ es un layout y contiene la descripción de la interfaz gráfica de nuestro menú principal.
+    <img src="images/text_changed.gif" width="40%">
 
-   ![imagen](images/05.png)
-   
-- __MainActivity.kt__ contiene una clase que hereda de ___AppCompactActivity___, por lo tanto sabemos que es una Activity y que contiene el código fuente para hacer funcionar nuestro menú principal.
+    Por último, imprimiremos los valores de los editText, para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
 
-   ![imagen](images/06.png)
+    ```xml
+    <Button
+        android:id="@+id/button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/accept"/>
+    ```
 
+    Agrega el botón y lo asocias a su id, para no redundar en código omitimos este paso. Finalmente, imprime en consola los textos de los _EditText_ cuando des click al botón:
 
-[`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
+    ```kotlin
+    Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
+    ```
+
+    Corroboramos el funcionamiento:
+
+    <img src="images/1.png" width="70%"/>
+
+<br/>
+
+[`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)
 
 </div>

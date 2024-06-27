@@ -1,90 +1,71 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Reto 2`
-	
-## Reto 2 
+
+
+[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Reto 2`
+
+## Reto 1: Animators
 
 <div style="text-align: justify;">
 
+
 ### 1. Objetivos :dart:
 
-- Analizar el ciclo de vida de un _Fragment_ y su comportamiento al realizar diversas acciones.
+- Aplicar el conocimiento de Animators
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio instalado
-2. Emulador de android tablet configurado.
+1. Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
-El ejerecicio anterior tiene un layout similar a este:
+A partir del ejercicio de ___Shared Transition___ del [ejemplo 2](../Ejemplo-02/), crear la siguiente transición:
 
- <img src="../Ejemplo-02/images/9.png" width="33%">
+<img src="Images/exercise.gif" width="70%">
 
-Sin embargo, queremos que para el caso de una tablet, tengamos una Interfaz más parecida a la del diagrama:
 
- <img src="../Ejemplo-02/images/1.png" width="70%">
- 
- El ejercicio consistirá en adaptar el layout para tenerlo de la forma vertical para la versión ___portrait___, como para la ___landscape___.
 
-1. Utilizando el ejemplo anterior, modificar únicamente el layout para dispositivos grandes (la lista debe abarcar el 40% de la pantalla).
+Esto implica agregar el título __Conciertos__ en ambos _layouts_ de los _activities_ y crear su animación. Como en este caso estamos compartiendo más de un _View_, la escena se construye con la siguiente nomenclatura:
 
-2. Crear una versión landscape para cuando la tablet esté en posición horizontal (la lista debe abarcar el 35% de la pantalla).
+>  ActivityOptionsCompat.makeSceneTransitionAnimation(context, ..sharedElements)
 
-Para que nuestro diseño reacciones a la orientación del teléfono, abriremos nuestro ___AndroidManifest.xml___ e ingresamos en nuestro tag aludiendo a ___MainActivity___.
+Donde:
 
-```xml
-android:screenOrientation="sensor"
+* __context__ es el contexto de nuestro _activity_
+* __sharedElements__ es uno o varios objetos de la clase ___androidx.core.util.Pair___, que son pares ___view,string___ donde se ingresa el _view_ a compartir y su *transitionName*.
+
+
+
+
+
+<details>
+	<summary>Solucion</summary>
+
+```kotlin
+binding.btnActivity2.setOnClickListener {
+
+    val intent = Intent(this, SharedTransitionedActivity::class.java)
+
+    val headerTransitionName = ViewCompat.getTransitionName(binding.imgConcert)?: " "
+    val titleTransitionName = ViewCompat.getTransitionName(binding.titleConcert)?: " "
+
+val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+    this,
+    Pair.create(binding.imgConcert,headerTransitionName),
+    Pair.create(binding.titleConcert,titleTransitionName),
+
+)
+
+startActivity(intent, options?.toBundle())
+}
 ```
 
-<details><summary>Solución</summary>
 
-Para tener una versión landscape, crearemos un ___android resource directory___ con los _qualifiers_ ___Size___ con valor ___large___ y ___orientation___ con valor ___landscape___.
-	
-el código quedaría de esta forma:
-
-```xml
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <fragment
-        android:id="@+id/fragmentList"
-        class="org.bedu.listdetailfragment.ListFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline"/>
-    <fragment
-        android:id="@+id/fragmentDetail"
-        class="org.bedu.listdetailfragment.DetailFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
-
-Para la versión _portrait_, bastaría únicamente modificar reutilizar el código anterior para ___fragment_detail___ de nuestro directorio ___layout-large___ y que tenga el 0.5 de porcentaje.
 
 </details>
-<br/>
 
-[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
-
+ 
 
 
+
+[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
 </div>

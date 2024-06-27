@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Postwork`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Postwork`
 
 ## Postwork
 
@@ -6,27 +6,37 @@
 
 ### 1. Objetivos :dart:
 
-- Orientarse en la implementación de nuevas _Activities_ y sus _layouts_.
+- Aplicar el conocimiento de Listas a la tienda en línea
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
-
+2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-#### Definir el caso de uso para nuestro primer flujo.
+1. Para la tienda, hay qué crear visualmente una lista similar a la del [Reto 1](../Reto-01) 
 
-A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
-
-El proyecto se va a desarrollar por etapas, y como no podemos dimensionar en su totalidad la implementación de los temas por venir, es conveniente hacer una pequeña planeación.
-
-Se considera recomendable que nuestro flujo tenga al menos seis pantallas, que tenga un objetivo principal y otras pantallas de apoyo (perfil, configuración, etc.). Por lo anterior, sería muy complejo desarrollar el flujo de Activities en esta sesión, por lo que se puede empezar por definir el flujo de únicamente dos pantallas o incluso 3. 
-
-Se recalca que es conveniente desarrollar el flujo más simple en la aplicación, puesto a que las complejidades de otras pantallas con distintas funciones pueden ser cubiertas en siguientes temas. Un ejemplo de lo anterior es el flujo entre una pantalla de _inicio de sesión_ y otra que lleve a la información de perfil (puesto que los datos son únicamente informativos) y el inicio de sesión únicamente valida que las credenciales sean correctas. Un ejemplo contrario sería desarrollar una pantalla que arroje los resultados de la busqueda de un producto, puesto que el tema de listas aún no está cubierto ni el de filtros.
+<img src="../Ejemplo-01a/result.png" width="33%" align="center"/>
 
 
+pero con un RecyclerView, tal como se vió en el [Ejemplo 3](../Ejemplo-03) y el [Reto 3](../Reto-03)
 
-[`Anterior`](../Proyecto/Readme.md) | [`Siguiente`](../../Sesion-04)
+Se puede basar uno en la tienda **linio** para android
+
+<img src="list.png" width="33%" align="center"/>
+
+la lista puede ser en una matriz como en la imagen o lineal vertical como la primera imagen
+
+2. Al seleccionar un elemento, direccionar a una pantalla de detalles del producto, donde posteriormente se podrá enviar al carrito
+
+<img src="details.png" width="33%" align="center"/>
+
+
+
+[`Anterior`](../Proyecto/Readme.md) | [`Siguiente`](../../Sesion-05/Readme.md)
+
+
+
 
 </div>

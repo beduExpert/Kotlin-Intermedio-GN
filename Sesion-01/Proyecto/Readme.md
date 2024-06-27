@@ -1,14 +1,13 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Proyecto`
 
-## Proyecto: Lineamientos 
+## Proyecto: Agregando Views
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Definir el proyecto con el que trabajaremos todo el curso.
-- Interpretar los lineamientos que integra el proyecto.
-- Programar la idea básica de nuestra aplicación.
+- Implementar Views al proyecto.
+- Crear un formulario.
 
 ### 2. Requisitos :clipboard:
 
@@ -17,76 +16,61 @@
 
 ### 3. Desarrollo :computer:
 
+1. Generá un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
 
-##### cómo definir el proyecto
+2. Una vez generado el proyecto vamos a implementar un formulario de registro y login en nuestra app.
 
-En esta primera parte del curso, debemos definir un proyecto con el que trabajemos las 8 sesiones. Este proyecto va ir tomando mayor complejidad conforme se vaya avanzando en nuevos temas, obteniendo herramientas que nos permitan realizar nuevas funcionalidades.
+### Login
 
-Si previamente tomaraon el curso de __Kotlin fundamentals__, pueden retomar la idea original del proyecto e ir adaptándolo a este módulo, con esto tendrán una integración más completa de conceptos de Android y Kotlin.
+<img src="images/0.png" width="60%">
 
-Para poder elegir el proyecto adecuado, hay que considerar ciertos factores:
+Los __Views__ básicos a implementar son:
 
-* Se basa en una idea de proyecto que ya existe (spotify, amazon,rappi, etc).
-* Soluciona un problema de la vida real.
-* Se puede plantear como una aplicación móvil.
-* Se limita a una simulación sencilla de la prestación de algún servicio o producto.
+- Un _ImageView_ para el logo de la app.
+- Dos _EditText_: el primero para usuario/correo/teléfono, el segundo para la contraseña. Ambos con íconos de preferencia para darle personalidad.
+- Un botón de Iniciar sesión
+- Una etiqueta para "olvidé contraseña"
 
+### Tips
 
-A continuación damos unos ejemplos de aplicaciones que se pueden retomar para el concepto de nuestro proyecto.
+Declarar el password con el atributo ___inputType___ como ___textPassword___ protege el texto que se va escribiendo como puntos, para que no sean visibles.
 
-__NOTA:__ Estas muestras no tienen como objetivo que sean replicadas, más bien es para tomar el concepto y algunas referencias de interfaz o una versión reducida de estas, para no dificultar el desarrollo de manera innecesaria.
+Para la validación del formato de un email, existe un utils en android que hace la validación automática (también valida números telefónicos o sitios web). Dichas herramientas en forma de clase se llama Patterns, y la propiedad que utilizaremos es EMAIL_ADDRESS, por lo que una función de validación podría quedar de la siguiente forma:
 
-<div>
-   <img src="images/spotify.png" align="right" height="90"> 
-        
-   ###### Spotify
-   Es un buen ejemplo si tomamos en cuenta que la aplicación no reproducirá música en este módulo (En el módulo avanzado se le da continuidad al manejo multimedia y se puede retomar el proyecto). La aplicación se podría limitar a crear listas de reproducciones, agregar y quitar canciones de la lista y seleccionar favoritos. Podríamos simular una pantalla de perfil e inicio de sesión.
-   
-   <img src="images/spotifyList.jpeg" align="center" width="35%"> 
-   
-</div>
+```kotlin
+fun isEmailValid(email: String): Boolean { 
+    return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+}
+```
+podríamos crear otro validador para Password utilizando directamente una función if y englobándola en otra función.
 
-<div>
-   <img src="images/linio.png" align="right" height="90"> 
-        
-   ###### linio
-   Esta aplicación de pago es una buena guía de concepto al poder implementar una lista de productos, seleccionar algunos de ellos para el carrito de comprar, eliminar del carrito y simular un perfil con saldo para realizar compras. Incluso se le pueden restar características y seguir siendo una aplicación bastante completa.
-   
-   <img src="images/linioList.jpeg" align="center" width="35%"> 
-   
-</div>
+Para mostrar un error en un EditText podemos setear un error mediante:
 
-<div>
-   <img src="images/imdb.png" align="right" height="90"> 
-        
-   ###### IMDB
-En esta aplicación podemos consultar sinopsis, calificaciones y listas de películas, programas de TV, actores etc. Podríamos tomar de este ejemplo el desplegar una lista de películas, tener la capacidad de calificarlas y leer su sinopsis, o tomar otras ideas de ella.
-   
-   <img src="images/imdbList.jpeg" align="center" width="35%"> 
-   
-</div>
+```kotlin
+editText.error = "Contraseña incorrecta"
+```
 
+cuando la validación sea exitosa, hay qué borrar el mensaje, por lo que agregar una extensión a EditText para hacer esto sería útil:
 
-##### lineamientos para comenzar el proyecto
+```kotlin
+fun EditText.clearError() {
+    error = null
+}
+```
 
-- Aconsejamos no definir una idea muy compleja del proyecto, puesto a que su propósito es meramente didáctico.
-- La aplicación debe ser pensada únicamente para teléfonos móviles y con orientación vertical, esto para reducir complejidad y ahorrar tiempo en los diseños de layouts.
-- Se puede retomar la idea del curso __Kotlin Fundamentals__ o crear uno desde cero, pero la idea es darle continuidad.
-- Se evaluarán únicamente las implementaciones de los temas vistos en el curso, si bien se pueden tomar conceptos vistos de otras fuentes, deberán ser moderados para no perder de vista lo fundamental.
-- La estructura del código irá tomando forma a lo largo del proyecto, por lo que adelantarse a los temas no es aconsejable.
-- Crearemos nuestro proyecto con el nombre que le asignemos a la aplicación.
-- Este setup inicial cubrirá el diseño del concepto y la creación del proyecto, pero las implementaciones al código comienzan en la siguiente sesión.
+### Lineamientos
+
+1. La pantalla debe contener al menos un _ImageView_, dos _EditText_, dos _TextView_ y un _Button_.
+2. El color de fondo debe ser asignado al fondo de la pantalla, asignar colores al texto.
+3. Todo tipo de recursos debe ir en su respectivo archivo (strings en _strings.xml_, recursos gráficos en la carpeta _drawable_, etc).
+4. Al menos un View debe implementar un callback con alguna funcionalidad.
 
 
+### Register
+
+Repite los pasos del login, pero con los campos del register
 
 
-
-
-
-
-
-
-
-[`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-02/Readme.md)
 
 </div>

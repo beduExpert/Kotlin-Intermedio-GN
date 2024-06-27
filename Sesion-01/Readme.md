@@ -1,75 +1,97 @@
 [`Kotlin-Intermedio`](../Readme.md) > `Sesión 1`
 
-## Sesión 1: Introducción a Android
 
-<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
+## Sesión 1: Views
+
 <div style="text-align: justify;">
+
+### Instrucciones de la sesión
+
+Para esta sesión, modificaremos el layout inicial de un proyecto creado, de modo que el archivo generado en ___res/layout___ sea reemplazado por este código:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+     {COLOCA AQUI EL CONTENIDO DEL LAYOUT}
+</LinearLayout>
+```
+
+### Introducción
+
+Un ___View___ es una clase que representa la base de todos los componentes para la interfaz gráfica y su representación gráfica está delimitada por un rectángulo. La descripción gráfica de un View así como su posición en la pantalla está determinado por un archivo layout en lenguaje XML, y se encuentran distribuidos jerárquicamente en un árbol de Vistas. Un tipo especial de View es el ___ViewGroup___, que es un contenedor de Views y otros ViewGroups con un formato de orden específico. 
+
+<img src="images/view_tree.png" align="right">
+<h5>Ejemplo de árbol de Views</h5>
 
 ### 1. Objetivos :dart: 
 
-- Reconocer el IDE Android Studio con el que desarrollan aplicaciones móviles.
-- Conocer la estructura de un proyecto android y todos los archivos generados por el IDE
+---
+
+<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
+
+- Modificar el proyecto por defecto
+- utilizar los controles esenciales para generar interfaces básicas.
+- Utilizar herramientas básicas para debuggeo
 
 ### 2. Contenido :blue_book:
 
 ---
 
-<img src="images/tools.png" align="right" height="90"> 
+<img src="images/button.png" align="right" height="90"> 
 
-#### <ins>Setup inicial</ins>
+#### <ins>Botones y textos</ins>
 
-Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, explicando el significado de los distintos campos y opciones para su configuración.
+Se crearán Vistas desde cero mediante código y las utilizaremos para detonar eventos sencillos como modificar un texto.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
-
----
-
-<img src="images/structure.png" align="right" height="90"> 
-
-#### <ins>Estructura del proyecto</ins>
-
-Con el proyecto nuevo creado, analizamos la estructura del proyecto y explicamos cada sección de esta y su propósito.
-
-- [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
-
----
-
-<img src="images/emulator.jpg" align="right" height="90"> 
-
-#### <ins>Emulación de dispositivos</ins>
-
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:
-
-- [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
 
 ---
 
-<img src="images/chaomi.png" align="right" height="110"> 
+<img src="images/text_input.png" align="right" height="90"> 
 
-#### <ins>Correr en un dispositivo físico</ins>
+#### <ins>Inputs e imágenes</ins>
 
-Basta de emulaciones, utilizaremos un dispositivo móvil físico para instalar nuestra primera aplicación a nuestro móvil. :iphone:
+Ampliaremos el dominio a ImageViews para la visualización de imágenes y EditTexts para ingresar un texto desde el teclado del móvil, y explorando los eventos que este detona. 
 
-- [**`EJEMPLO 4`**](Ejemplo-04/Readme.md)
+- [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
+- [**`RETO 2`**](Reto-02/Readme.md)
 
 ---
 
+<img src="images/url_image.png" align="right" height="90"> 
+
+#### <ins>Imágenes mediante URL</ins>
+
+Mostrar imágenes en un ImageView por medio de URLS, utilizando la librería coil disponible en _mavenCentral()_. 
+
+- [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
+
+---
+
+
 ### 3. Proyecto :hammer:
 
-Aplica los lineamientos que vienen en esta guía para definir y comenzar el desarrollo de tu proyecto.
+Con los temas anteriores, construye una pantalla de login para la aplicación definida.
 
 - [**`PROYECTO SESIÓN 1`**](Proyecto/Readme.md)
 
 ### 4. Postwork :memo:
 
-Esta es una guía anexa de consejos para una mejor planeación de tu proyecto para este módulo.
+Con lo aprendido en esta sesión, implementa Views adicionales a tu primera pantalla.
 
 - [**`POSTWORK SESIÓN 1`**](Postwork/Readme.md)
 
 <br/>
 
-[`Anterior`](../Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)      
+[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-03/Readme.md)      
 
 </div>
 

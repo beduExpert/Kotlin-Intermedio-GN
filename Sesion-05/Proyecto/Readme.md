@@ -1,13 +1,12 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Proyecto`
+[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Proyecto`
 
-## Proyecto: Fragments
+## Proyecto
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Modularizar el proyecto mediante ___Fragments___.
-- Manejar un flujo entre _fragments_.
+- Agregar indicadores audiovisuales a nuestra aplicación
 
 ### 2. Requisitos :clipboard:
 
@@ -16,36 +15,22 @@
 
 ### 3. Desarrollo :computer:
 
-En este reto final, vamos a implementar _fragments_ para lograr una app flexible para diversos dispositivos, o crear un flujo.
+En esta parte del proyecto, retomaremos el proyecto realizado en Kotlin Intermedio e implementaremos algunas animaciones a la aplicación.
 
-Por simplicidad podemos escoger un login con nombre de usuario/correo/teléfono y una contraseña.
+En caso de no existir un elemento gráfico candidato a una animación, se considerará un rediseño parcial en algunas pantallas para adaptar la sesión al proyecto.
 
-### Lista-detalle
 
-Para este apartado, podemos tomar como base el ejercicio realizado en el [Ejemplo 2](../Ejemplo-02) para una lista-detalle, pudiéndolo modificar a un inbox o a otro tipo de lista, dependiendo del proyecto que hayamos elegido.
-
-<img src="images/1.png" width="40%">
-
-### Flujo
-
-Podemos crear un flujo en la aplicación similar a los de los tutoriales guiados cuando abres por primera vez una app
-
-<img src="images/2.png" width="40%">
-
-O una serie de pasos para completar una tarea.
-
-<img src="images/3.jpeg" width="40%">
 
 ### Lineamientos
 
-1. Se debe implementar al menos dos _fragments_ en el proyecto.
-2. Cualquier forma de implementación de _fragments_ es válido.
-3. El uso de los _fragments_ debe ser adecuado (no utilizarlos en lugares donde no se requieran).
+1. Se deben agregar al menos tres Transiciones entre pantallas.
+2. Animar el logo en el login o en el menú principal. 
+3. Crear animaciones extra al realizar una acción.
 
 
 
 
 
-[`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Reto-02) | [`Siguiente`](../Postwork/Readme.md)
 
 </div>

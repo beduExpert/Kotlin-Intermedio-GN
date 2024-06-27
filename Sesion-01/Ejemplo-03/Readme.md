@@ -1,60 +1,105 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejemplo 3`
 
-## Ejemplo 3: Emulación de dispositivos
+## Ejemplo 3: Imágenes mediante URL
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Crear un dispositivo virtual Android
-- Ejecutar nuestro proyecto en el emulador configurado
+- Instalar dependencias mediante _gradle_
+- extender _ImageView_ para recuperar imágenes por medio de una URL.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
+2. Seguir la instrucciones específicas para esta sesión.
 
 ### 3. Desarrollo :computer:
 
-Para poder probar cualquier aplicación a desarrollarse, es necesario tener un dispositivo Android a la mano, pero no tiene qué ser físico debido a que Android Studio puede crear emuladores de teléfonos reales y personalizados a través del __AVD MANAGER__. Vamos a aprender a crear un __AVD__ (Android Virtual Device) o Dispositivo Virtual Android.
+Para que un ImageView pueda cargar una imagen remota a través de una URL, tenemos qué instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado). Las opciones más populares son:
 
-1. Inicia __Android Studio__ y abre el proyecto creado anteriormente.
+- Fresco
+- Picasso
+- Glide
 
-2. En la barra de herramientas, localiza un ícono de un celular con la cabeza de la mascota de android, descubrirás que es un botón que da acceso al __AVD MANAGER__, donde crearemos nuestro dispositivo virtual. Da click sobre este.
+Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: ___coil___ ( Coroutine Image Loader), que como dice su nombre, utiliza las populares coroutines de Kotlin. 
 
-![imagen](images/01.png)
+1. Insertamos la implementación de la dependencia en el archivo ___app/buid.grade___ la siguiente línea:
 
-3. Al abrirse la ventana, si no tenemos dispositivos creados previamente, nos saldrá una ventana que tiene un botón con la leyenda _Create virtual device_, da click sobre él.
+    ```gradle
+    dependencies{
+        implementation(libs.coil)
+    }
+    ```
 
-![imagen](images/02.png)
+    nótese que esta línea va dentro del bloque ___dependencies___, aquí es donde se declara la implementación de dependencias de la app. Cada dependencia se vaja de un repositorio.
 
-4. Explora un poco! verás distintos teléfonos con configuraciones diferentes de pantalla, algunos con la Play Store disponible. Selecciona uno y da click en siguiente.
+2. Con todos los cambios hechos en ___gradle___, sincronizamos nuestro proyecto. Cada vez que se modifican los archivos ___gradle___, emerge esta barra superior: 
 
-![imagen](images/03.png)
+<img src="images/0.png" width="90%"/>
 
-5. Vamos a probar a instalar Android Pie en nuestro dispositivo (pero también puedes instalar otra versión si así lo deseas). Da click en Download, al lado del nombre de la versión.
+Podemos dar click en ___Sync now___ en la parte derecha de esa barra, o sincronizamos mediante la herramienta (dicha opción es un elefante con una flecha azul).
 
-![imagen](images/04.png)
+<img src="images/1.png" width="55%"/>
 
-6. Acepta los términos y condiciones, y espera a que la descarga termine; cuando esto suceda, click en finalizar.
+4. Requeriremos permisos de internet, por lo que entramos al manifest en ___app/src/main/AndroidManifest.xml___ e insertamos el permiso:
 
-7. De regreso en la selección de _Imagen de Sistema_, selecciona __Android Pie__ y dale Next.
+    ```xml
+    <uses-permission android:name="android.permission.INTERNET"/>
+    ```
 
-8. En el último paso, deja las configuraciones finales intactas (orientación inicial del dispositivo etc.) y finaliza el proceso.
+    <img src="images/2.png" width="55%"/>
 
-![imagen](images/05.png)
+5. Utiliza el siguiente código para sustituir el _ViewGroup_ actual por _LinearLayout_.
 
-Listo! nuestro dispositivo está configurado, podemos hacer más configuraciones de dispositivos virtuales si así lo deseamos.
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      tools:context=".MainActivity">
+      {COLOCA AQUI EL CONTENIDO DEL LAYOUT}
+   </LinearLayout>
+   ```
 
-Ahora vamos a correr nuestra aplicación! La forma más práctica es dando click en el botón verde de play :arrow_forward:.
+6. Dentro del _LinearLayout_, insertar el siguiente _ImageView_:
 
-![imagen](images/06.png)
+    ```xml
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+    />
+    ```
 
-Espera un momento y listo! la aplicación corre en nuestro emulador.
+7. Por último, agregamos la variable para el _ImageView_.
 
-![imagen](images/07.png)
-  
-**¡Felicidades! Ahora estás listo para correr tu aplicación en un dispositivo real**
+    ```kotlin
+    private lateinit var imageView: ImageView
+    ```
 
-[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Reto-01/Readme.md)
+    asignamos valor a un campo:
+
+    ```kotlin
+    imageView = findViewById(R.id.imageView)
+    ```
+
+    y utilizamos la función _load_ (es un método que extiende de _ImageView_) para cargar imágenes desde URLS etc.
+
+    ```kotlin
+    imageView.load("https://raw.githubusercontent.com/beduExpert/Kotlin-Intermedio-GN/master/images/android-kotlin.png")
+    ```
+
+    Corremos el código y comprobamos!
+
+    <img src="images/3.png" width="55%"/>
+
+
+
+[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
 </div>

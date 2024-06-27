@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Postwork`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Postwork`
 
 ## Postwork
 
@@ -6,37 +6,39 @@
 
 ### 1. Objetivos :dart:
 
-- Aplicar el conocimiento de Listas a la tienda en línea
+- Orientarse en la implementación de _fragments_ para el proyecto.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
-2. Seguir la instrucción específica para esta sesión.
+
 
 ### 3. Desarrollo :computer:
 
-1. Para la tienda, hay qué crear visualmente una lista similar a la del [Reto 1](../Reto-01) 
+#### Definir el uso del fragment
 
-<img src="../Ejemplo-01a/result.png" width="33%" align="center"/>
+A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
 
+Para conseguir implementar _fragments_ de manera natural en nuestro proyecto, buscaremos la forma de cómo encajarla.
 
-pero con un RecyclerView, tal como se vió en el [Ejemplo 3](../Ejemplo-03) y el [Reto 3](../Reto-03)
+- Si es una app que implique la compra de un producto, podemos hacer un flujo de _fragments_ que impliquen la selección del producto, después el ingreso de la dirección de envío, y por último la captura del método de pago.
 
-Se puede basar uno en la tienda **linio** para android
+- Si es una app tipo spotify, podemos crear una interfaz donde se muestre un patrón lista-detalle para seleccionar música y en el detalle los datos de la canción (esto aplica también para apps como imdb, etc.)
 
-<img src="list.png" width="33%" align="center"/>
+- Un clon de una app de entregas a domicilio podría implementar un flujo.
 
-la lista puede ser en una matriz como en la imagen o lineal vertical como la primera imagen
-
-2. Al seleccionar un elemento, direccionar a una pantalla de detalles del producto, donde posteriormente se podrá enviar al carrito
-
-<img src="details.png" width="33%" align="center"/>
+- Al abrir un video en youtube, se puede ver cómo salta un _fragment_ emergente donde se reproduce el video. Podemos hacer una simulación básica de ese comportamiento.
 
 
+### Tips
 
-[`Anterior`](../Proyecto/Readme.md) | [`Siguiente`](../../Sesion-05/Readme.md)
+El uso del ___DialogFrament___ es permitido en este módulo, en [Este artículo](https://guides.codepath.com/android/using-dialogfragment) se explica un poco más de cómo implementarlo (el lenguaje es Java, pero es bastante comprensible).
+
+<img src="images/1.png" width="35%">
 
 
 
+
+[`Anterior`](../Readme.md#Proyecto) | [`Siguiente`](../../Sesion-06)
 
 </div>

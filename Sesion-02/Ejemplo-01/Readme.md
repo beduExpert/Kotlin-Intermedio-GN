@@ -1,148 +1,234 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Ejemplo 1`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 1`
 
-## Ejemplo 1: Views, Button
+## Ejemplo 1: Layouts: RelativeLayout
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Crear un View desde el layout.
-- Explorar los atributos básicos de un View.
+- Acomodar los elementos de acuerdo al patrón de RelativeLayout.
 
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
-2. Seguir la instrucción específica para esta sesión.
 
 ### 3. Desarrollo :computer:
 
+El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. para hacer el enlace con otros Views, se requiere que declaren id's, en el layout de abajo, los id tienen el nombre del color que representa cada vista, para identificarlos mejor.
+
+La siguiente tabla muestra los atributos que tienen qué ver con el posicionamiento de sus elementos:
+
+
+ATRIBUTO | DESCRIPCIÓN
+---------|------------
+layout_above | posiciona el borde inferior al borde superiori de la vista con el id que se pase este atributo.
+layout_alignBaseline | posiciona la línea de base con la línea de la vista llamada.
+layout_alignBottom | Hace que se alíneen los bordes inferiores de las vistas.
+layout_alignEnd | Hace que se alíneen los bordes finales de las vistas.
+layout_alignLeft | Hace que se alíneen los bordes izquierdos de las vistas.
+layout_alignParentBottom | si true, pone el borde inferior del View sobre el inferior del RelativeLayout 
+layout_alignParentEnd | si true, pone el borde final del View sobre el final del RelativeLayout 
+layout_alignParentLeft | si true, pone el borde izquierdo del View sobre el izquierdo del RelativeLayout 
+ayout_alignParentRight | si true, pone el borde derecho del View sobre el derecho del RelativeLayout 
+ayout_alignParentStart | si true, pone el borde inicial del View sobre el inicial del RelativeLayout 
+layout_alignParentTop | si true, pone el borde superior del View sobre el superior del RelativeLayout
+layout_alignRight | borde derecho con borde derecho del View asignado
+layout_alignStart | borde inicial con borde inicial del View asignado
+layout_alignTop | borde superior con borde superior del View asignado
+layout_centerVertical | si true, centra verticalmente el View con su padre
+layout_above | posiciona el borde inferior al borde superior de la vista con el id que se le pase a este atributo
+layout_below | posiciona el borde superior al borde inferior de la vista con el id que se le pase a este atributo
+layout_toRightOf | posiciona el borde izquiero junto al derecho del View asignado
+layout_toLeftOf | posiciona el borde derecho junto al izquierdo del View asignado
+
+
+El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de acuerdo al primer ejercicio: 
+
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
+2. Modificamos el activity_main.xml para que quede acorde a esta pantalla (cada cuadro es un View con un background distinto)
+
+```xml
+    <View
+        android:id="@+id/red"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF0000" />
+```
+
+3. Ordenamos nuestro layout tal y como está en la siguiente imagen:
+
    <img src="images/0.png" width="40%">
-
-2. Una vez creado el proyecto, nos dirigimos al directorio de nuestro proyecto, localizamos la carpeta de recursos y abrimos el archivo XML enconatrado en la carpeta _layout_.
-
-   <img src="images/1.png" width="50%">
    
-3. Se abrirá una nueva pestaña con una ventana que muestra el diseño de la pantalla principal, esta es una interpretación gráfica del código XML que se encuentra en nuestro archivo, y por supuesto podemos visualizarlo en Android Studio. Las formas de visualizar este archivo son por código,diseño o mixto y se muestran en el siguiente gif:
-
-      <img src="images/layout_modes.gif" width="85%">
-     
-4. Ahora vamos a explorar un poco las herramientas que la IDE nos brinda para este tipo de archivos:
-
-      <img src="images/2.png" width="50%">
-
-   * ![#FF0000](https://via.placeholder.com/15/ff0000/000000?text=+): La barra vertical izquierda contiene __Palette__ Que nos muestra una serie de Views para insertar en el layout y __Component tree__ Que muestra la estructura de nuestro layout. 
-   * ![#FFFF00](https://via.placeholder.com/15/ffff00/000000?text=+): En la barra superior vertical, tenemos opciones para mostrar el diseño con su _blueprint_, una opción para colocar el diseño en formato vertical/horizontal, seleccionar la resolución de la pantalla mediante móviles predefinidos o con medidas personalizadas, la API de android entre otras cosas. 
-   * ![#0000FF](https://via.placeholder.com/15/0000ff/000000?text=+):En la barra lateral derecha, tenemos la opción ___attributes___ que despliegan los atributos de un _View_ seleccionado con el cursor.
-   * ![#00FF00](https://via.placeholder.com/15/00ff00/000000?text=+): Este menú flotante posibilita el zoom in/out al layout, capacidad de pan, escalar la app a resolución 1:1.
-
-5. Elegiremos un tipo de visualización para nuestro archivo. En este caso, elegiremos la opción mixta para permitirnos visualizar nuestro código con el que trabajaremos manualmente y visualizar los cambios que genera en el layout.
-
-6. Utilizaremos [Este código](../Readme.md#instrucciones-de-las-sesion) para sustituir el _ViewGroup_ actual (_ConstraintLayout_) con uno de manejo más sencillo (_LinearLayout_), este tema se toca a mayor profundidad en la siguiente sesión.
-
-7. Agregamos el siguiente código XML para agregar un _TextView_:
-
-```kotlin
-<TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-```
-
-8. Agregaremos un texto para nuestro _TextView_, para eso, abrirermos el recurso ___strings.xml___ ubicado en ___res/values/___ . Dentro del tag resources, agregamos un nuevo string:
-
-```xml
-<string name="hello_text">Hola, Estas es la sesión 2!</string>
-```
-
-   y agregamos un nuevo atributo ___text___ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas y definiremos el tamaño de la fuente:
+   Para eso, vamos a centrar todos nuestros _Views_ horizontalmente con el atributo ___layout_centerHorizontal___ true. Para los demás utilizamos la siguiente lógica:
    
- ```xml
-android:text="@string/hello_text"
-android:textStyle="bold"
-android:textSize="14sp"
-```
-   en textSize, tenemos el sufijo "sp" que significa scale-independent pixels.
-   Deberíamos poder visualizar el texto correctamente!
+   - El cuadro rosa va arriba del azul  --> layout_above="@id/blue"
+   - El cuadro azul va arriba del verde --> layout_above="@id/green"
+   - El cuadro verde va en el centro vertical --> layout_centerInParent="true"
+   - El cuadro rojo va abajo del verde --> layout_below="@id/green"
+   - El cuadro amarillo va abajo del rojo --> layout_below="@id/red"
    
-   <img src="images/4.png" width="40%">
-
-
-9. Añadimos ahora un botón, ponemos esta línea de código abajo del Textview para generar uno.
-
-```xml
-<Button 
-        android:id="@+id/btnAccept"
-        android:background="@color/mexicanPink"
-        android:text="@string/accept_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-```
-
-   Ingresamos el texto _accept_button_ en _strings.xml_ :
-
-```xml
-<string name="accept_button">ACEPTAR</string>
-```
-
-   Y el color rosa mexicano a _colors.xml_:
+   Implementando esa lógica, queda el siguiente layout:
    
 ```xml
-<color name="mexicanPink">#E4007C</color>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/blue"
+        android:id="@+id/pink"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF00FF" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/green"
+        android:id="@+id/blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#0000FF" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/green"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#00FF00" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/green"
+        android:id="@+id/red"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF0000" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/red"
+        android:id="@+id/yellow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFFF00" />
+</RelativeLayout>
 ```
+   
+4. Ahora ordenamos según esta imagen:
 
-En el diseño se visualiza correctamente el botón, sin embargo, el botón está pegado al _TextView_, así que le daremos un margen en la parte superior:
-
+   <img src="images/1.png" width="40%">
+   
+   La lógica es la siguiente:
+   
+   - El cuadro rosa se alinea a la parte izquierda y superior del layout  --> layout_alignParentLeft="true", layout_alignParentTop="true"
+   - El cuadro azul se alinea a la parte derecha y superior del layout  --> layout_alignParentRight="true", layout_alignParentTop="true"
+   - El cuadro verde se mantiene en el centro --> android:layout_centerInParent="true"
+   - El cuadro rojo se alinea a la parte izquierda e inferior del layout  --> layout_alignParentLeft="true", layout_alignParentBottom="true"
+   - El cuadro amarillo se alinea a la parte derecha e inferior del layout  --> layout_alignParentRight="true", layout_alignParentBottom="true"
+   
+   
 ```xml
-android:layout_marginTop="48dp"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+        <View
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pink"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF00FF" />
+    <View
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#0000FF" />
+    <View
+        android:layout_centerInParent="true"
+        android:id="@+id/green"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#00FF00" />
+    <View
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/red"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF0000" />
+    <View
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/yellow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFFF00" />
+</RelativeLayout>
 ```
 
-10. Ahora agregaremos funcionalidad a este botón. Abrimos El archivo ___MainActivity.kt___ en ___java/nombre.del.paquete/___. Dentro de la clase homónima, declaramos dos objetos _Button_ y _TextView_ para representar los Views en nuestra Activity.
-
-```kotlin
-private lateinit var btnAccept: Button
-private lateinit var text: TextView
-```
-
-
-   al final del método ___onCreate___ , agregamos la siguiente línea de código para asignarles los Views correspondientes (mediante sus id's):
-
-```kotlin
-btnAccept = findViewById(R.id.btnAccept)
-text = findViewById(R.id.text)
-```
-
-y por último asignamos el código a reproducirse cuando se pulse el botón: 
-
-```kotlin
-btnAccept.setOnClickListener {
-            text.text = "Haz dado click al botón!"
-        }
-```
-
-   Lo que estamos haciendo aquí es asignar un nuevo texto a nuestro ___TextView___ al hacer click en el botón. Corremos la aplicación para comprobar que todo funcione bien.
-
-   Por buena práctica, todo texto de la aplicación va en _strings.xml_ por lo que trasladamos el texto del _TextView_ al archivo:
-
+5. Por último, ordenaremos de acuerdo al siguiente patrón:
+   
+   <img src="images/2.png" width="40%">
+   
+      - El cuadro rosa se alinea a la parte izquierda del layout y al centro vertical --> layout_alignParentLeft="true", layout_centerVertical="true"
+   - El cuadro azul se alinea a la parte superior del layout y al centro horizontal  -->  layout_alignParentTop="true", layout_centerHorizontal="true"
+   - El cuadro verde se mantiene en el centro --> android:layout_centerInParent="true"
+   - El cuadro rojo se alinea a la parte inferior y al centro horizontal del layout  -->  layout_alignParentBottom="true", layout_centerHorizontal="true"
+   - El cuadro amarillo se alinea a la parte derecha y al centro vertical del layout  --> layout_alignParentRight="true", layout_centerVertical="true"
+   
+   Por lo tanto, el layout queda de la siguiente forma:
+   
 ```xml
-<string name="button_clicked">Haz dado click al botón!</string>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <View
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/pink"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF00FF" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/blue"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#0000FF" />
+    <View
+        android:layout_centerInParent="true"
+        android:id="@+id/green"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#00FF00" />
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/red"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FF0000" />
+    <View
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/yellow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFFF00" />
+</RelativeLayout>
 ```
 
-   y el texto ahora se asigna de la siguiente form:
 
-```kotlin
-text.text = getString(R.string.button_clicked)
-```
-
-
-Nuestra aplicación debe verse de la siguiente forma:
-
-<img src="images/5.png" width="40%">
-
-
-
-[`Anterior`](../Readme.md) | [`Siguiente`](../Reto-01/Readme.md)
+[`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
 
 </div>

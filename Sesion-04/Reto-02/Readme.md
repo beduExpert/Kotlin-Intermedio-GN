@@ -1,87 +1,90 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Reto 2`
-
-## Reto 2: Agregando Items al RecyclerView
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Reto 2`
+	
+## Reto 2 
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Que el programador aprenda a actualizar el RecyclerView cuando se le agregue un nuevo elemento
+- Analizar el ciclo de vida de un _Fragment_ y su comportamiento al realizar diversas acciones.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
-2. Seguir la instrucción específica para esta sesión.
+1. Android Studio instalado
+2. Emulador de android tablet configurado.
 
 ### 3. Desarrollo :computer:
 
-Continuando con el proyecto del ejemplo 3, vamos a crear la interfaz para agregar nuevos usuarios, hay que contemplar que por ahorro de tiempo no pondremos ningún filtro en el nombre, ni en el teléfono de cada contacto agregado.
+El ejerecicio anterior tiene un layout similar a este:
 
-Utilizaremos el botón redondo llamado FAB (Floating Action Button) para ir a la pantalla de agregar contacto nuevo.
+ <img src="../Ejemplo-02/images/9.png" width="33%">
 
-No olvidar utilizar *startActivityForResult* para obtener el resultado del contacto de regreso a la pantalla principal.
+Sin embargo, queremos que para el caso de una tablet, tengamos una Interfaz más parecida a la del diagrama:
 
-```kotlin 
- val intent = Intent(this,AddContactActivity::class.java)
- startActivityForResult(intent,1)
-```
-<img src="01.png" width="30%">
+ <img src="../Ejemplo-02/images/1.png" width="70%">
+ 
+ El ejercicio consistirá en adaptar el layout para tenerlo de la forma vertical para la versión ___portrait___, como para la ___landscape___.
 
-Hay que implementar en la Actividad detonante la función *onActivityResult*, para recibir la info una vez haya sido envidada. 
+1. Utilizando el ejemplo anterior, modificar únicamente el layout para dispositivos grandes (la lista debe abarcar el 40% de la pantalla).
 
-```kotlin
- override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK) {
+2. Crear una versión landscape para cuando la tablet esté en posición horizontal (la lista debe abarcar el 35% de la pantalla).
 
-               //ToDo: aquí va el código para actualizar el RecyclerView
+Para que nuestro diseño reacciones a la orientación del teléfono, abriremos nuestro ___AndroidManifest.xml___ e ingresamos en nuestro tag aludiendo a ___MainActivity___.
 
-
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
-            }
-        }
-    }
+```xml
+android:screenOrientation="sensor"
 ```
 
-y en la clase AddContactActivity():
+<details><summary>Solución</summary>
 
-```kotlin
-class AddContactActivity : AppCompatActivity() {
+Para tener una versión landscape, crearemos un ___android resource directory___ con los _qualifiers_ ___Size___ con valor ___large___ y ___orientation___ con valor ___landscape___.
+	
+el código quedaría de esta forma:
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_contact)
+```xml
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <fragment
+        android:id="@+id/fragmentList"
+        class="org.bedu.listdetailfragment.ListFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline"/>
+    <fragment
+        android:id="@+id/fragmentDetail"
+        class="org.bedu.listdetailfragment.DetailFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        buttonAdd.setOnClickListener{
-            val name = editName.text.toString()
-            val phone = editPhone.text.toString()
-            val status = "disponible"
-            val imgProfile = R.drawable.unknown
-
-            val contact = Contact(name,status,phone,imgProfile)
-
-            val returnIntent = Intent()
-            returnIntent.putExtra("new_contact", contact)
-            setResult(Activity.RESULT_OK, returnIntent)
-            finish()
-        }
-    }
-
-
-}
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-El diseño de esa página lo dejararemos a criterio propio.
+Para la versión _portrait_, bastaría únicamente modificar reutilizar el código anterior para ___fragment_detail___ de nuestro directorio ___layout-large___ y que tenga el 0.5 de porcentaje.
 
+</details>
+<br/>
 
-
-[`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
+[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 
 
 
 
 </div>
-
