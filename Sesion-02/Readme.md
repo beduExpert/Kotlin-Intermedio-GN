@@ -1,7 +1,7 @@
 [`Kotlin-Intermedio`](../Readme.md) > `Sesión 3`
 
 
-## Sesión 3: Activities y Layouts
+## Sesión 2: Activities y Layouts
 
 <div style="text-align: justify;">
 

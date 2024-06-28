@@ -16,11 +16,11 @@
 
 ### 3. Desarrollo :computer:
 
-1. Generá un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
+1. Genera un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
 
 2. Una vez generado el proyecto vamos a implementar un formulario de registro y login en nuestra app.
 
-### Login
+#### Login
 
 <img src="images/0.png" width="60%">
 
@@ -31,7 +31,7 @@ Los __Views__ básicos a implementar son:
 - Un botón de Iniciar sesión
 - Una etiqueta para "olvidé contraseña"
 
-### Tips
+#### Tips
 
 Declarar el password con el atributo ___inputType___ como ___textPassword___ protege el texto que se va escribiendo como puntos, para que no sean visibles.
 
@@ -58,7 +58,7 @@ fun EditText.clearError() {
 }
 ```
 
-### Lineamientos
+#### Lineamientos
 
 1. La pantalla debe contener al menos un _ImageView_, dos _EditText_, dos _TextView_ y un _Button_.
 2. El color de fondo debe ser asignado al fondo de la pantalla, asignar colores al texto.
@@ -66,7 +66,7 @@ fun EditText.clearError() {
 4. Al menos un View debe implementar un callback con alguna funcionalidad.
 
 
-### Register
+#### Register
 
 Repite los pasos del login, pero con los campos del register
 

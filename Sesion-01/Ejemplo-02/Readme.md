@@ -93,7 +93,7 @@
 
     <img src="images/edit_text.gif" width="40%">
 
-2. Como el tamaño lo ponemos en función del contenido, este se redimensiona al agregar texto, esto no es deseable así que tenemos qué determinar un tamaño fijo, por lo que modificaremos el EditText:
+2. Como el tamaño lo ponemos en función del contenido, este se redimensiona al agregar texto, esto no es deseable. Determinaremos un tamaño fijo, modificando el  EditText:
 
     ```xml
     <EditText
@@ -110,11 +110,22 @@
         />
     ```
 
-3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el ___inputType___ como text (con eso evitamos un texto multilínea), este último atributo regula el tipo de dato que introducimos y por ende modifica el teclado, de modo que si nuestro InputType es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. El texto de descripción se controla por la propiedad ___hint___ y su color por ___textColorHint___. En este caso, haría falta agregar un string llamado _add_text_ para que funcione correctamente. finalmente, ___drawableLeft___ nos da la posibilidad de poner una imagen del lado izquierdo para personalizarlo, existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con ___drawablePadding___.
+3. En este caso, utilizamos el ancho de nuestro _LinearLayout_ con un margen de 24dp para cada lado, e incluimos el _inputType_ como text (con eso evitamos un texto multilínea).
+Este último atributo regula el tipo de dato que introducimos y por ende modifica el teclado, de modo que si nuestro _InputType_ es _phone_, nos desplegará un teclado numérico, o si se trata de un _textEmailAddress_, saldrá un teclado alfanumérico que nos facilita caracteres como el . y @. 
 
-4. Ahora revisemos el concepto de _focus_. El foco determina si un elemento está activo, en el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor en este y mostrándose el teclado para edición. Se puede deshabilidar la propiedad _focusable_ de un EditText, pero por ahora esto no es requerido. Cuando tenemos varios campos, podemos seleccionar qué elemento se va a enfocar después de terminar de editar en un _EditText_. Por defecto, esto está seteado de arriba para abajo. 
+    El texto de descripción se controla por la propiedad hint y su color por _textColorHint_. En este caso, haría falta agregar un string llamado _add_text_ para que funcione correctamente. 
 
-    Agregamos un nuevo _EditText_ que pida un teléfono, para esto, limitaremos los caracteres a 10 y agregaremos y declararemos el tipo de input a ___phone___:
+    Finalmente, _drawableStart_ nos da la posibilidad de poner una imagen del lado izquierdo para personalizarlo, existen otros atributos para agregar en otros lados las imágenes e incluso para añadir padding al drawable con _drawablePadding_.
+
+4. Ahora revisemos el concepto de focus que determina si un elemento está activo. 
+En el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor en este y mostrándose el teclado para edición.
+
+    <img src="images/inputs.gif" width="40%">
+
+     Se puede deshabilitar la propiedad focusable de un EditText, pero por ahora esto no es requerido. 
+
+    Cuando tenemos varios campos, podemos seleccionar qué elemento se va a enfocar después de terminar de editar en un _EditText_. Por defecto, esto está seteado de arriba para abajo.
+    Agregamos un nuevo _EditText_ que pida un teléfono, para esto, limitaremos los caracteres a 10 y agregaremos y declararemos el tipo de input a _phone_:
 
     ```xml
     <EditText
@@ -132,7 +143,7 @@
         />
     ```
 
-    Al correr el código tenemos lo siguiente:
+    ¡Y listo! Lo que aparece en EditText, puede verse en TextView
 
     <img src="images/inputs.gif" width="40%">
 
@@ -192,7 +203,7 @@
 
     <img src="images/text_changed.gif" width="40%">
 
-    Por último, imprimiremos los valores de los editText, para esto imprimiremos los valores en nuestra línea de comandos ___Logcat___ al pulsar sobre un botón.
+    Por último, imprimiremos los valores de los editText, modificando los valores en nuestra línea de comandos Logcat al pulsar sobre un botón.
 
     ```xml
     <Button
@@ -209,7 +220,7 @@
     Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
     ```
 
-    Corroboramos el funcionamiento:
+    Corroboramos el funcionamiento, visualizando el siguiente mensaje en la terminal de android studio "Los valores son: (Usuario) y (Teléfono)"
 
     <img src="images/1.png" width="70%"/>
 

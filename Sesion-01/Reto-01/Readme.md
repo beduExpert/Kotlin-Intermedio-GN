@@ -11,13 +11,18 @@
 ### 2. Requisitos :clipboard:
 
 1. Android Studio instalado
-2. Emulador android y/o dispositico físico configurado
+2. Emulador android y/o dispositivo físico configurado
 
 ### 3. Desarrollo :computer:
 
 Este diagrama podría ser de ayuda para este reto:
 
 <img src="images/view_diagram.png">
+
+Margin -> Extremidad y orilla de la vista <br/>
+Border -> Borde de la vista <br/>
+Padding -> Relleno entre el borde y el contenido de la vista <br/>
+Content -> Contenido de la vista "Botón, imagen, texto..."
 
 <br/>
 
@@ -82,6 +87,12 @@ Este diagrama podría ser de ayuda para este reto:
     <br/>
 
 4. Experimentar con las medidas del botón y el text. Qué sucede al asignarle a width y a height el valor "match_parent"? Experimentar con gravity y layout_gravity.
+
+width -> Ancho <br/>
+height -> Alto <br/>
+match_parent -> Del mismo tamaño que el padre <br/>
+layout_gravity -> Peso del padre sobre la vista
+
 
 <br/>
 

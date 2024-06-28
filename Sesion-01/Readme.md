@@ -5,6 +5,10 @@
 
 <div style="text-align: justify;">
 
+### Introducción
+
+Un __View__ es una clase que representa la base de todos los componentes para la interfaz gráfica y su representación gráfica está delimitada por un rectángulo. La descripción gráfica de un View así como su posición en la pantalla está determinado por un archivo layout en lenguaje __XML__. Un tipo especial de View es el __ViewGroup__, que es un contenedor de Views y otros ViewGroups con un formato de orden específico, que se encuentran distribuidos jerárquicamente en un árbol de Vistas.
+
 ### Instrucciones de la sesión
 
 Para esta sesión, modificaremos el layout inicial de un proyecto creado, de modo que el archivo generado en ___res/layout___ sea reemplazado por este código:
@@ -23,10 +27,6 @@ Para esta sesión, modificaremos el layout inicial de un proyecto creado, de mod
 </LinearLayout>
 ```
 
-### Introducción
-
-Un ___View___ es una clase que representa la base de todos los componentes para la interfaz gráfica y su representación gráfica está delimitada por un rectángulo. La descripción gráfica de un View así como su posición en la pantalla está determinado por un archivo layout en lenguaje XML, y se encuentran distribuidos jerárquicamente en un árbol de Vistas. Un tipo especial de View es el ___ViewGroup___, que es un contenedor de Views y otros ViewGroups con un formato de orden específico. 
-
 <img src="images/view_tree.png" align="right">
 <h5>Ejemplo de árbol de Views</h5>
 
@@ -36,9 +36,9 @@ Un ___View___ es una clase que representa la base de todos los componentes para 
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
-- Modificar el proyecto por defecto
-- utilizar los controles esenciales para generar interfaces básicas.
-- Utilizar herramientas básicas para debuggeo
+- Identificar los controles esenciales para generar interfaces básicas 
+- Utilizar herramientas básicas para debugge
+- Implementar los controles y herramientas para modificar el proyecto por defecto
 
 ### 2. Contenido :blue_book:
 
@@ -46,9 +46,11 @@ Un ___View___ es una clase que representa la base de todos los componentes para 
 
 <img src="images/button.png" align="right" height="90"> 
 
-#### <ins>Botones y textos</ins>
+#### <ins>Textos y botones</ins>
 
-Se crearán Vistas desde cero mediante código y las utilizaremos para detonar eventos sencillos como modificar un texto.
+Se crearán textos y botones desde cero mediante código.
+
+El botón es un componente. que el usuario utiliza para pulsar y disparar un evento. que realizara alguna acción en la aplicación. Es uno de los componentes más comunes dentro de los programas que usan en interfaces gráficas de usuario, así como los textos "texto fijo que el usuario no puede modificar" que sirven para mostrar instruciones y/o información importante al usuario.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -57,9 +59,9 @@ Se crearán Vistas desde cero mediante código y las utilizaremos para detonar e
 
 <img src="images/text_input.png" align="right" height="90"> 
 
-#### <ins>Inputs e imágenes</ins>
+#### <ins>EditText e imágenes</ins>
 
-Ampliaremos el dominio a ImageViews para la visualización de imágenes y EditTexts para ingresar un texto desde el teclado del móvil, y explorando los eventos que este detona. 
+Ampliaremos el dominio a ImageViews para la visualización de imágenes y EditTexts "Entradas de texto" para ingresar un texto desde el teclado del móvil, y explorando los eventos que este detona. 
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 2`**](Reto-02/Readme.md)

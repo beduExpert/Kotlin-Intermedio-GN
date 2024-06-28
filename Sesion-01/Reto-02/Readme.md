@@ -6,10 +6,10 @@
 
 ### 1. Objetivos :dart:
 
-- Crear EditText y extraer su valor
+- Crear un formulario con varios EditText y extraer su valor
 - Asignar imágenes a un ImageView de forma dinámica
-- Validar contenido 
-- (Op) utilizar styles
+- Validar que el usuario llene todos los campos
+- (Opcional) Utilizar styles para modificar las vistas
 
 ### 2. Requisitos :clipboard:
 
@@ -25,11 +25,11 @@
 - Cuando el usuario pulse __ACEPTAR__, existirán dos casos:
 	a) Ningún campo está vacío: se mostrará una imagen con una palomita verde en señal de autenticación correcta
 	
-	<img src="images/1.png" width="40%">
+	<img src="images/2.png" width="40%">
 	
 	b) Uno o todos los campos están vacíos: Se mostrará una imagen con una paloma roja en señal de error de autenticación
 	
-	<img src="images/2.png" width="40%">
+	<img src="images/1.png" width="40%">
 
 
 Contemplar lo siguiente:

@@ -1,6 +1,6 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Ejemplo 1`
 
-## Ejemplo 1: Views, Button
+## Ejemplo 1: Textos y botones
 
 <div style="text-align: justify;">
 
@@ -71,7 +71,7 @@
    <string name="hello_text">Hola, Estas es la sesión 1!</string>
    ```
 
-   y agrega un nuevo atributo ___text___ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas y definiremos el tamaño de la fuente:
+   y agrega un nuevo atributo __text__ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas Utilizando el comando “TextStyle” y definiremos el tamaño de la fuente con “textSize”
    
    ```xml
    android:text="@string/hello_text"
@@ -85,7 +85,7 @@
    <img src="images/4.png" width="40%">
 
 
-9. Añade un botón, debajo del Textview.
+9. Utilizando el comando:
 
    ```xml
    <Button 
@@ -109,6 +109,8 @@
    ```
 
    En el diseño se visualiza correctamente el botón, sin embargo, el botón está pegado al _TextView_, así que le daremos un margen en la parte superior:
+
+   <img src="images/6.png" width="40%">
 
    ```xml
    android:layout_marginTop="48dp"
@@ -136,6 +138,8 @@
       }
       ```
 
+      <br/>
+
       Lo que estamos haciendo aquí es asignar un nuevo texto a nuestro ___TextView___ al hacer click en el botón. Corremos la aplicación para comprobar que todo funcione bien.
 
       Por buena práctica, todo texto de la aplicación va en _strings.xml_ por lo que trasladamos el texto del _TextView_ al archivo:
@@ -144,7 +148,7 @@
       <string name="button_clicked">Haz dado click al botón!</string>
       ```
 
-      y el texto ahora se asigna de la siguiente form:
+      y el texto ahora se asigna de la siguiente forma:
 
       ```kotlin
       text.text = getString(R.string.button_clicked)
