@@ -1,5 +1,5 @@
 
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 4`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Ejemplo 4`
 
 ## Ejemplo 4: Ciclo de vida de un Activity
 
@@ -20,32 +20,29 @@ Como estudiamos anteriormente, cada estado del ciclo de un Activity ejecuta cier
 
 Nos apoyaremos de un elemento visual llamado **Toast**
 
-
-
 Para realizar el ejemplo, seguimos los siguientes pasos:
 
-1.- Crear un nuevo proyecto con una Activity vacía.
+1. Crear un nuevo proyecto con una Activity vacía.
 
-![](images/01.png)
+    ![](images/01.png)
 
-2.- Ingresar el siguiente nombre y package name para el proyecto
+2. Ingresar el siguiente nombre y package name para el proyecto
 
-![](images/02.png)
+    ![](images/02.png)
 
-3.- Al crearse el proyeccto, abrir la ventana MainActivity, en ella encontraran esto:
+3. Al crearse el proyeccto, abrir la ventana MainActivity, en ella encontraran esto:
 
-```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
+    ```kotlin
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-```
->no hay que olvidar que la sentencia *override* es un modificador que sirve para sobreescribir un método implementado por la clase que se hereda.
+    ```
+    > No hay que olvidar que la sentencia *override* es un modificador que sirve para sobreescribir un método implementado por la clase que se hereda.
 
-bajo esta función, hacer override de los otros métodos llamados durante el ciclo de vida de un Activity, e insertar en ellas el Toast con un texto que identifique en el estado del ciclo en que unon se encuentra.
+    Bajo esta función, hacer override de los otros métodos llamados durante el ciclo de vida de un Activity, e insertar en ellas el Toast con un texto que identifique en el estado del ciclo en que unon se encuentra.
 
-```kotlin
-
+    ```kotlin
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,7 +50,7 @@ bajo esta función, hacer override de los otros métodos llamados durante el cic
         Log.d("activities","onCreate ejecutado")
     }
 
-override fun onStart() {
+    override fun onStart() {
         super.onStart()
         Log.d("activities","onStart ejecutado")
     }
@@ -82,19 +79,17 @@ override fun onStart() {
         Log.d("activities","onDestroy ejecutado")
         super.onDestroy()
     }
-```
+    ```
 
-4.- Después de esto, correr la aplicación en el emulador, y comprobar el flujo. Describir qué métodos se mandan a llamar cuando la aplicación se minimiza y cuando se cierra.
+4. Después de esto, ejecuta la aplicación y comprueba el flujo. Describe qué métodos se mandan a llamar cuando la aplicación se minimiza y cuando se cierra.
 
 5. Comprobar qué sucede con el ciclo de vida al girar el teléfono a landscape (nuestra activity debe permitir rotación).
 
 6. Explorar cómo preservar estados de elementos seteados programáticamente al girar la pantalla.
 
+<br/>
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../Ejemplo-05/Readme.md)
-
-
-
 
 </div>
 

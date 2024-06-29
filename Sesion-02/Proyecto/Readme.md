@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Proyecto`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Proyecto`
 
 ## Proyecto: Activities y Layouts
 
@@ -15,19 +15,25 @@
 
 ### 3. Desarrollo :computer:
 
-En este reto final, vamos a crear un flujo entre las primeras pantallas de nuestra aplicación. 
+Las primeras pantallas de nuestra aplicación ya fue creadas durante la ___Sesión 2___, por lo que ahora queda definir qué sigue después del Inicio de sesión y registro.
 
-La primera pantalla de nuestra aplicación ya fue creada durante la ___Sesión 2___, por lo que ahora queda definir qué sigue después de la primera pantalla que diseñamos.
+A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
 
+El proyecto se va a desarrollar por etapas, y como no podemos dimensionar en su totalidad la implementación de los temas por venir, es conveniente hacer una pequeña planeación.
+
+Se considera recomendable que nuestro flujo tenga al menos seis pantallas, que tenga un objetivo principal y otras pantallas de apoyo (perfil, configuración, etc.). Por lo anterior, sería muy complejo desarrollar el flujo de Activities en esta sesión, por lo que se puede empezar por definir el flujo de únicamente dos pantallas o incluso 3. 
+
+Se recalca que es conveniente desarrollar el flujo más simple en la aplicación, puesto a que las complejidades de otras pantallas con distintas funciones pueden ser cubiertas en siguientes temas. Un ejemplo de lo anterior es el flujo entre una pantalla de _inicio de sesión_ y otra que lleve a la información de perfil (puesto que los datos son únicamente informativos) y el inicio de sesión únicamente valida que las credenciales sean correctas. Un ejemplo contrario sería desarrollar una pantalla que arroje los resultados de la busqueda de un producto, puesto que el tema de listas aún no está cubierto ni el de filtros.
 
 ### Lineamientos
 
-1. Se debe generar al menos una nueva _Activity_ que interactúe con la _Activity_ previamente creada.
-2. el o los _layouts_ generados, deben ser maquetados con el _Viewgroup_ ___ConstraintLayout___.
+1. Se debe generar al menos una nueva _Activity_ que interactúe con los _Activity_ previamente creados.
+    Por ejemplo una vez que el usuario llene los formularios de Inicio de sesión o registro, puedes simular que ya entró a la pantalla principal como si realmente hubiera iniciado sesión y/o creado su cuenta. 
+2. El o los _layouts_ generados, deben ser maquetados con el _Viewgroup_ ___ConstraintLayout___.
 3. Cada _layout_ debe tener más de 3 Views, y es sugerido que la distribución de las _Views_ no sea lineal.
 4. Las Activites deben de implementar alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones). 
 
 
-[`Anterior`](../Ejemplo-05/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Ejemplo-05/Readme.md) | [`Siguiente`](../../Sesion-03/Readme.md)
 
 </div>

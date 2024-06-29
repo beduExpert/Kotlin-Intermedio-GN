@@ -1,7 +1,7 @@
-[`Kotlin-Intermedio`](../Readme.md) > `Sesión 4`
+[`Kotlin-Intermedio`](../Readme.md) > `Sesión 3`
 
 
-## Sesión 4: Listas
+## Sesión 3: Listas
 
 <div style="text-align: justify;">
 

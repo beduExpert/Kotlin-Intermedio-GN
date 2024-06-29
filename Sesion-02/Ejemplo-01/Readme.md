@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Ejemplo 1`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Ejemplo 1`
 
 ## Ejemplo 1: Layouts: RelativeLayout
 
@@ -14,7 +14,7 @@
 
 ### 3. Desarrollo :computer:
 
-El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. para hacer el enlace con otros Views, se requiere que declaren id's, en el layout de abajo, los id tienen el nombre del color que representa cada vista, para identificarlos mejor.
+El Relative Layout es un ViewGroup que organiza su contenido de acuerdo a posiciones relativas a su área o a los otros miembros del layout. Para hacer el enlace con otros Views, se requiere que declaren id's, en el layout de abajo, los id tienen el nombre del color que representa cada vista, para identificarlos mejor.
 
 La siguiente tabla muestra los atributos que tienen qué ver con el posicionamiento de sus elementos:
 
@@ -48,13 +48,13 @@ El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de 
 
 2. Modificamos el activity_main.xml para que quede acorde a esta pantalla (cada cuadro es un View con un background distinto)
 
-```xml
+    ```xml
     <View
         android:id="@+id/red"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="#FF0000" />
-```
+    ```
 
 3. Ordenamos nuestro layout tal y como está en la siguiente imagen:
 
@@ -70,50 +70,50 @@ El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de 
    
    Implementando esa lógica, queda el siguiente layout:
    
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/blue"
-        android:id="@+id/pink"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF00FF" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/green"
-        android:id="@+id/blue"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#0000FF" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:id="@+id/green"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#00FF00" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/green"
-        android:id="@+id/red"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF0000" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/red"
-        android:id="@+id/yellow"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFFF00" />
-</RelativeLayout>
-```
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/blue"
+            android:id="@+id/pink"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF00FF" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/green"
+            android:id="@+id/blue"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#0000FF" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/green"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#00FF00" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/green"
+            android:id="@+id/red"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF0000" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/red"
+            android:id="@+id/yellow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00" />
+    </RelativeLayout>
+    ```
    
 4. Ahora ordenamos según esta imagen:
 
@@ -128,55 +128,55 @@ El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de 
    - El cuadro amarillo se alinea a la parte derecha e inferior del layout  --> layout_alignParentRight="true", layout_alignParentBottom="true"
    
    
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+            <View
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/pink"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF00FF" />
         <View
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/pink"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF00FF" />
-    <View
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/blue"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#0000FF" />
-    <View
-        android:layout_centerInParent="true"
-        android:id="@+id/green"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#00FF00" />
-    <View
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/red"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF0000" />
-    <View
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/yellow"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFFF00" />
-</RelativeLayout>
-```
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/blue"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#0000FF" />
+        <View
+            android:layout_centerInParent="true"
+            android:id="@+id/green"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#00FF00" />
+        <View
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/red"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF0000" />
+        <View
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/yellow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00" />
+    </RelativeLayout>
+    ```
 
 5. Por último, ordenaremos de acuerdo al siguiente patrón:
    
    <img src="images/2.png" width="40%">
    
-      - El cuadro rosa se alinea a la parte izquierda del layout y al centro vertical --> layout_alignParentLeft="true", layout_centerVertical="true"
+    - El cuadro rosa se alinea a la parte izquierda del layout y al centro vertical --> layout_alignParentLeft="true", layout_centerVertical="true"
    - El cuadro azul se alinea a la parte superior del layout y al centro horizontal  -->  layout_alignParentTop="true", layout_centerHorizontal="true"
    - El cuadro verde se mantiene en el centro --> android:layout_centerInParent="true"
    - El cuadro rojo se alinea a la parte inferior y al centro horizontal del layout  -->  layout_alignParentBottom="true", layout_centerHorizontal="true"
@@ -184,49 +184,49 @@ El ejemplo de abajo ya tiene implementado el RelativeLayout y está ordenado de 
    
    Por lo tanto, el layout queda de la siguiente forma:
    
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <View
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/pink"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF00FF" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/blue"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#0000FF" />
-    <View
-        android:layout_centerInParent="true"
-        android:id="@+id/green"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#00FF00" />
-    <View
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/red"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FF0000" />
-    <View
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/yellow"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFFF00" />
-</RelativeLayout>
-```
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <View
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/pink"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF00FF" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/blue"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#0000FF" />
+        <View
+            android:layout_centerInParent="true"
+            android:id="@+id/green"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#00FF00" />
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/red"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FF0000" />
+        <View
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/yellow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00" />
+    </RelativeLayout>
+    ```
 
 
 [`Anterior`](../Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)
