@@ -50,7 +50,12 @@ Para esta sesión, modificaremos el layout inicial de un proyecto creado, de mod
 
 Se crearán textos y botones desde cero mediante código.
 
-El botón es un componente. que el usuario utiliza para pulsar y disparar un evento. que realizara alguna acción en la aplicación. Es uno de los componentes más comunes dentro de los programas que usan en interfaces gráficas de usuario, así como los textos "texto fijo que el usuario no puede modificar" que sirven para mostrar instruciones y/o información importante al usuario.
+En esta sección exploraremos dos de los componentes más comunes dentro de los programas que usan interfaces gráficas de usuario:
+El texto fijo que el usuario no puede modificar y que se utiliza para mostrar instrucciones y/o información importante. 
+El botón: un componente que el usuario utiliza para pulsar y disparar un evento, es decir que realizará alguna acción en la aplicación.
+Ambos elementos tienen atributos modificables como margen, borde y padding, entre otros.
+
+En el siguiente ejemplo crearás textos y botones desde cero mediante código.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -61,7 +66,9 @@ El botón es un componente. que el usuario utiliza para pulsar y disparar un eve
 
 #### <ins>EditText e imágenes</ins>
 
-Ampliaremos el dominio a ImageViews para la visualización de imágenes y EditTexts "Entradas de texto" para ingresar un texto desde el teclado del móvil, y explorando los eventos que este detona. 
+Las “Entradas de texto” o Edit text son un elemento importante para crear una mejor experiencia al usuario, ya que le permiten ingresar un texto desde el teclado del móvil y, a través de ello, detonar diferentes eventos.
+
+Asimismo, la visualización de imágenes es imprescindible, por lo que en el siguiente ejemplo y reto, ampliaremos el dominio ImageViews. 
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 2`**](Reto-02/Readme.md)
@@ -72,7 +79,13 @@ Ampliaremos el dominio a ImageViews para la visualización de imágenes y EditTe
 
 #### <ins>Imágenes mediante URL</ins>
 
-Mostrar imágenes en un ImageView por medio de URLS, utilizando la librería coil disponible en _mavenCentral()_. 
+Para que un ImageView pueda cargar una imagen remota a través de una URL, tenemos que instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado). Las opciones más populares son:
+
+- Fresco
+- Picasso
+- Glide
+
+Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: coil ( Coroutine Image Loader), que como dice su nombre, utiliza las populares coroutines de Kotlin. 
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 

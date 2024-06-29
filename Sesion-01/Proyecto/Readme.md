@@ -20,15 +20,16 @@
 
 2. Una vez generado el proyecto vamos a implementar un formulario de registro y login en nuestra app.
 
-#### Login
+#### Login (Vista para iniciar sesión)
 
 <img src="images/0.png" width="60%">
 
 Los __Views__ básicos a implementar son:
 
 - Un _ImageView_ para el logo de la app.
-- Dos _EditText_: el primero para usuario/correo/teléfono, el segundo para la contraseña. Ambos con íconos de preferencia para darle personalidad.
-- Un botón de Iniciar sesión
+- Dos _EditText_: el primero para usuario, el segundo para la contraseña. Ambos con íconos de preferencia para darle personalidad.
+- Un botón de iniciar sesión
+- Un botón para crear cuenta
 - Una etiqueta para "olvidé contraseña"
 
 #### Tips
@@ -66,10 +67,21 @@ fun EditText.clearError() {
 4. Al menos un View debe implementar un callback con alguna funcionalidad.
 
 
-#### Register
+#### Register (Vista para crear cuenta)
 
 Repite los pasos del login, pero con los campos del register
 
+Campos:
+
+- Usuario
+- Nombre
+- Apellidos
+- Contraseña
+- Repetir contraseña
+- Botón de regresar
+- Botón de crear cuenta
+
+<br/>
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-02/Readme.md)
 

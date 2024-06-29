@@ -65,10 +65,10 @@
    />
    ```
 
-8. Agrega un texto para nuestro _TextView_, para eso, abre el recurso ___strings.xml___ ubicado en ___res/values/___ . Dentro del tag resources, agrega un nuevo string:
+8. Agrega un texto para nuestro _TextView_, para eso, abre el recurso ___strings.xml___ ubicado en ___res/values/___ Dentro del tag resources, agrega un nuevo string con el texto __“Hola, estás en la sesión 1”__:
 
    ```xml
-   <string name="hello_text">Hola, Estas es la sesión 1!</string>
+   <string name="hello_text">Hola, estás en la sesión 1!</string>
    ```
 
    y agrega un nuevo atributo __text__ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas Utilizando el comando “TextStyle” y definiremos el tamaño de la fuente con “textSize”

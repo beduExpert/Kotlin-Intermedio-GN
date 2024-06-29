@@ -16,14 +16,6 @@
 
 ### 3. Desarrollo :computer:
 
-Para que un ImageView pueda cargar una imagen remota a través de una URL, tenemos qué instalar alguna dependencia (o descargarla con un cliente y asignarla, pero eso es mucho más complicado). Las opciones más populares son:
-
-- Fresco
-- Picasso
-- Glide
-
-Mientras que todos los anteriores tienen una amplia comunidad, nos enfocaremos en una cuarta opción: ___coil___ ( Coroutine Image Loader), que como dice su nombre, utiliza las populares coroutines de Kotlin. 
-
 1. Insertamos la implementación de la dependencia en el archivo ___app/buid.grade___ la siguiente línea:
 
     ```gradle
