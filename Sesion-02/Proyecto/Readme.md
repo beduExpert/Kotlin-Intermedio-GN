@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-Las primeras pantallas de nuestra aplicación ya fue creadas durante la ___Sesión 2___, por lo que ahora queda definir qué sigue después del Inicio de sesión y registro.
+Ya has creado las primeras pantallas de tu aplicación durante la __Sesión 2__, por lo que ahora queda definir qué sigue después del Inicio de sesión y registro.
 
 A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
 
@@ -27,11 +27,11 @@ Se recalca que es conveniente desarrollar el flujo más simple en la aplicación
 
 ### Lineamientos
 
-1. Se debe generar al menos una nueva _Activity_ que interactúe con los _Activity_ previamente creados.
+1. Genera al menos una nueva _Activity_ que interactúe con los _Activity_ previamente creados.
     Por ejemplo una vez que el usuario llene los formularios de Inicio de sesión o registro, puedes simular que ya entró a la pantalla principal como si realmente hubiera iniciado sesión y/o creado su cuenta. 
-2. El o los _layouts_ generados, deben ser maquetados con el _Viewgroup_ ___ConstraintLayout___.
-3. Cada _layout_ debe tener más de 3 Views, y es sugerido que la distribución de las _Views_ no sea lineal.
-4. Las Activites deben de implementar alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones). 
+2. Maqueta el o los _layouts_ con el _Viewgroup_ ___ConstraintLayout___.
+3. Agrega a cada _layout_ por lo menos 3 Views, y es sugerido que la distribución de las _Views_ no sea lineal.
+4. Implementa en las Activites alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones). 
 
 
 [`Anterior`](../Ejemplo-05/Readme.md) | [`Siguiente`](../../Sesion-03/Readme.md)

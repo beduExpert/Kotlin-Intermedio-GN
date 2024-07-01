@@ -7,7 +7,7 @@
 
 ### 1. Objetivos :dart:
 
-- Volver visible el ciclo de vida de un activity a través de indicadores visual para corroborar el orden en el flujo estudiado previamente, para su posterior uso.
+- Analizar el ciclo de vida de un activity a través de indicadores visual para corroborar el orden en el flujo estudiado
 
 ### 2. Requisitos :clipboard:
 
@@ -22,11 +22,11 @@ Nos apoyaremos de un elemento visual llamado **Toast**
 
 Para realizar el ejemplo, seguimos los siguientes pasos:
 
-1. Crear un nuevo proyecto con una Activity vacía.
+1. Creamos un nuevo proyecto con una Activity vacía.
 
     ![](images/01.png)
 
-2. Ingresar el siguiente nombre y package name para el proyecto
+2. Ingresamos el siguiente nombre y package name para el proyecto
 
     ![](images/02.png)
 
@@ -81,7 +81,7 @@ Para realizar el ejemplo, seguimos los siguientes pasos:
     }
     ```
 
-4. Después de esto, ejecuta la aplicación y comprueba el flujo. Describe qué métodos se mandan a llamar cuando la aplicación se minimiza y cuando se cierra.
+4. Después de esto, ejecutamos la aplicación y comprobamos el flujo. Describe qué métodos se mandan a llamar cuando la aplicación se minimiza y cuando se cierra.
 
 5. Comprobar qué sucede con el ciclo de vida al girar el teléfono a landscape (nuestra activity debe permitir rotación).
 

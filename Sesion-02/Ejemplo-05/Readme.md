@@ -146,7 +146,7 @@ Como base, utilizaremos el proyecto desarrollado en el [Reto 2](../../Sesion-01/
 
     la Activity _LoggedActivity_ tiene qué tener los callbacks de su ciclo de vida implementados como en el _MainActivity_, pero con un identificador propio para poder diferenciarlos y saber cómo se comporta su flujo. 
 
-    en el método ___onCreate___, vamos a recuperar la información de nuestro teléfono y mostrarlo mediante un _Toast_. como la información que recuperaremos es un _String_, la obtendremos por medio del método ___getStringExtra___.
+    En el método ___onCreate___, vamos a recuperar la información de nuestro teléfono y mostrarlo mediante un _Toast_. como la información que recuperaremos es un _String_, la obtendremos por medio del método ___getStringExtra___.
 
     ```kotlin
     val phone = intent.getStringExtra(USER_PHONE)
@@ -157,7 +157,7 @@ Como base, utilizaremos el proyecto desarrollado en el [Reto 2](../../Sesion-01/
     Corremos la aplicación...
 
 
-    y obtenemos el siguiente error: 
+    Y obtenemos el siguiente error: 
 
     <img src="images/1.png" width="70%">
 

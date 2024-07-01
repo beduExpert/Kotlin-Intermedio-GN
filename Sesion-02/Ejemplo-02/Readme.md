@@ -15,12 +15,12 @@
 
 ### 3. Desarrollo :computer:
 
-El objetivo es apilar las Views como la siguiente imagen:
+En este ejemplo apilaremos los views como en la siguiente imagen.
 
 
 <img src="images/00.png" width="35%">
 
-1. Abrir un nuevo proyecto con Activity vacía
+1. Abriremos un nuevo proyecto con un Activity vacía
 
 2. El trabajo será únicamente con Layouts, así que ir directamente a activity_main.xml
 
@@ -64,7 +64,7 @@ El objetivo es apilar las Views como la siguiente imagen:
 
     No hay que preocuparse por los errores, esto sucede porque dentro de un constraint layout, los hijos deben de anclarse a algún lugar.
 
-4. Selecciona la pestaña **Design**, con ella la interacción de Constraint Layout es mucho más interactiva y eficaz.
+4. Seleccionamos la pestaña **Design**, con ella la interacción de Constraint Layout es mucho más interactiva y eficaz.
 
     <img src="images/02.png" width="70%">
 
@@ -72,17 +72,17 @@ El objetivo es apilar las Views como la siguiente imagen:
 
     <img src="images/03.png" width="35%">
 
-6. Ahora arrastra los puntos de anclaje laterales a los límites laterales del layout para que este quede centrado.
+6. Ahora arrastraremos los puntos de anclaje laterales a los límites laterales del layout para que este quede centrado.
 
-7. Arrastra el punto de anclaje inferior del View verde al superior del amarillo para unirlos
+7. Arrastraremos el punto de anclaje inferior del View verde al superior del amarillo para unirlos
 
     <img src="images/04.png" width="35%">
 
-8. Termina de apilar todas las cajas ¡Felicidades!
+8. Terminamos de apilar todas las cajas ¡Felicidades!
 
 Puedes estudiar el código generado para comprender un poco cómo funciona el xml generado.
 
-Continúen experimentando con la UI y Constraint Layout para seguir enriqueciendo su conocimiento.
+Continúa experimentando con la UI y Constraint Layout para seguir enriqueciendo tu conocimiento.
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 </div>

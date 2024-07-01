@@ -1,14 +1,14 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 02`](../Readme.md) > `Ejemplo 3`
 
-## Ejemplo 3: Constraint layout Pte 2
+## Ejemplo 03: Otros atributos de Constraint Layout
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Explotar el uso del _Layout Editor_.
-- Utilizar las propiedades que nos brinda ConstraintLayout.
-- Agrupar de forma inteligente nuestras _Views_.
+- Profundizar en el uso el uso del _Layout Editor_.
+- Utilizar las propiedades de _Constraint Layout_
+- Agrupar los _Views_ de forma optimizada 
 
 ### 2. Requisitos :clipboard:
 
@@ -21,7 +21,7 @@
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
-2. Abrir el archivo ___main_activity.xml___, por defecto tendremos un ___ConstraintLayout___ como _ViewGroup_ principal.
+2. Abriremos el archivo ___main_activity.xml___, por defecto tendremos un ___ConstraintLayout___ como _ViewGroup_ principal.
 
 3. En el ejercicio pasado, aprendimos a hacer constraints entre _Views_, sin embargo, esta es apenas una de sus funcionalidades, puesto que este _layout_ es hasta el momento el más completo entre todos, eliminando _views anidados_, optimizando el _layout_ y dando mayor flexibilidad a nuestros diseños. Vamos a analizar el _layout editor_:
 
