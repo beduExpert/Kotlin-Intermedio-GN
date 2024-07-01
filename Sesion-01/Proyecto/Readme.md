@@ -16,7 +16,7 @@
 
 ### 3. Desarrollo :computer:
 
-1. Genera un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
+1. Generamos un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
 
 2. Una vez generado el proyecto vamos a implementar un formulario de registro y login en nuestra app.
 
@@ -43,7 +43,7 @@ fun isEmailValid(email: String): Boolean {
     return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
 }
 ```
-podríamos crear otro validador para Password utilizando directamente una función if y englobándola en otra función.
+Podríamos crear otro validador para Password utilizando directamente una función if y englobándola en otra función.
 
 Para mostrar un error en un EditText podemos setear un error mediante:
 
@@ -51,7 +51,7 @@ Para mostrar un error en un EditText podemos setear un error mediante:
 editText.error = "Contraseña incorrecta"
 ```
 
-cuando la validación sea exitosa, hay qué borrar el mensaje, por lo que agregar una extensión a EditText para hacer esto sería útil:
+Cuando la validación sea exitosa, hay qué borrar el mensaje, por lo que agregar una extensión a EditText para hacer esto sería útil:
 
 ```kotlin
 fun EditText.clearError() {

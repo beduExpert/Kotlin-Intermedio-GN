@@ -37,9 +37,9 @@
    * ![#0000FF](https://via.placeholder.com/15/0000ff/000000?text=+):En la barra lateral derecha, tenemos la opción ___attributes___ que despliegan los atributos de un _View_ seleccionado con el cursor.
    * ![#00FF00](https://via.placeholder.com/15/00ff00/000000?text=+): Este menú flotante posibilita el zoom in/out al layout, capacidad de pan, escalar la app a resolución 1:1.
 
-5. Elige la opción mixta para permitirnos visualizar nuestro código con el que trabajaremos manualmente y visualizar los cambios que genera en el layout.
+5. Elegimos la opción mixta para permitirnos visualizar nuestro código con el que trabajaremos manualmente y visualizar los cambios que genera en el layout.
 
-6. Utiliza el siguiente código para sustituir el _ViewGroup_ actual (_ConstraintLayout_) con uno de manejo más sencillo (_LinearLayout_), este tema se toca a mayor profundidad más adelante en otra sesión.
+6. Utilizamos el siguiente código para sustituir el _ViewGroup_ actual (_ConstraintLayout_) con uno de manejo más sencillo (_LinearLayout_), este tema se toca a mayor profundidad más adelante en otra sesión.
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -65,13 +65,13 @@
    />
    ```
 
-8. Agrega un texto para nuestro _TextView_, para eso, abre el recurso ___strings.xml___ ubicado en ___res/values/___ Dentro del tag resources, agrega un nuevo string con el texto __“Hola, estás en la sesión 1”__:
+8. Agregamos un texto para nuestro _TextView_, para eso, abre el recurso ___strings.xml___ ubicado en ___res/values/___ Dentro del tag resources, agrega un nuevo string con el texto __“Hola, estás en la sesión 1”__:
 
    ```xml
    <string name="hello_text">Hola, estás en la sesión 1!</string>
    ```
 
-   y agrega un nuevo atributo __text__ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas Utilizando el comando “TextStyle” y definiremos el tamaño de la fuente con “textSize”
+   y Agregamos un nuevo atributo __text__ al _TextView_ para insertarle un texto. Adicionalmente, haremos el texto en negritas Utilizando el comando “TextStyle” y definiremos el tamaño de la fuente con “textSize”
    
    ```xml
    android:text="@string/hello_text"
@@ -96,7 +96,7 @@
       android:layout_height="wrap_content" />
    ```
 
-   Ingresa el texto _accept_button_ en _strings.xml_ :
+   Ingresamos el texto _accept_button_ en _strings.xml_ :
 
    ```xml
    <string name="accept_button">ACEPTAR</string>
@@ -116,7 +116,7 @@
    android:layout_marginTop="48dp"
    ```
 
-10. Ahora agrega funcionalidad a este botón. Abre El archivo ___MainActivity.kt___ en ___java/nombre.del.paquete/___. Dentro de la clase homónima, declara dos objetos _Button_ y _TextView_ para representar los Views en nuestra Activity.
+10. Ahora agregamos funcionalidad a este botón. Abre El archivo ___MainActivity.kt___ en ___java/nombre.del.paquete/___. Dentro de la clase homónima, declara dos objetos _Button_ y _TextView_ para representar los Views en nuestra Activity.
 
       ```kotlin
       private lateinit var btnAccept: Button

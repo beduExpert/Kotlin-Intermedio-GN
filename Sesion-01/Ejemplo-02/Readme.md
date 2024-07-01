@@ -38,7 +38,7 @@
    </LinearLayout>
    ```
    
-3. Agrega un ImageView, mediante el siguiente código:
+3. Agregamos un ImageView, mediante el siguiente código:
 
     ```xml
     <ImageView
@@ -81,7 +81,7 @@
 
 ### EditText
 
-1. Ahora agrega un EditText con las siguientes líneas de código después del ImageView:
+1. Ahora agregamos un EditText con las siguientes líneas de código después del ImageView:
 
     ```xml
     <EditText
@@ -214,7 +214,7 @@ En el caso de un _EditText_, es cuando está seleccionada, apareciendo el cursor
         android:text="@string/accept"/>
     ```
 
-    Agrega el botón y lo asocias a su id, para no redundar en código omitimos este paso. Finalmente, imprime en consola los textos de los _EditText_ cuando des click al botón:
+    Agregamos el botón y lo asociamos a su id, para no redundar en código omitimos este paso. Finalmente, imprime en consola los textos de los _EditText_ cuando des click al botón:
 
     ```kotlin
     Log.d("Test","Los valores son: ${editText.text} y ${editText2.text}")
