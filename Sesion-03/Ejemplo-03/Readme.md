@@ -7,8 +7,8 @@
 ### 1. Objetivos :dart:
 
 - Comprender el concepto y funcionamiento de un RecyclerView
-- Ventajas y desventajas
-- Diferencias versus con una ListView
+- Identificar ventajas y desventajas
+- Analizar diferencias con una ListView
 
 ### 2. Requisitos :clipboard:
 
@@ -16,7 +16,7 @@
 
 ### 3. Desarrollo :computer:
 
-En este proyecto, crearemos una lista de contactos de teléfono sencilla con un RecyclerView.
+En este ejemplo, crearemos una lista de contactos de teléfono sencilla con un RecyclerView.
 
 1. Abrir un proyecto con una Actividad Básica (Basic Activity), para dejar preparado el terreno del [Reto 02](../Reto-02)
 

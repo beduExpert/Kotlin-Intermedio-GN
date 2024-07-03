@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Que el programador aprenda a actualizar el RecyclerView cuando se le agregue un nuevo elemento
+- Actualizar el RecyclerView cuando se le agregue un nuevo elemento
 
 ### 2. Requisitos :clipboard:
 
@@ -14,11 +14,11 @@
 
 ### 3. Desarrollo :computer:
 
-Continuando con el proyecto del ejemplo 3, vamos a crear la interfaz para agregar nuevos usuarios, hay que contemplar que por ahorro de tiempo no pondremos ningún filtro en el nombre, ni en el teléfono de cada contacto agregado.
+Continuando con el ejemplo 3, vamos a crear la interfaz para agregar nuevos usuarios. En este reto no pondremos ningún filtro en el nombre, ni en el teléfono de cada contacto agregado.
 
 Utilizaremos el botón redondo llamado FAB (Floating Action Button) para ir a la pantalla de agregar contacto nuevo.
 
-No olvidar utilizar *startActivityForResult* para obtener el resultado del contacto de regreso a la pantalla principal.
+No olvides utilizar *startActivityForResult* para obtener el resultado del contacto de regreso a la pantalla principal.
 
 ```kotlin 
  val intent = Intent(this,AddContactActivity::class.java)
