@@ -100,7 +100,7 @@ Con los temas anteriores, construye una pantalla de login y register para la apl
 
 <br/>
 
-[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)      
+[`Anterior`](../Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)      
 
 </div>
 
