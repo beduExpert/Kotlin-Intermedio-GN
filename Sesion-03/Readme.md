@@ -71,7 +71,7 @@ Con los temas anteriores, construye una pantalla de items ajustado al concepto d
 
 <br/>
 
-[`Anterior`](../Sesion-03/Readme.md) | [`Siguiente`](../Sesion-04/Readme.md)      
+[`Anterior`](../Sesion-02/Readme.md) | [`Siguiente`](../Sesion-04/Readme.md)      
 
 </div>
 
