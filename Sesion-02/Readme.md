@@ -79,7 +79,7 @@ Con los temas anteriores, haz una transición entre tu formulario y tu pantalla 
 
 <br/>
 
-[`Anterior`](../Sesion-02/Readme.md) | [`Siguiente`](../Sesion-03/Readme.md)      
+[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-03/Readme.md)      
 
 </div>
 
