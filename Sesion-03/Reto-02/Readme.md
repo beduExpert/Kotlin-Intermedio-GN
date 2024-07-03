@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Reto 2`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Reto 2`
 
 ## Reto 2: Agregando Items al RecyclerView
 
@@ -10,8 +10,7 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
-2. Seguir la instrucción específica para esta sesión.
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
@@ -25,25 +24,26 @@ No olvidar utilizar *startActivityForResult* para obtener el resultado del conta
  val intent = Intent(this,AddContactActivity::class.java)
  startActivityForResult(intent,1)
 ```
+
 <img src="01.png" width="30%">
 
 Hay que implementar en la Actividad detonante la función *onActivityResult*, para recibir la info una vez haya sido envidada. 
 
 ```kotlin
- override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK) {
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    super.onActivityResult(requestCode, resultCode, data)
+    if (requestCode == 1) {
+        if (resultCode == Activity.RESULT_OK) {
 
-               //ToDo: aquí va el código para actualizar el RecyclerView
+            //ToDo: aquí va el código para actualizar el RecyclerView
 
 
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
-            }
+        }
+        if (resultCode == Activity.RESULT_CANCELED) {
+            //Write your code if there's no result
         }
     }
+}
 ```
 
 y en la clase AddContactActivity():
@@ -69,8 +69,6 @@ class AddContactActivity : AppCompatActivity() {
             finish()
         }
     }
-
-
 }
 ```
 

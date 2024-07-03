@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Proyecto`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 03`](../Readme.md) > `Proyecto`
 
 ## Proyecto
 
@@ -10,13 +10,11 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
-2. Seguir la instrucción específica para esta sesión.
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
-Las listas son elementos recurrentes en las aplicaciones. En nuestra aplicación de galeria, tenemos un grid de fotos que al pulsar sobre un elemento, se despliega la imagen para abarcar toda la pantalla. En una app bancaria, el historial de transacciones se muestran en lista. Para una app de cine, las pelí
-culas están listadas de forma vertical. 
+Las listas son elementos recurrentes en las aplicaciones. En nuestra aplicación de galeria, tenemos un grid de fotos que al pulsar sobre un elemento, se despliega la imagen para abarcar toda la pantalla. En una app bancaria, el historial de transacciones se muestran en lista. Para una app de cine, las películas están listadas de forma vertical.
 
 <img src="images/1.png" width="35%">
 
@@ -27,13 +25,13 @@ En general, la implementación de una lista en el proyeto es esencial y práctic
 
 ### Lineamientos
 
-1. El proyecto debe utilizar al menos un _RecyclerView_.
-2. Al pulsar sobre cualquier elemento del _RecyclerView_, debemos navegar a una nueva pantalla para los detalles del elemento (las acciones a realizar en ella son libres).
-3. Cada elemento debe tener en su _layout_ al menos dos textos y una imagen.
+1. Genera una nueva pantalla en tu proyecto que contenga una lista de elementos con un _RecyclerView_. 
+2. Al pulsar sobre cualquier elemento del _RecyclerView_, debemos navegar a una nueva pantalla, donde se puedan ver los detalles del elemento (las acciones a realizar en ella son libres).
+3. Cada elemento debe tendrá en su _layout_ al menos dos textos y una imagen.
 4. La distribución del _layout_ preferentemente no debe ser lineal.
 
 
-[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../../Sesion-04/Readme.md)
 
 
 

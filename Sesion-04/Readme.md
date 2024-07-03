@@ -1,7 +1,7 @@
-[`Kotlin-Intermedio`](../Readme.md) > `Sesión 5`
+[`Kotlin-Intermedio`](../Readme.md) > `Sesión 4`
 
 
-## Sesión 5: Fragments
+## Sesión 4: Fragments
 
 <div style="text-align: justify;">
   
@@ -71,17 +71,17 @@ Ejecutaremos una serie de transacciones para los fragments dentro de un contened
 
 Con los temas anteriores, elige entre la construcción de una vista lista-detalle, un flujo de Fragments, o idea tu propuesta.
 
-- [**`PROYECTO SESIÓN 5`**](Proyecto/Readme.md)
+- [**`PROYECTO SESIÓN 4`**](Proyecto/Readme.md)
 
 ### 4. Postwork :memo:
 
 Con lo aprendido en esta sesión, continúa con la implementación de Fragments en tu proyecto.
 
-- [**`POSTWORK SESIÓN 5`**](Postwork/Readme.md)
+- [**`POSTWORK SESIÓN 4`**](Postwork/Readme.md)
 
 <br/>
 
-[`Anterior`](../Sesion-04/Readme.md) | [`Siguiente`](../Sesion-06/Readme.md)      
+[`Anterior`](../Sesion-04/Readme.md) | [`Siguiente`](../Sesion-05/Readme.md)      
 
 </div>
 
