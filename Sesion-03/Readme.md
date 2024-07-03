@@ -67,7 +67,7 @@ Esta clase es una mejora de los _ListAdapters_, reciclando _Views_ y métodos pa
 
 Con los temas anteriores, construye una pantalla de items ajustado al concepto de tu proyecto.
 
-- [**`PROYECTO SESIÓN 4`**](Proyecto/Readme.md)
+- [**`PROYECTO SESIÓN 3`**](Proyecto/Readme.md)
 
 <br/>
 
