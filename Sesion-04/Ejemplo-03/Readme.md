@@ -164,7 +164,7 @@ Hasta ahora hemos declarado ___Fragments___ por medio del tag ___fragment___ den
 
 5. Aunque google no lo recomienda, utilizamos para esta ocasión _kotlinx synthetic_ En nuestro ___MainActivity___, para saltarnos la asignación de las _Views_. obtenemos el ___supportFragmentManager___ y lo guardamos en una variable.
 
-En el _listener_ del botón de agregar, creamos una nueva _Transaction_, creamos una instancia de ___BeduFragment___, la agregamos al _container_ con el _tag_ "fragBedu" (que nos servirá para identificarlo) y aplicamos los cambios mediante el método ___commit___.
+    En el _listener_ del botón de agregar, creamos una nueva _Transaction_, creamos una instancia de ___BeduFragment___, la agregamos al _container_ con el _tag_ "fragBedu" (que nos servirá para identificarlo) y aplicamos los cambios mediante el método ___commit___.
 
     ```kotlin
     override fun onCreate(savedInstanceState: Bundle?) {
