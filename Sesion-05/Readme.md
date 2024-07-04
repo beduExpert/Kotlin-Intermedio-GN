@@ -1,6 +1,6 @@
-[`Kotlin-Avanzado`](../Readme.md) > `Sesión 1`
+[`Kotlin-Avanzado`](../Readme.md) > `Sesión 5`
 
-## Sesión 5: Elementos visuales "Animaciones y transiciones"
+## Sesión 5: Elementos visuales
 
 <img src="images/bouncing-ball.png" align="right" height="120" hspace="10">
 
@@ -14,7 +14,7 @@
 
 ### 2. Contenido :blue_book:
 
- 
+"Animaciones y transiciones"
 
 #### <ins>Animators</ins>
 
