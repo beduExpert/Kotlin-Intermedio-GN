@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Proyecto`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 04`](../Readme.md) > `Proyecto`
 
 ## Proyecto: Fragments
 
@@ -7,45 +7,41 @@
 ### 1. Objetivos :dart:
 
 - Modularizar el proyecto mediante ___Fragments___.
-- Manejar un flujo entre _fragments_.
+- Implementar _fragments_ para lograr una app flexible para diversos dispositivos, o crear un flujo.
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
-
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
-En este reto final, vamos a implementar _fragments_ para lograr una app flexible para diversos dispositivos, o crear un flujo.
+#### Definir el uso del fragment
 
-Por simplicidad podemos escoger un login con nombre de usuario/correo/teléfono y una contraseña.
+A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
 
-### Lista-detalle
+Para conseguir implementar _fragments_ de manera natural en nuestro proyecto, buscaremos la forma de cómo encajarla.
 
-Para este apartado, podemos tomar como base el ejercicio realizado en el [Ejemplo 2](../Ejemplo-02) para una lista-detalle, pudiéndolo modificar a un inbox o a otro tipo de lista, dependiendo del proyecto que hayamos elegido.
+- Si es una app que implique la compra de un producto, podemos hacer un flujo de _fragments_ que impliquen la selección del producto, después el ingreso de la dirección de envío, y por último la captura del método de pago.
 
-<img src="images/1.png" width="40%">
+- Si es una app tipo spotify, podemos crear una interfaz donde se muestre un patrón lista-detalle para seleccionar música y en el detalle los datos de la canción (esto aplica también para apps como imdb, etc.)
 
-### Flujo
+- Un clon de una app de entregas a domicilio podría implementar un flujo.
 
-Podemos crear un flujo en la aplicación similar a los de los tutoriales guiados cuando abres por primera vez una app
+- Al abrir un video en youtube, se puede ver cómo salta un _fragment_ emergente donde se reproduce el video. Podemos hacer una simulación básica de ese comportamiento.
 
-<img src="images/2.png" width="40%">
+#### Tips
 
-O una serie de pasos para completar una tarea.
+El uso del ___DialogFrament___ es permitido en este módulo, en [Este artículo](https://guides.codepath.com/android/using-dialogfragment) se explica un poco más de cómo implementarlo (el lenguaje es Java, pero es bastante comprensible).
 
-<img src="images/3.jpeg" width="40%">
+<img src="images/1.png" width="35%">
 
-### Lineamientos
+#### Lineamientos
 
-1. Se debe implementar al menos dos _fragments_ en el proyecto.
+1. Implementa al menos dos _fragments_ en el proyecto.
 2. Cualquier forma de implementación de _fragments_ es válido.
 3. El uso de los _fragments_ debe ser adecuado (no utilizarlos en lugares donde no se requieran).
 
 
-
-
-
-[`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-05/Readme.md)
 
 </div>

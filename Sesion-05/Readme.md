@@ -1,6 +1,6 @@
 [`Kotlin-Avanzado`](../Readme.md) > `Sesión 1`
 
-## Sesión 1: Animaciones y transiciones
+## Sesión 5: Elementos visuales "Animaciones y transiciones"
 
 <img src="images/bouncing-ball.png" align="right" height="120" hspace="10">
 
@@ -46,12 +46,6 @@ Haremos uso de Transitions para crear animaciones suaves en el flujo de navegaci
 Aplica los lineamientos que vienen en esta guía para definir y comenzar el desarrollo de tu proyecto.
 
 - [**`PROYECTO SESIÓN 1`**](Proyecto/Readme.md)
-
-### 4. Postwork :memo:
-
-Esta es una guía anexa de consejos para una mejor planeación de tu proyecto para este módulo.
-
-- [**`POSTWORK SESIÓN 1`**](Postwork/Readme.md)
 
 <br/>
 
