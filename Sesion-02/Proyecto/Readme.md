@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-Ya has creado las primeras pantallas de tu aplicación durante la __Sesión 2__, por lo que ahora queda definir qué sigue después del Inicio de sesión y registro.
+Ya has creado las primeras pantallas de tu aplicación durante la __Sesión 1__, por lo que ahora queda definir qué sigue después del Inicio de sesión y registro.
 
 A continuación veremos ciertas ideas que nos ayudarán a aterrizar nuestro proyecto.
 
