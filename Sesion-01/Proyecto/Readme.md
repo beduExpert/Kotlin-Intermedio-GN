@@ -16,7 +16,7 @@
 
 ### 3. Desarrollo :computer:
 
-1. Generamos un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo "La parte final denominada proyecto"
+1. Generamos un nuevo proyecto el cuál te servirá para todas las sesiones de este módulo.
 
 2. Una vez generado el proyecto vamos a implementar un formulario de registro y login en nuestra app.
 
