@@ -15,12 +15,12 @@
 
 ### 3. Desarrollo :computer:
 
-Apoyándonos del diagrama que representa el ciclo de vida de un ___Fragment___, realizaremos las tareas enumeradas a continuación.
+Observa el siguiente diagrama que representa el ciclo de vida de un Fragment.
 
  <img src="../images/fragment-cycle.png">
  
  
- También nos apoyaremos de esta tabla que relaciona el ciclo de vida de nuestro fragment con el ciclo del Activity al que lo adjuntamos.
+Apoyándote de la tabla que se presenta a continuación, donde se relaciona el ciclo de vida de nuestro fragment con el ciclo del Activity al que lo adjuntamos, realiza las tareas enumeradas a continuación.
  
  
 Estado del _Activity_ |	Callbacks del _Fragment_ llamados |	Ciclo de vida del _Fragment_
@@ -33,7 +33,7 @@ Stopped	| onStop() | Fragment parado e invisible.
 Destroyed |	onDestroyView(), onDestroy(), onDetach() | El Fragmento es destruído.
 
 
-1. Utilizando el ejemplo anterior, utilizaremos todos los callbacks para imprimir un texto cuando este se halla mandado a llamar. Observar como se imprimen los logs en el _logcat_ con diversas acciones (abrir la app, cerrar la app, voltear el teléfono, enviar a segundo plano, etc.).
+1. Utilizando el ejemplo anterior, usaremos todos los callbacks para imprimir un texto cuando este se haya mandado a llamar. Observar como se imprimen los logs en el _logcat_ con diversas acciones (abrir la app, cerrar la app, voltear el teléfono, enviar a segundo plano, etc.).
 
 
     <details><summary>Solución</summary>

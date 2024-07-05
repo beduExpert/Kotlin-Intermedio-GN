@@ -41,6 +41,13 @@ El uso del ___DialogFrament___ es permitido en este módulo, en [Este artículo]
 2. Cualquier forma de implementación de _fragments_ es válido.
 3. El uso de los _fragments_ debe ser adecuado (no utilizarlos en lugares donde no se requieran).
 
+#### Checklist
+
+- [ ] Pantalla iniciar sesión
+- [ ] Pantalla crear cuenta
+- [ ] Pantalla que utilice ConstraintLayout con al menos 3 views
+- [ ] Pantalla que incluya RecyclerView con una lista de elementos, donde se pueda dar clic a los elementos y ver más información
+- [ ] Por lo menos dos fragments
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-05/Readme.md)
 

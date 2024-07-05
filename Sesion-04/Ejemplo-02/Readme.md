@@ -4,6 +4,14 @@
 
 <div style="text-align: justify;">
 
+En este ejemplo abordaremos una aplicación que sigue el patrón lista-detalle. Como usuario te habrás dado cuenta que en las aplicaciones es común encontrarnos con una lista de productos que, al seleccionar uno, nos permite visualizar sus detalles. 
+
+Ejemplificamos el uso de Fragments para un diseño de interfaz flexible, ya que para un teléfono móvil convencional, la lista se mostrará en una pantalla y el detalle en otra. En el caso de una tablet, que consta de una pantalla grande, pondremos la vista y el detalle en la misma pantalla. El siguiente diagrama nos ayudará a visualizar la idea
+
+<img src="images/1.png" width="70%">
+
+La diferencia entre el móvil y la tablet es que en la tablet se mostrará el listado y el detalle en la misma pantalla, en el móvil serán dos pantallas.
+
 ### 1. Objetivos :dart:
 
 - Adaptar un diseño de acuerdo al tamaño de una pantalla.
@@ -11,16 +19,9 @@
 ### 2. Requisitos :clipboard:
 
 1. Android Studio Instalado en nuestra computadora.
-2. Seguir las instrucciónes para esta sesión.
+2. Seguir las instrucciones para esta sesión.
 
 ### 3. Desarrollo :computer:
-
-En este ejemplo abordaremos una aplicación que sigue el patrón _lista-detalle_, en el cual tendremos una lista de productos y al seleccionar uno, visualizaremos sus detalles. En este ejercicio ejemplificamos el uso de _Fragments_ para un diseño de interfaz flexible, ya que para un teléfono móvil convencional, la lista se mostrará en una pantalla y el detalle en otra. En el caso de una tablet, que consta de una pantalla grande, pondremos la vista y el detalle en la misma pantalla. El siguiente diagrama nos ayudará a visualizar la idea.
-
-<img src="images/1.png" width="70%">
-
-La diferencia es que las dos pantallas irán en orden vertical para el caso de la tablet.
-
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 
@@ -219,7 +220,7 @@ La diferencia es que las dos pantallas irán en orden vertical para el caso de l
     </FrameLayout>
     ```
 
-6. Perfecto! Ahora modificamos nuestro _activity_main.xml_ para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregamos nuestro ___fragment___ al layout.
+6. ¡Perfecto! Ahora modificamos nuestro _activity_main.xml_ para que muestre únicamente la lista de productos (teléfono móvil), por lo tanto únicamente agregamos nuestro ___fragment___ al layout.
 
     ```xml
     <LinearLayout
@@ -271,7 +272,7 @@ La diferencia es que las dos pantallas irán en orden vertical para el caso de l
 
     <img src="images/6.png" width="30%">
 
-    Listo! ahí guardamos el _layout_ de la versión tablet. Nos podemos ahorrar estos pasos simplemente creando un directorio con el nombre ___layout-large___.
+    ¡Listo! ahí guardamos el _layout_ de la versión tablet. Nos podemos ahorrar estos pasos simplemente creando un directorio con el nombre ___layout-large___.
 
 9. Dentro de ___layout-large___, creamos otro archivo ___activity_main.xml___, que contendrá nuestros fragmentos en vertical.
 
@@ -311,7 +312,7 @@ La diferencia es que las dos pantallas irán en orden vertical para el caso de l
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-10. Suficiente del apartado gráfico! Enfoquémonos en Kotlin. Vamos a requerir un ___Adapter___ para nuestro _RecyclerView_, por lo que utilizamos este código para nuestra clase _RecyclerAdapter_.
+10. ¡Suficiente del apartado gráfico! Enfoquémonos en Kotlin. Vamos a requerir un ___Adapter___ para nuestro _RecyclerView_, por lo que utilizamos este código para nuestra clase _RecyclerAdapter_.
 
     ```kotlin
     //Declaración con constructor
