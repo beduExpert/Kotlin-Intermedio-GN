@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-En este reto final, implementaremos una vista de RecyclerView utilizando CardViews que permita la edición de elementos al seleccionar una celda.
+Hasta este punto tu proyecto debe tener una vista de RecyclerView con CardViews. Ahora permiras la edición de elementos al seleccionar una celda.
 
 - Las acciones sugeridas a ejecutar son:
 
@@ -30,7 +30,7 @@ Si se implementa la opción de Editar, debe mostrar una nueva vista para editar 
 
 ### Flujo
 
-El flujo del proyecto comienza con la **Vista-A**, un recycler view. al seleccionar una fila o celda, debe ir a vista de detalle **Vista-B** en donde el título de la celda debe tener uno o varios campos de texto para poder editar su informacion. Con un botón salvaremos la información y regresaremos a la **Vista-A**.
+El flujo del proyecto comienza con la **Vista-A**, un recycler view. al seleccionar una fila o celda, ira a la vista de detalle **Vista-B** en donde el título de la celda tendrá uno o varios campos de texto para poder editar su informacion. Con un botón guardaremos la información y regresaremos a la **Vista-A**.
 
 Flujo:
 
@@ -39,7 +39,7 @@ Flujo:
 **Vista-B** |<---[guardar y actualizar]--- **Vista-A**
 ```
 
-En las opciones de cada campo de texto, se debe implementar un menú contextual con opciones propias. Estas opciones deben ser diferentes a Copiar, Pegar, Cortar texto. Se sugiere algo como, verificar correo electronico, poner texto en mayusculas, compartir en alguna red social.
+En las opciones de cada campo de texto, implementa un menú contextual con opciones propias. Estas opciones serán diferentes a Copiar, Pegar, Cortar texto. Se sugiere algo como, verificar correo electronico, poner texto en mayusculas, compartir en alguna red social.
 
 ![](./images/2.png)
 
@@ -49,15 +49,19 @@ En las opciones de cada campo de texto, se debe implementar un menú contextual 
 
 ### Lineamientos
 
-1. Se debe implementar al menos dos vistas en el proyecto.
-2. Cualquier forma de implementación de _recyclerview_ es válido.
-3. Se deben usar almenos dos tipos de menus contextuales en el proyecto, con opciones propias.
-4. Uno de los menús debe ser creado por XML y otro sin XML.
+1. Implementa al menos dos vistas en el proyecto.
+2. Cualquier forma de implementación de _recyclerview_ es válida.
+3. Usa almenos dos tipos de menus contextuales en el proyecto, con opciones propias.
+4. Uno de los menús sera creado por XML y otro sin XML.
 
 
+#### Checklist
+
+- [ ] Dos opciones diferentes de menu
+- [ ] Un menu creado por XML
+- [ ] Un menu creado sin XML
 
 
-
-[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../../Sesion-08/Readme.md)
 
 </div>

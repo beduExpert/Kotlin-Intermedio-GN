@@ -21,22 +21,22 @@
 
 El reto consiste en agregar funcionalidad a cada opción elegida en el menú.
 
-Nos apoyaremos del siguiente código.
+1. Nos apoyamos del siguiente código.
 
-```
- if (item.isChecked) {
-                    Toast.makeText(this, "Item1 Checked", Toast.LENGTH_LONG).show()
-                    item.setChecked(false)
-                } else {
-                    Toast.makeText(this, "Item1 Not Checked", Toast.LENGTH_LONG).show()
-                    item.setChecked(true)
-                }
-```
+    ```java
+    if (item.isChecked) {
+        Toast.makeText(this, "Item1 Checked", Toast.LENGTH_LONG).show()
+        item.setChecked(false)
+    } else {
+        Toast.makeText(this, "Item1 Not Checked", Toast.LENGTH_LONG).show()
+        item.setChecked(true)
+    }
+    ```
 
-Se debe identificar en que parte del proyecto debe agregarse este código.
+2. Identifica en que parte del proyecto debe agregarse este código.
 Igualmente jugar con el método `item.setChecked(false)`.
 
-![Elemento de Menu](./images/1.gif)
+    ![Elemento de Menu](./images/1.gif)
 
 
 [`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)

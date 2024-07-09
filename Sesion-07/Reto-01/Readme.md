@@ -19,12 +19,15 @@
 
 ### 3. Desarrollo :computer:
 
-El reto consiste en agregar un CheckBox en cada elemento de menú.
-Mostrar iconos en cada opción de menú.
-Agregar tantas opciones quieras, pero crea agrupaciones.
+Ahora toca poner en marca lo que aprendiste en el ejemplo anterior.
 
-![Elemento de Menu](./images/1.png)
-![Elemento de Menu](./images/2.png)
+Para completar este reto realiza los siguientes puntos: 
+- Agrega un CheckBox en cada elemento de menú.
+- Mostrar iconos en cada opción de menú.
+- Agrega tantas opciones quieras, pero crea agrupaciones.
+
+    ![Elemento de Menu](./images/1.png)
+    ![Elemento de Menu](./images/2.png)
 
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)

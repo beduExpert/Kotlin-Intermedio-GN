@@ -10,7 +10,7 @@
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
 - Definir elementos de Menús de manera gráfica así como con código.
-- Manejar de eventos y cambio de elementos en tiempo de ejecución.
+- Manejar eventos y cambio de elementos en tiempo de ejecución.
 - Menús contextuales y grupos de Menús.
 - Implementar ActionModes.
 
@@ -24,7 +24,7 @@
 
 #### <ins>Tipos de menus en Android</ins>
 
-Implementación de los tres tipos de menú en Android. Abarcando desde la interfáz grafica con grupos de elementos hasta la creación mediante código. Los menús vistos: Popup, Contextual y Opciones.
+Implementación de los tres tipos de menú en Android. Abarcando desde la interfáz grafica con grupos de elementos, hasta la creación mediante código. Los menús vistos: Popup, Contextual y Opciones.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -56,14 +56,9 @@ Crearemos menus contextuales flotantes.
 
 ### 3. Proyecto :hammer:
 
-
-- [**`PROYECTO SESIÓN 7`**](Proyecto/Readme.md)
-
-### 4. Postwork :memo:
-
 Con lo aprendido en esta sesión, continúa con la implementación de ___Menús_ en tu proyecto.
 
-- [**`POSTWORK SESIÓN 7`**](Postwork/Readme.md)
+- [**`PROYECTO SESIÓN 7`**](Proyecto/Readme.md)
 
 <br/>
 

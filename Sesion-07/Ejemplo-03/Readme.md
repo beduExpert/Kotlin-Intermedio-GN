@@ -17,7 +17,7 @@
 
 ### 3. Desarrollo :computer:
 
-## ActionMode
+#### ActionMode
 
 Recordando los menus contextuales, aquellos que se enfocan sobre elementos de UI que especifiquemos. Encontramos los ActionMode, estos son una implementacion similar al contextual menu, veamos.
 
@@ -70,116 +70,116 @@ La cuál te dará la posición en la pantalla para el elemento flotante.
 ## Comenzamos
 
 
-Como ya hemos visto, crearemos un directorio para Menu y un archivo xml.
-En el Activity Main xml agregaremos un elemento de UI como un TextView.
-Igualmente, agregaremos dos iconos de tu elección a la carpeta Drawable.
+1. Como ya hemos visto, creamos un directorio para Menu y un archivo xml.
+En el Activity Main xml agregamos un elemento de UI como un TextView.
+Igualmente, agregamos dos iconos de tu elección a la carpeta Drawable.
 
-![imagen](images/2.png)
+    ![imagen](images/2.png)
 
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-     <item
-        android:id="@+id/option_1"
-        android:icon="@drawable/ic_add"
-        android:title="Add" />
-    <item
-        android:id="@+id/option_2"
-        android:icon="@drawable/ic_cast"
-        android:title="Cast" />
-</menu>
-```
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/option_1"
+            android:icon="@drawable/ic_add"
+            android:title="Add" />
+        <item
+            android:id="@+id/option_2"
+            android:icon="@drawable/ic_cast"
+            android:title="Cast" />
+    </menu>
+    ```
 
-Nos dirigimos a nuestro MainActivity, declaramos el elemento de UI, en este caso TextView. Este recibirá la acción de `onClick`.
+2. Nos dirigimos a nuestro MainActivity, declaramos el elemento de UI, en este caso TextView. Este recibirá la acción de `onClick`.
 
-```
- var textView: TextView = findViewById(R.id.txTextView)
-```
+    ```java
+    var textView: TextView = findViewById(R.id.txTextView)
+    ```
 
-Sobre este textView agregaremos una acción `setOnClickListener()`.
+    Sobre este textView agregamos una acción `setOnClickListener()`.
 
-```
-var textView: TextView = findViewById(R.id.txTextView)
-        textView.setOnLongClickListener { item ->
-            when(item.id) {
-                R.id.option_1 -> {
-                    Toast.makeText(this, "option 1", Toast.LENGTH_SHORT).show()
-                    true
-                }
-            }
-   false
-}
-```
-
-Para ejecutar el Action Mode es necesario implementar un `ActionMode.Callback`.
-Declaramos una variable global para ActionModes.
-
-```
- private var actionMode: ActionMode? = null
-```
-
-Dentro de la misma clase de Main Activity creamos un Callback con los metodos para poder ejecutar el ActionMode.
-
-```
-inner class ActionModeCallback: ActionMode.Callback {
-            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
-                when (item?.getItemId()) {
-                    R.id.txTextView -> {
-                        actionMode?.setTitle("") //remove item count from action mode.
-                        actionMode?.finish()
-                        return true
+    ```java
+    var textView: TextView = findViewById(R.id.txTextView)
+            textView.setOnLongClickListener { item ->
+                when(item.id) {
+                    R.id.option_1 -> {
+                        Toast.makeText(this, "option 1", Toast.LENGTH_SHORT).show()
+                        true
                     }
                 }
-                return false
-            }
+    false
+    }
+    ```
 
-            override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-                val inflater = mode?.getMenuInflater()
-                inflater?.inflate(R.menu.menu, menu)
-                return true
-            }
+3. Para ejecutar el Action Mode es necesario implementar un `ActionMode.Callback`.
+Declaramos una variable global para ActionModes.
 
-            override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-                menu?.findItem(R.id.option_2)?.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
-                return true
-            }
+    ```java
+    private var actionMode: ActionMode? = null
+    ```
 
-            override fun onDestroyActionMode(mode: ActionMode?) {
-                actionMode = null
+4. Dentro de la misma clase de Main Activity creamos un Callback con los metodos para poder ejecutar el ActionMode.
+
+    ```java
+    inner class ActionModeCallback: ActionMode.Callback {
+        override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+            when (item?.getItemId()) {
+                R.id.txTextView -> {
+                    actionMode?.setTitle("") //remove item count from action mode.
+                    actionMode?.finish()
+                    return true
+                }
             }
+            return false
         }
-```
 
-Ejecutamos el código y el resultado debe ser similar a este:
+        override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+            val inflater = mode?.getMenuInflater()
+            inflater?.inflate(R.menu.menu, menu)
+            return true
+        }
 
-![imagen](images/3.gif)
+        override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+            menu?.findItem(R.id.option_2)?.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
+            return true
+        }
+
+        override fun onDestroyActionMode(mode: ActionMode?) {
+            actionMode = null
+        }
+    }
+    ```
+
+5. Ejecutamos el código y el resultado debe ser similar a este:
+
+    ![imagen](images/3.gif)
 
 
-Ahora bien, agregaremos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado.
+6. Ahora bien, agregamos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado.
 
-```
-inner class ActionModeCallback: ActionMode.Callback {
-      override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
-         when (item?.getItemId()) {
-              R.id.option_1 -> {
+    ```java
+    inner class ActionModeCallback: ActionMode.Callback {
+        override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+            when (item?.getItemId()) {
+                R.id.option_1 -> {
                 actionMode?.setTitle("Option1") //remove item count from action mode.
                 //actionMode?.finish()
                         return true
                 }
-          }
+            }
         return false
-     }
+        }
 
-     override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-         val inflater = mode?.getMenuInflater()
-         inflater?.inflate(R.menu.menu, menu)
-         mode?.setTitle("Options Menu")
-         return true
+        override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+            val inflater = mode?.getMenuInflater()
+            inflater?.inflate(R.menu.menu, menu)
+            mode?.setTitle("Options Menu")
+            return true
     }
-```
+    ```
 
-![imagen](images/4.gif)
+    ![imagen](images/4.gif)
 
 
 [`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Reto-03/Readme.md)

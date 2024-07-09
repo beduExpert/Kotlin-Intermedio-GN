@@ -20,25 +20,25 @@
 
 ### 3. Desarrollo :computer:
 
-### OPTIONS MENU
+#### OPTIONS MENU
 
-Retomaremos el Ejemplo de [options_menu](./options_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomamos el Ejemplo de [options_menu](./options_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
 ![MainActivity](./images/4.png)
 
 
-Para ello, nos dirigimos al MainActivity, y escribimos la función encargada de obtener la opción elegida en el menú.
+1. Nos dirigimos al MainActivity, y escribimos la función encargada de obtener la opción elegida en el menú.
 
-```
-override fun onOptionsItemSelected(item: MenuItem): Boolean {
-	return super.onOptionsItemSelected(item)
-}
-```
+    ```java
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+    ```
 
-Luego, comparamos cada `id` dentro del Menu.
+2. Luego, comparamos cada `id` dentro del Menu.
 
-```
-override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    ```java
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
             R.id.item1 -> {
@@ -48,12 +48,12 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
         }
         return super.onOptionsItemSelected(item)
     }
-```
+    ```
 
-Finalmente, para el resto de opciones:
+3. Finalmente, para el resto de opciones:
 
-```
- override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    ```java
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
             R.id.item1 -> {
@@ -71,19 +71,19 @@ Finalmente, para el resto de opciones:
         }
         return super.onOptionsItemSelected(item)
     }
-```
+    ```
 
 
-### CONTEXTUAL MENU
+#### CONTEXTUAL MENU
 
-Retomaremos el Ejemplo de [context_menu](./context_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomamos el Ejemplo de [context_menu](./context_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
 ![MainActivity](./images/7.gif)
 
-Para ejecutar acciones de acuerdo al elemento seleccionado del menú, nos basaremos en la función `onContextItemSelected(item: MenuItem?)`.
+1. Para ejecutar acciones de acuerdo al elemento seleccionado del menú, nos basaremos en la función `onContextItemSelected(item: MenuItem?)`.
 
-```
- override fun onContextItemSelected(item: MenuItem): Boolean {
+    ```java
+    override fun onContextItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
             R.id.copy -> {
                 Toast.makeText(this, "Copy", Toast.LENGTH_SHORT).show()
@@ -91,44 +91,46 @@ Para ejecutar acciones de acuerdo al elemento seleccionado del menú, nos basare
         }
         return super.onContextItemSelected(item)
     }
-```
+    ```
 
-Implementar resto de opciones.
+2. Implementa el resto de opciones, reutilizando el código del ejemplo previo.
 
 
-### POPUP MENU
+#### POPUP MENU
 
-Retomaremos el Ejemplo de [popup_menu](./popup_menu), pero esta vez agregaremos funcionalidad a las opciones de menú.
+Retomamos el Ejemplo de [popup_menu](./popup_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
-Este código difiere debido a que implementaremos un closure para el popMenu, dentro de este closure mediante un capture list obtendremos la opcion deseada.
+Este código difiere debido a que implementamos un closure para el popMenu, dentro de este closure mediante un capture list obtenemos la opcion deseada.
 
-```
-override fun onClick(v: View?) {
+1. Agregamos el siguiente código en el evento del botón
+
+    ```java
+    override fun onClick(v: View?) {
         var popMenu = PopupMenu(this, v)
         popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
         // implementar closure
         popMenu.show()
     }
-```
+    ```
 
-Captamos cada opción de menú con su **id** correspondiente.
+2. Captamos cada opción de menú con su **id** correspondiente.
 
-```
-override fun onClick(v: View?) {
-    var popMenu = PopupMenu(this, v)
-        popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
-        popMenu.setOnMenuItemClickListener { item ->
-            when(item.itemId) {
-                R.id.item1 -> {
-                    Toast.makeText(this, "option 1", Toast.LENGTH_SHORT).show()
-                    true
+    ```java
+    override fun onClick(v: View?) {
+        var popMenu = PopupMenu(this, v)
+            popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
+            popMenu.setOnMenuItemClickListener { item ->
+                when(item.itemId) {
+                    R.id.item1 -> {
+                        Toast.makeText(this, "option 1", Toast.LENGTH_SHORT).show()
+                        true
+                    }
                 }
+                false
             }
-            false
-        }
-    popMenu.show()
-}
-```
+        popMenu.show()
+    }
+    ```
 
 
 #### Referencias: 

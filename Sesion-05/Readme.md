@@ -49,7 +49,7 @@ Aplica los lineamientos que vienen en esta guía para definir y comenzar el desa
 
 <br/>
 
-[`Anterior`](../Readme.md) | [`Siguiente`](../Sesion-02/Readme.md)      
+[`Anterior`](../Sesion-04/Readme.md) | [`Siguiente`](../Sesion-06/Readme.md)      
 
 </div>
 

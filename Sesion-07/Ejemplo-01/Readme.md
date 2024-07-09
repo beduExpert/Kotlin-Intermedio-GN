@@ -7,8 +7,8 @@
 ### 1. Objetivos :dart:
 
 - Crear menus de opciones utilizando las clases dedicadas a esto incluidas en el SDK de Android.
-- Entender los elementos que conforman a cada uno de estos tres tipos de menu.
-- Aprender a definir y crear los tres tipos de menus en Android: Popup, Contextual y Opciones.
+- Entender los elementos que conforman los tipos de menu.
+- Aprender a definir y crear algunos tipos de menus en Android: Popup, Contextual y Opciones.
 
 ### 2. Requisitos :clipboard:
 
@@ -35,7 +35,7 @@ Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso
 
 #### Definiendo un menú en XML
 
-Para definir un menú, crearemos un archivo XML dentro del directorio del proyecto `res/menu/`.
+Para definir un menú, creamos un archivo XML dentro del directorio del proyecto `res/menu/`.
 
 El menú estará conformado por los siguientes elementos:
 
@@ -50,7 +50,7 @@ El menú estará conformado por los siguientes elementos:
 
 Ejemplo de menú en xml:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/new_game"
@@ -65,45 +65,44 @@ Ejemplo de menú en xml:
 
 En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para ver mas sobre esta opción ver la [documentación](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
 
-
-#### Creamos un proyecto nuevo...
-
 ### OPTIONS MENU
 
-Una vez creado un proyecto en Android, agregaremos un icono en nuestro folder `res` en `drawables`.  Para agregar un icono, damos click derecho y seleccionamos las siguientes opciones `New > Vector Asset`, elegimos un nombre.
+1. Creamos un nuevo proyecto.
 
-![Elemento de Menu](./images/res_icon.png)
+2. Agregamos un icono en nuestro folder `res` en `drawables`.  Para agregar un icono, damos click derecho y seleccionamos las siguientes opciones `New > Vector Asset`, elegimos un nombre.
 
-Para crear los menus, crearemos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos `New > Directory`, escribimos **Menu**.
+    ![Elemento de Menu](./images/res_icon.png)
 
-En la carpeta generada, damos click derecho y elegimos `New > Menu Resource File`, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
+    Para crear los menus, creamos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos `New > Directory`, escribimos **Menu**.
 
-![Elemento de Menu](./images/res_menu.png)
+    En la carpeta generada, damos click derecho y elegimos `New > Menu Resource File`, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
 
-En este archivo en XML escribiremos los elementos del Menu de Opciones.
+    ![Elemento de Menu](./images/res_menu.png)
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/item1"
-        android:icon="@drawable/ic_search"
-        android:title="Item1"
-        app:showAsAction="ifRoom" />
-</menu>
-```
+    En este archivo en XML escribimos los elementos del Menu de Opciones.
 
-![Elemento de Menu](./images/1.png)
+    ```
+    <?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/item1"
+            android:icon="@drawable/ic_search"
+            android:title="Item1"
+            app:showAsAction="ifRoom" />
+    </menu>
+    ```
 
-Agregamos otro elemento de menú.
+    ![Elemento de Menu](./images/1.png)
 
-**OJO** observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
+    Agregamos otro elemento de menú.
 
-![Elemento de Menu](./images/2.gif)
+    **OJO** observamos que se agrega otro botón de buscar. Para corregir esto nos dirigimos a `showAsAtion` en el código XML, lo cambiamos a `never`.
 
-Ahora, agregaremos un Submenu. Para lograr esto, escribimos dentro de Item un bloque de Menu con Items en el interior, estos Items serán las opciones del submenú.
+    ![Elemento de Menu](./images/2.gif)
 
-```
+3. Ahora, agregamos un Submenu. Para lograr esto, escribimos dentro de Item un bloque de Menu con Items en el interior, estos Items serán las opciones del submenú.
+
+    ```xml
     <item android:id="@+id/item3"
         android:icon="@drawable/ic_search"
         android:title="Item2"
@@ -119,95 +118,92 @@ Ahora, agregaremos un Submenu. Para lograr esto, escribimos dentro de Item un bl
                 app:showAsAction="never" />
         </menu>
     </item>
-```
+    ```
 
-![Submenus](./images/3.png)
+    ![Submenus](./images/3.png)
 
 
-Ahora bien, nos dirigimos a la clase `MainActivity` y agregamos el código de menú que nos ayudará a mostrar la implementación en XML en pantalla.
+4. Ahora bien, nos dirigimos a la clase `MainActivity` y agregamos el código de menú que nos ayudará a mostrar la implementación en XML en pantalla.
 
-```
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    ```java
+    class MainActivity : AppCompatActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+        }
+
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            val inflater = menuInflater
+            inflater.inflate(R.menu.options_menu, menu)
+            return super.onCreateOptionsMenu(menu)
+        }
     }
+    ```
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.options_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-}
-```
-
-![MainActivity](./images/4.png)
+    ![MainActivity](./images/4.png)
 
 
 ### CONTEXTUAL MENU
 
-Creamos un nuevo proyecto, en el cuál nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
+1. Creamos un nuevo proyecto, en el cuál nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
 
-Creamos un directorio de Menu  y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etc.
+2. Creamos un directorio de Menu  y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etc.
 
-![MainActivity](./images/5.png)
+    ![MainActivity](./images/5.png)
 
-**Opcional**:
-Nos dirigimos al `Gradle` (Module: app) para agregar la dependencia de Material Design. Sincronizamos.
+3. Nos dirigimos al `Gradle` (Module: app) para agregar la dependencia de Material Design. Sincronizamos.
 
-> implementation 'com.android.support.design:28.0.0'
+    > implementation 'com.android.support.design:28.0.0'
 
+    Una vez terminado de sincronziar el *Gradle*, vamos a **MainActivity** para implementar el **Context Menu**.
 
-Una vez terminado de sincronziar el *Gradle*, vamos a **MainActivity** para implementar el **Context Menu**.
-
-Agregamos el elemento que tendrá este menú. Se activará dando un Tap largo.
-El elemento se debe registrar con la función `registerForContextMenu(txTextView)`.
+4. Agregamos el elemento que tendrá este menú. Se activará dando un Tap largo. El elemento se debe registrar con la función `registerForContextMenu(txTextView)`.
 
 
-```
-override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
-     super.onCreateContextMenu(menu, v, menuInfo)
-     var inflater = menuInflater
-     inflater.inflate(R.menu.menu_context, menu)
-}
-```
+    ```java
+    override fun onCreateContextMenu( menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        var inflater = menuInflater
+        inflater.inflate(R.menu.menu_context, menu)
+    }
+    ```
 
-![MainActivity](./images/6.gif)
+    ![MainActivity](./images/6.gif)
 
 
 ### POPUP MENU
 
-Similar a los menús anteriores. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
+1. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
 
-Este **botón** servirá para lanzar el PopUp Menu.
+    Este **botón** servirá para lanzar el PopUp Menu.
 
-Creamos un Directorio de Menu y un Menu Item en XML con las opciones que necesitemos. 
+    Creamos un Directorio de Menu y un Menu Item en XML con las opciones que necesitemos. 
 
-Esta implementación sera similar al Context Menu.
+    Esta implementación sera similar al Context Menu.
 
-Vamos al MainActivity, agregamos un Listener en la clase.
+2. Vamos al MainActivity, agregamos un Listener en la clase.
 
-```
-class MainActivity: AppCompatActivity(), View.OnClickListener {
+    ```java
+    class MainActivity: AppCompatActivity(), View.OnClickListener {
 
-	 //...
+        //...
 
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        override fun onClick(v: View?) {
+            TODO("Not yet implemented")
+        }
     }
-}
-```
+    ```
 
-Dentro de este onClick, agregaremos una instancia de PopupMenu.
+    Dentro de este onClick, agregamos una instancia de PopupMenu.
 
-```
+    ```
 
-var popMenu = PopMenu(this, v)
-popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
-popMenu.show()
+    var popMenu = PopMenu(this, v)
+    popMenu.menuInflater.inflate(R.menu.popmenu, popMenu.menu)
+    popMenu.show()
 
-```
-![MainActivity](./images/7.gif)
+    ```
+    ![MainActivity](./images/7.gif)
 
 
 

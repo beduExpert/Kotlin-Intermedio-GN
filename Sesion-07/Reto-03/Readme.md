@@ -16,30 +16,28 @@
 
 ### 3. Desarrollo :computer:
 
-Crear una clase que implemente un ActionMode.Callback().
+1. Crea una clase que implemente un ActionMode.Callback().
 
-```
-class PrimaryActionModeCallback : ActionMode.Callback {
-}
-```
+    ```kotlin
+    class PrimaryActionModeCallback : ActionMode.Callback {
+    }
+    ```
 
-Este callback tendra un OnClick listener, lo implementaremos como Global.
+2. Este callback tendra un OnClick listener, lo implementaremos como Global.
 
+    > var onActionItemClickListener: OnActionItemClickListener? = null
 
-> var onActionItemClickListener: OnActionItemClickListener? = null
+    Dentro de la clase sobreescribimos los metodos necesarios, estos son:
 
-Dentro de la clase sobreescribiremos los metodos necesarios, estos son:
+        - onCreateActionMode
+        - onPrepareActionMode
+        - onDestroyActionMode
+        - onActionItemClicked
 
-	- onCreateActionMode
-	- onPrepareActionMode
-	- onDestroyActionMode
-	- onActionItemClicked
+3. Finalmente creamos un método para configuracion, agregamos titulo, subtitulo y menu.
 
-Finalmente creamos un método para configuracion, agregamos titulo, subtitulo y menu.
-
-
-```
-fun startActionMode(view: View,
+    ```kotlin
+    fun startActionMode(view: View,
                         @MenuRes menuResId: Int,
                         title: String? = null,
                         subtitle: String? = null) {
@@ -48,17 +46,17 @@ fun startActionMode(view: View,
         this.subtitle = subtitle
         view.startActionMode(this)
     }
-```
+    ```
 
 
-Para hacer uso de esta clase:
+4. Hacemos uso de esta clase:
 
-```
-// Start primary ActionMode
+    ```java
+    // Start primary ActionMode
 
-val primaryActionModeCallback = PrimaryActionModeCallback()
-primaryActionModeCallback.startActionMode(view, R.menu.menu_actions, "Title", "Subtitle")
-```
+    val primaryActionModeCallback = PrimaryActionModeCallback()
+    primaryActionModeCallback.startActionMode(view, R.menu.menu_actions, "Title", "Subtitle")
+    ```
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 
