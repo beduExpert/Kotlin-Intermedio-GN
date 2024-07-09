@@ -73,7 +73,7 @@ Con los temas anteriores, elige entre la construcción de una vista lista-detall
 
 <br/>
 
-[`Anterior`](../Sesion-04/Readme.md) | [`Siguiente`](../Sesion-05/Readme.md)      
+[`Anterior`](../Sesion-03/Readme.md) | [`Siguiente`](../Sesion-05/Readme.md)      
 
 </div>
 
