@@ -1,6 +1,6 @@
 [`Kotlin-Avanzado`](../Readme.md) > `Sesión 5`
 
-## Sesión 5: Elementos visuales
+## Sesión 5: MVC, animaciones y transiciones
 
 <img src="images/bouncing-ball.png" align="right" height="120" hspace="10">
 
@@ -9,7 +9,7 @@
 
 ### 1. Objetivos :dart: 
 
-- Construir ejemplos con el patrón *MVC* (Modelo Vista Controlador)
+- Construir ejemplo con el patrón *MVC* (Modelo Vista Controlador)
 - Indicar al usuario el estado de la aplicación mediante animaciones
 - Crear trancisiones entre pantallas de forma orgánica
 
@@ -47,7 +47,7 @@ El enfoque model, view, controller separa nuestra aplicación, a nivel general, 
 
     En el caso de una aplicación Android, el controlador casi siempre está representado por una Activity o un Fragment.
 
-[**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
+- [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 
 ---
 
@@ -55,7 +55,7 @@ El enfoque model, view, controller separa nuestra aplicación, a nivel general, 
 
 Mediante el uso de la clase ___Animator___ y quienes heredan de esta, realizaremos varias animaciones a nuestros views con respecto a movimiento, dimensiones, rotación y transparencia.
 
-[**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
+- [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
 
 ---
