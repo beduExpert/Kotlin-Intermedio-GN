@@ -23,7 +23,7 @@ Hasta este punto tu proyecto debe tener una vista de RecyclerView con CardViews.
 	- Eliminar
 	- Editar
 
-	![](./images/1.png)
+	<img src="./images/1.png" width="60%">
 
 Al seleccionar una opción de menú debe verse actualizado el `RecyclerView`.
 Si se implementa la opción de Editar, debe mostrar una nueva vista para editar la información.
