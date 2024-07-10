@@ -65,12 +65,6 @@ Adaptaremos nuestro proyecto al _guideline_ de Material Design sustituyendo _Com
 
 - [**`PROYECTO SESIÓN 6`**](Proyecto/Readme.md)
 
-### 4. Postwork :memo:
-
-Con lo aprendido en esta sesión, continúa con la implementación de ___Material Design___ en tu proyecto.
-
-- [**`POSTWORK SESIÓN 6`**](Postwork/Readme.md)
-
 <br/>
 
 [`Anterior`](../Sesion-05/Readme.md) | [`Siguiente`](../Sesion-07/Readme.md)      

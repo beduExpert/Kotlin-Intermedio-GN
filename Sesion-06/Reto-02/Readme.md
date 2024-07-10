@@ -11,40 +11,40 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio instalado
+- Android Studio instalado
 
 ### 3. Desarrollo :computer:
 
-Tomaremos el ejercicio realizado en el proyecto del [Ejemplo 3](../Ejemplo-03) para nuestros ejercicios.
+Ahora pondrás en práctica lo visto durante el ejemplo anterior.
 
+Para completar este reto utiliza el proyecto del [Ejemplo 3](../Ejemplo-03/Readme.md) y completa los siguientes puntos:
 
+1. Implementa lo siguiente en el _Drawer_:
 
-1. En el ejemplo [Ejemplo 3](../Ejemplo-03), faltó implementar lo siguiente en el _Drawer_:
+     <image src="../Ejemplo-03/images/7.png" width="35%">
+     
+     Implementar el diseño del código, de forma que quede así:
 
-<image src="../Ejemplo-03/images/7.png" width="35%">
-    
-Implementar el diseño del código, de forma que quede así:
+     <image src="images/1.png" width="35%">
+     
+     Cambia al _Theme_ ___AppTheme.RedBlue___ para que quede así:
 
-<image src="images/1.png" width="35%">
-    
-Y al cambiar al _Theme_ ___AppTheme.RedBlue___ quede así:
+     <image src="images/2.png" width="35%">
 
-<image src="images/2.png" width="35%">
+2. Genera un nuevo ___Dark Theme___. Utilizando lo visto en el ejemplo 3 de está sesión.
 
 
 <details><summary>Solución</summary>
 
 ```xml
-   <LinearLayout
-         ...
-    android:paddingBottom="16dp"
-    android:background="?attr/colorAccent"
-         >
-    <ImageView
+<LinearLayout
+     ...
+android:paddingBottom="16dp"
+android:background="?attr/colorAccent"
+     >
+<ImageView
 ```
 </details>
-
-2. Generar un nuevo ___Dark Theme___, para esto, hereda de ___Theme.MaterialComponents.NoActionBar___. (Ejercicio abierto, sujeto a revisión).
 
 <br/>
 

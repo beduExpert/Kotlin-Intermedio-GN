@@ -12,8 +12,7 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
-
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
@@ -21,13 +20,13 @@ Para apegarnos más a los estándares de google y crear una aplicación con un d
 
 Esto implica reemplazar todos los _Views_ que tengan un equivalente en ___MaterialComponents___, agregar una ___App Bar___ y crear un tema personalizado para nuestro proyecto, acorde al giro que este tenga.
 
-Los puntos a cubrir en este proyecto serán los siguientes:
+Los puntos a cubrir en este proyecto son los siguientes:
 
-* Implementar _CardView_ en al menos un caso de nuestra aplicación.
-* Reemplazar los componentes en nuestra app que cuenten con un equivalente en la librería de ___MaterialComponents___.
-* Crear un _DrawerNavigation_ que vaya acorde al concepto de la app.
-* Añadir un App bar cuyas opciones de menú implementen una funcionalidad mínima que concuerde con la actividad principal de la app.
-* Estilizar nuestra aplicación mediante un nuevo _Theme_, podemos apoyarnos de la herramienta [Color Tool](https://material.io/resources/color).
+1. Implementar _CardView_ en al menos un caso de nuestra aplicación "RecyclerView".
+2. Reemplazar los componentes en nuestra app que cuenten con un equivalente en la librería de ___MaterialComponents___.
+3. Crear un _DrawerNavigation_ que vaya acorde al concepto de la app.
+4. Añadir un App bar cuyas opciones de menú implementen una funcionalidad mínima que concuerde con la actividad principal de la app.
+5. Estilizar nuestra aplicación mediante un nuevo _Theme_, podemos apoyarnos de la herramienta [Color Tool](https://material.io/resources/color).
 
 
 ### Herramientas de apoyo:
@@ -38,11 +37,18 @@ Los puntos a cubrir en este proyecto serán los siguientes:
 
 ### Lineamientos
 
-1. Cubrir al menos dos de los cuatro puntos.
-2. Si algún punto anterior no se puede implementar en un punto de nuestra app, se debe crear algo que pueda encajar con dicho punto.
-3. Se recomienda ampliamente verificar la guía de estilo y de componentes del [sitio web oficial](https://material.io/)
+1. Implementar _CardView_ en un RecyclerView
+2. Crear _DrawerNavigation_ y añadir un App bar
+3. Si algún punto anterior no se puede implementar en un punto de nuestra app, se debe crear algo que pueda encajar con dicho punto.
+4. Se recomienda ampliamente verificar la guía de estilo y de componentes del [sitio web oficial](https://material.io/)
+
+#### Checklist
+
+- [ ] CardView en un RecyclerView
+- [ ] DrawerNavigation con opciones acordes al proyecto
+- [ ] App bar funcional
 
 
-[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Postwork/Readme.md)
+[`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../../Sesion-07/Readme.md)
 
 </div>
