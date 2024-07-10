@@ -1,8 +1,8 @@
 
 
-[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Reto 2`
+[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Reto 2`
 
-## Reto 1: Animators
+## Reto 2: Animators
 
 <div style="text-align: justify;">
 
@@ -13,11 +13,11 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
-A partir del ejercicio de ___Shared Transition___ del [ejemplo 2](../Ejemplo-02/), crear la siguiente transición:
+A partir del ejercicio de ___Shared Transition___ del [ejemplo 3](../Ejemplo-03/Readme.md), crear la siguiente transición:
 
 <img src="Images/exercise.gif" width="70%">
 
@@ -47,24 +47,20 @@ binding.btnActivity2.setOnClickListener {
     val headerTransitionName = ViewCompat.getTransitionName(binding.imgConcert)?: " "
     val titleTransitionName = ViewCompat.getTransitionName(binding.titleConcert)?: " "
 
-val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-    this,
-    Pair.create(binding.imgConcert,headerTransitionName),
-    Pair.create(binding.titleConcert,titleTransitionName),
+    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+        this,
+        Pair.create(binding.imgConcert,headerTransitionName),
+        Pair.create(binding.titleConcert,titleTransitionName),
 
-)
+    )
 
-startActivity(intent, options?.toBundle())
+    startActivity(intent, options?.toBundle())
 }
 ```
 
-
-
 </details>
 
- 
-
-
+<br/>
 
 [`Anterior`](../Reto-02/Readme.md) | [`Siguiente`](../Proyecto/Readme.md)
 

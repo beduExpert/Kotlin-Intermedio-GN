@@ -1,6 +1,6 @@
 
 
-[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 01`](../Readme.md) > `Reto 1`
+[`Kotlin Avanzado`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Reto 1`
 
 ## Reto 1: Animators
 
@@ -13,52 +13,74 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio Instalado en nuestra computadora.
+- Android Studio Instalado en nuestra computadora.
 
 ### 3. Desarrollo :computer:
 
+Ahora toca poner en práctica lo visto hasta ahora.
 
+Para completar este reto aplica una animación a la sección del ganador del juego, está animación debe ser diferente a la vista en ejemplo 02.
 
-Al pulsar sobre cualquier parte de nuestro Constraint Layout (excepto botones o el mismo arwing), mover la nave a dicho punto, centrando el punto con su centro.
+A continuación te mostramos como podría quedar
 
-
-
-
+<img src="./Images/video.gif" width="70%">
 
 <details>
 	<summary>Solucion</summary>
 
+1. Generamos la animación
 
-private fun moveAnywhere(event: MotionEvent): Boolean{
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <set
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:ordering="together">
+        <objectAnimator
+            android:propertyName="translationX"
+            android:valueTo="200"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/cycle_interpolator"
+            android:duration="3000"
+            />
+        <objectAnimator
+            android:propertyName="translationY"
+            android:valueTo="-300"
+            android:interpolator="@android:anim/decelerate_interpolator"
+            android:valueType="floatType"
+            android:duration="3000"
+            />
 
-```kotlin
-        if (event.action === MotionEvent.ACTION_DOWN) {
-            val x = event.x - arwing.width/2
-            val y = event.y - arwing.height/2
+    </set>
+    ```
 
-            Toast.makeText(this, "valor: $y", Toast.LENGTH_SHORT).show()
+2. Creamos el método que invoque la nueva animación
 
-            arwing.animate().apply {
-                x(x)
-                y(y)
-                duration = 1000
-                interpolator = AccelerateInterpolator()
-                start()
-            }
-
+    ```java
+    private fun shrinkDodging(v: View) {
+        AnimatorInflater.loadAnimator(this, R.animator.dodging).apply {
+            setTarget(v)
+            start()
         }
+    }
+    ```
 
-    return true
-}
-```
+3. Por ultimo dentro del método onCellClicked, donde se cambia la visibilidad de la vista del ganador mandamos llamar el método shrinkDodging
+
+    ```java
+    winnerPlayerLabel!!.text = playerThatMoved.toString()
+    winnerPlayerViewGroup!!.visibility = View.VISIBLE
+    shrinkDodging(winnerPlayerViewGroup!!)
+    ```
 
 </details>
 
  
+<br/>
 
 
 
-[`Anterior`](../Ejemplo-01) | [`Siguiente`](../Ejemplo-02)
+
+[`Anterior`](../Ejemplo-02/Readme.md) | [`Siguiente`](../Ejemplo-03/Readme.md)
 
 </div>
 
