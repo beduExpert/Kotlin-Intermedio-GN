@@ -1,4 +1,4 @@
-[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 06`](../Readme.md) > `Reto 3`
+[`Kotlin Intermedio`](../../Readme.md) > [`Sesión 07`](../Readme.md) > `Reto 3`
  
 	
 ## Reto 3: Creando Callback en clase independiente

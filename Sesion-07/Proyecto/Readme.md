@@ -15,7 +15,7 @@
 
 ### 3. Desarrollo :computer:
 
-Hasta este punto tu proyecto debe tener una vista de RecyclerView con CardViews. Ahora permiras la edición de elementos al seleccionar una celda.
+Hasta este punto tu proyecto debe tener una vista de RecyclerView con CardViews. Ahora permirás la edición de elementos al seleccionar una celda.
 
 - Las acciones sugeridas a ejecutar son:
 
@@ -23,7 +23,7 @@ Hasta este punto tu proyecto debe tener una vista de RecyclerView con CardViews.
 	- Eliminar
 	- Editar
 
-![](./images/1.png)
+	![](./images/1.png)
 
 Al seleccionar una opción de menú debe verse actualizado el `RecyclerView`.
 Si se implementa la opción de Editar, debe mostrar una nueva vista para editar la información.
