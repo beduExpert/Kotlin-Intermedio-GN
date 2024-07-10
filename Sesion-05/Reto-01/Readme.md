@@ -9,7 +9,7 @@
 
 ### 1. Objetivos :dart:
 
-- Aplicar el conocimiento de Animators
+- Crear una animación utilizando cualquiera de las propiedades revisadas
 
 ### 2. Requisitos :clipboard:
 
@@ -19,7 +19,7 @@
 
 Ahora toca poner en práctica lo visto hasta ahora.
 
-Para completar este reto aplica una animación a la sección del ganador del juego, está animación debe ser diferente a la vista en ejemplo 02.
+Para completar este reto aplica una animación a la sección del ganador del juego, **está animación debe ser diferente a la vista en ejemplo 02.**
 
 A continuación te mostramos como podría quedar
 

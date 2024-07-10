@@ -9,15 +9,16 @@
 
 ### 1. Objetivos :dart: 
 
-- Construir ejemplo con el patrón *MVC* (Modelo Vista Controlador)
-- Indicar al usuario el estado de la aplicación mediante animaciones
-- Crear trancisiones entre pantallas de forma orgánica
+- Explicar cómo se estructura un ejemplo utilizando el patrón MVC.
+- Crear animaciones para indicar el estado de la aplicación al usuario.
+- Identificar el funcionamiento de las transiciones.
+- Crear transiciones entre pantallas de forma orgánica
 
 ### 2. Contenido :blue_book:
 
 #### <ins>MCV</ins>
 
-El enfoque model, view, controller separa nuestra aplicación, a nivel general, en un conjunto de 3 responsabilidades.
+El enfoque model, view, controller (MVC) separa nuestra aplicación, a nivel general, en un conjunto de 3 responsabilidades.
 
 1. Modelo "Model"
 
@@ -53,7 +54,7 @@ El enfoque model, view, controller separa nuestra aplicación, a nivel general, 
 
 #### <ins>Animators</ins>
 
-Mediante el uso de la clase ___Animator___ y quienes heredan de esta, realizaremos varias animaciones a nuestros views con respecto a movimiento, dimensiones, rotación y transparencia.
+Mediante el uso de la clase ___Animator___ y quienes heredan de ésta, realizaremos varias animaciones a nuestros views con respecto a movimiento, dimensiones, rotación y transparencia.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -73,7 +74,7 @@ Haremos uso de Transitions para crear animaciones suaves en el flujo de navegaci
 
 ### 3. Proyecto :hammer:
 
-Aplica los lineamientos que vienen en esta guía para agregar algunas animaciones y transiciones a la aplicación.
+Utiliza los lineamientos en la guía, para incorporar animaciones y transiciones en la interfaz de la aplicación.
 
 - [**`PROYECTO SESIÓN 5`**](Proyecto/Readme.md)
 

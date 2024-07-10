@@ -9,8 +9,9 @@
 
 ### 1. Objetivos :dart:
 
-- Comprender el funcionamiento esencial de las animaciones en Android
-- Aplicar conocimientos para generar nuestras propias animaciones
+- Identificar los conceptos  Scenes, Transition, Transition Sets, Transition sin Scene, Transition en un Activity y Shared Transition.
+- Comprender el funcionamiento esencial de las transiciones en Android
+- Aplicar conocimientos para generar nuestras propias transiciones
 
 ### 2. Requisitos :clipboard:
 
@@ -26,211 +27,202 @@ El menú principal de esta aplicación consta de una serie de botones que nos ll
 
 
 
-##### Scenes y Transitions
+### Scenes y Transitions
 
 
 
-Previamente abordamos cómo animar Views a través de animators. Las animaciones requieren configurar ciertos parámetros para personalizarla. Esto resulta conveniente para varias ocasiones, pero qué pasa si queremos animar el cambio en un layout? Utilizar un _Animator_ podría ser problemático. Afortunadamente, android provee de un framework llamado que crea animaciones entre escenas, estos son los ___transitions___.
+Previamente abordamos cómo animar Views a través de animators. Las animaciones requieren configurar ciertos parámetros para personalizarla. Esto resulta conveniente para varias ocasiones, pero ¿Qué pasa si queremos animar el cambio en un layout? 
+Utilizar un Animator podría ser problemático. Afortunadamente, Android provee de un framework llamado que crea animaciones entre escenas, estos son los transitions.
 
-Un ***Transition*** es una clase capaz de crear una transición entre dos escenas, cada ___Scene___ representa el estado de una jerarquía de views, incluyendo sus propiedades (posición, tamaño, color, etc.). Dichas scenes se pueden representar mediante layouts o incluso de forma dinámica via código. Con dos Scenes, podemos establecer un estado inicial y uno final para una jerarquía de Views.
+Un **Transition** es una clase capaz de crear una transición entre dos escenas, cada _Scene_ representa el estado de una jerarquía de views, incluyendo sus propiedades (posición, tamaño, color, etc.). Dichas scenes se pueden representar mediante layouts o incluso de forma dinámica via código. Con dos Scenes, podemos establecer un estado inicial y uno final para una jerarquía de Views.
 
 
 
-Primero, creamos las dos escenas a animar: ___scene_one___ y ___scene_two___, que serán recursos en la carpeta ___layout___.
+1. Primero, creamos las dos escenas a animar: ___scene_one___ y ___scene_two___, que serán recursos en la carpeta ___layout___.
 
-Dentro de ___scene_one___ ponemos el estado inicial de nuestro archivo:
+2. Dentro de ___scene_one___ ponemos el estado inicial de nuestro archivo:
 
+3. Abrimos ___TransitionActivity___, aquí animamos nuestras dos escenas:
 
+    <img src="Images/scene-one.png" width="80%">
 
+    Que corresponde al siguiente código:
 
+    ```xml
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-Abrimos ___TransitionActivity___, aquí animamos nuestras dos escenas:
+        <ImageView
+            android:id="@+id/imgPizza"
+            android:layout_width="128dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pizza_chorizo" />
 
+        <TextView
+            android:id="@+id/textPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Pizza de chorizo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPizza" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    ```
 
 
-<img src="Images/scene-one.png" width="80%">
 
-Que corresponde al siguiente código:
+    y esta será nuestra segunda escena:
 
-```xml
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <img src="Images/scene-two.png" width="80%">
 
-    <ImageView
-        android:id="@+id/imgPizza"
-        android:layout_width="128dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pizza_chorizo" />
 
-    <TextView
-        android:id="@+id/textPizza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Pizza de chorizo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPizza" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
 
+    Cuyo código es el siguiente:
 
+    ```xml
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-y esta será nuestra segunda escena:
+        <ImageView
+            android:id="@+id/imgPizza"
+            android:layout_width="0dp"
+            android:layout_height="128dp"
 
-<img src="Images/scene-two.png" width="80%">
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pizza_chorizo" />
 
+        <TextView
+            android:id="@+id/textPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza de chorizo"
+            android:textColor="#DDFFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPizza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgPizza"
+            app:layout_constraintVertical_bias="0.89" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    ```
 
 
-Cuyo código es el siguiente:
 
-```xml
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    Estas dos escenas contienen un ImageView y un TextView con los mismos id's, lo cual garantiza que sean equivalentes al momento de animarse.
 
-    <ImageView
-        android:id="@+id/imgPizza"
-        android:layout_width="0dp"
-        android:layout_height="128dp"
+    Abrimos ahora nuestro ___TransitionActivity___, donde representamos nuestras escenas y generamos la transición.
 
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pizza_chorizo" />
+    creamos los siguientes atributos para almacenar las dos escenas y para representar la escena activa:
 
-    <TextView
-        android:id="@+id/textPizza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pizza de chorizo"
-        android:textColor="#DDFFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgPizza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPizza"
-        app:layout_constraintVertical_bias="0.89" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
+    ```kotlin
+    private lateinit var sceneOne: Scene
+    private lateinit var sceneTwo: Scene
+    private lateinit var currentScene: Scene=
+    ```
 
+4. En el método ___onCreate___, asignamos nuestras escenas.
 
+    ```kotlin
+    sceneOne = Scene.getSceneForLayout(binding.container, R.layout.scene_one, this)
+    sceneTwo = Scene.getSceneForLayout(binding.container, R.layout.scene_two, this)
+    currentScene = sceneOne
+    ```
 
-Estas dos escenas contienen un ImageView y un TextView con los mismos id's, lo cual garantiza que sean equivalentes al momento de animarse.
 
-Abrimos ahora nuestro ___TransitionActivity___, donde representamos nuestras escenas y generamos la transición.
 
-creamos los siguientes atributos para almacenar las dos escenas y para representar la escena activa:
+    Ahora, vamos a crear nuestra primera transición. Para el botón ___btnTransition___ declaramos un listener donde activemos nuestra transición a la escena dos (presuponiendo que estamos en la escena uno).
 
-```kotlin
-private lateinit var sceneOne: Scene
-private lateinit var sceneTwo: Scene
-private lateinit var currentScene: Scene=
-```
+    ```kotlin
+    binding.btnTransition.setOnClickListener {
+        TransitionManager.go(sceneTwo)
+    }
+    ```
 
-En el método ___onCreate___, asignamos nuestras escenas.
+5. Dentro del ***FrameLayout*** de ___activity_transition.xml___, debemos incluir por defecto la escena uno:
 
-```kotlin
-sceneOne = Scene.getSceneForLayout(binding.container, R.layout.scene_one, this)
-sceneTwo = Scene.getSceneForLayout(binding.container, R.layout.scene_two, this)
-currentScene = sceneOne
-```
+    ```xml
+    <FrameLayout
+                ...>
+        <include layout="@layout/scene_one" />
+    </FrameLayout>
+    ```
 
+6. Ejecutamos el ejemplo y pulsamos al botón:
 
+    <img src="Images/default-tran.gif" width="60%">
 
-Ahora, vamos a crear nuestra primera transición. Para el botón ___btnTransition___ declaramos un listener donde activemos nuestra transición a la escena dos (presuponiendo que estamos en la escena uno).
 
-```kotlin
-binding.btnTransition.setOnClickListener {
-    TransitionManager.go(sceneTwo)
-}
-```
 
+    Debido a que no especificamos ninguna transición al _TransitionManager_, El ***Transition*** fue el default: __AutoTransition__, que reproduce un _fade out_, mueve y cambia tamaño, y al final ejecuta un *fade in*.
 
+    Para especificar un _Transition_ con nuestros propios parámetros, creamos un nuevo directorio de recursos llamado _transition_ (que contenga valores transition). Dentro de él, creamos un recurso ___bounds.xml___ y especificamos nuestro transition, que será del tipo ___ChangeBounds___:
 
-Dentro del ***FrameLayout*** de ___activity_transition.xml___, debemos incluir por defecto la escena uno:
+    ```xml
+    <changeBounds
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="500"
+        android:interpolator="@android:interpolator/accelerate_cubic"
+        />
+    ```
 
-```xml
-<FrameLayout
-             ...>
-    <include layout="@layout/scene_one" />
-</FrameLayout>
-```
+    Para obtener esta transición en el listener de nuestro botón, ponemos lo siguiente:
 
+    ```kotlin
+    val transition = TransitionInflater.from(this).inflateTransition(R.transition.bounds)
+    ```
 
+7. Finalmente, pasamos al ___TransitionManager___ nuestro _transition_ como segundo parámetro.
 
-Ejecutamos el ejemplo y pulsamos al botón:
+    ```kotlin
+    TransitionManager.go(sceneTwo, transition)
+    ```
 
-<img src="Images/default-tran.gif" width="60%">
+    La animación ahora se ajusta a nuestras especificaciones:
 
+    <img src="Images/bounds-tran.gif" width="60%">
 
 
-Debido a que no especificamos ninguna transición al _TransitionManager_, El ***Transition*** fue el default: __AutoTransition__, que reproduce un _fade out_, mueve y cambia tamaño, y al final ejecuta un *fade in*.
 
-Para especificar un _Transition_ con nuestros propios parámetros, creamos un nuevo directorio de recursos llamado _transition_ (que contenga valores transition). Dentro de él, creamos un recurso ___bounds.xml___ y especificamos nuestro transition, que será del tipo ___ChangeBounds___:
 
-```xml
-<changeBounds
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="500"
-    android:interpolator="@android:interpolator/accelerate_cubic"
-    />
-```
 
-Para obtener esta transición en el listener de nuestro botón, ponemos lo siguiente:
+    La implementación de un ___Transition___ de forma programática es similar. Ahora vamos a hacer la transición de la escena uno a la dos y viceversa, dependiendo de la escena activa. Primero, creamos nuestro objeto _transition_:
 
-```kotlin
-val transition = TransitionInflater.from(this).inflateTransition(R.transition.bounds)
-```
+    ```kotlin
+    val transition = ChangeBounds().apply {
+        interpolator = AccelerateInterpolator()
+        duration = 500
+    }
+    ```
 
-Finalmente, pasamos al ___TransitionManager___ nuestro _transition_ como segundo parámetro.
+    Ahora, para hacer el cambio dependiendo de la escena actual, implemenamos lo siguiente:
 
-```kotlin
-TransitionManager.go(sceneTwo, transition)
-```
-
-La animación ahora se ajusta a nuestras especificaciones:
-
-<img src="Images/bounds-tran.gif" width="60%">
-
-
-
-
-
-La implementación de un ___Transition___ de forma programática es similar. Ahora vamos a hacer la transición de la escena uno a la dos y viceversa, dependiendo de la escena activa. Primero, creamos nuestro objeto _transition_:
-
-```kotlin
-val transition = ChangeBounds().apply {
-    interpolator = AccelerateInterpolator()
-    duration = 500
-}
-```
-
-Ahora, para hacer el cambio dependiendo de la escena actual, implemenamos lo siguiente:
-
-```kotlin
-currentScene = if(currentScene == sceneOne){
-    TransitionManager.go(sceneTwo,transition)
-    sceneTwo
-} else{
-    TransitionManager.go(sceneOne,transition)
-    sceneOne
-}
-```
+    ```kotlin
+    currentScene = if(currentScene == sceneOne){
+        TransitionManager.go(sceneTwo,transition)
+        sceneTwo
+    } else{
+        TransitionManager.go(sceneOne,transition)
+        sceneOne
+    }
+    ```
 
 
 
@@ -238,82 +230,75 @@ currentScene = if(currentScene == sceneOne){
 
 Similar a los Animator Sets, un ___TransitionSet___ tiene la capacidad de reproducir varias transiciones al mismo tiempo o de forma secuencia. Se pueden definir a través de recursos o programáticamente.
 
-Ahora creamos un TransitionSet llamado ___transition_set.mxl___ y dentro de él declaramos un ___transitionSet___ como elemento padre, cuyas transiciones se ejecutarán al mismo tiempo.
+1. Ahora creamos un TransitionSet llamado ___transition_set.mxl___ y dentro de él declaramos un ___transitionSet___ como elemento padre, cuyas transiciones se ejecutarán al mismo tiempo.
+
+    ```xml
+    <transitionSet
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:transitionOrdering="together"
+        >
+    </transitionSet>
+    ```
+
+    El primer elemento será el changeBounds de nuestro xml anterior. 
+
+    ```xml
+    <changeBounds
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="500"
+        android:interpolator="@android:interpolator/accelerate_cubic"
+        />
+    ```
+
+2. Como la transición que animamos será similar a la del primer ejemplo, pero con un FAB cuando la imagen se vuelve header, tenemos qué crear una animación fade in (de transparente a opaco) para la aparición de nuestro botón por lo cual definimos una transición específica y lo ligamos al botón mediante su id.
+
+    ```xml
+    <fade
+        android:duration="300"
+        android:startDelay="400"
+        android:fadingMode="fade_in">
+        <targets>
+            <target
+                android:targetId="@id/fab"/>
+        </targets>
+    </fade>
+    ```
 
 
 
-```xml
-<transitionSet
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:transitionOrdering="together"
-    >
-  </transitionSet>
-```
+3. En ___TransitionSetActivity___, podemos notar que las asignaciones de las *Scenes* están comentadas, por lo cual debemos des comentarlas. También definimos el listener para el botón que reproducirá nuestra transición de acuerdo a la escena activa:
 
-
-
-El primer elemento será el changeBounds de nuestro xml anterior. 
-
-```xml
-<changeBounds
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="500"
-    android:interpolator="@android:interpolator/accelerate_cubic"
-    />
-```
-
-Como la transición que animamos será similar a la del primer ejemplo, pero con un FAB cuando la imagen se vuelve header, tenemos qué crear una animación fade in (de transparente a opaco) para la aparición de nuestro botón por lo cual definimos una transición específica y lo ligamos al botón mediante su id.
-
-```xml
-<fade
-    android:duration="300"
-    android:startDelay="400"
-    android:fadingMode="fade_in">
-    <targets>
-        <target
-            android:targetId="@id/fab"/>
-    </targets>
-</fade>
-```
-
-
-
-En ___TransitionSetActivity___, podemos notar que las asignaciones de las *Scenes* están comentadas, por lo cual debemos des comentarlas. También definimos el listener para el botón que reproducirá nuestra transición de acuerdo a la escena activa:
-
-```kotlin
-binding.btnTransitionSet.setOnClickListener {
-    val transition = TransitionInflater.from(this).inflateTransition(R.transition.transition_set)
-    currentScene = if(currentScene == sceneOne){
-        TransitionManager.go(sceneThree,transition)
-        sceneThree
-    } else{
-        TransitionManager.go(sceneOne,transition)
-        sceneOne
+    ```kotlin
+    binding.btnTransitionSet.setOnClickListener {
+        val transition = TransitionInflater.from(this).inflateTransition(R.transition.transition_set)
+        currentScene = if(currentScene == sceneOne){
+            TransitionManager.go(sceneThree,transition)
+            sceneThree
+        } else{
+            TransitionManager.go(sceneOne,transition)
+            sceneOne
+        }
     }
-}
-```
+    ```
 
-No olvidemos definir el layout inicial en el contenedor de nuestro ___activity_transition_set.xml___.
+    No olvidemos definir el layout inicial en el contenedor de nuestro ___activity_transition_set.xml___.
 
-Corremos el proyecto y probamos nuestra transición. Podemos notar que la aparición del FAB es bastante fluída, no obstante, al cambiar de la escena tres a la uno, notamos que la desaparición del FAB es muy abrupta; para solucionar esto, creaermos una animación de fade out.
+4. Corremos el proyecto y probamos nuestra transición. Podemos notar que la aparición del FAB es bastante fluída, no obstante, al cambiar de la escena tres a la uno, notamos que la desaparición del FAB es muy abrupta; para solucionar esto, creaermos una animación de fade out.
 
-```xml
-<fade
-    android:duration="300"
-    android:fadingMode="fade_out">
-    <targets>
-        <target
-            android:targetId="@id/fab"/>
-    </targets>
-</fade>
-```
+    ```xml
+    <fade
+        android:duration="300"
+        android:fadingMode="fade_out">
+        <targets>
+            <target
+                android:targetId="@id/fab"/>
+        </targets>
+    </fade>
+    ```
 
-Con esto, al reproducir nuestra transición obtenemos lo siguiente:
+    Con esto, al reproducir nuestra transición obtenemos lo siguiente:
 
-<img src="Images/transition-set.gif" width="70%">
-
-
-
+    <img src="Images/transition-set.gif" width="70%">
 
 
 #### Transitions Sin Scene
@@ -344,16 +329,16 @@ Ahora, agregamos la funcionalidad del botón para el campo de teléfono:
 
 1. Creamos un ___EditText___ por código 
 
-```kotlin
-val editText = EditText(this).apply {
-    id = View.generateViewId()
-    hint = "Teléfono"
-    layoutParams = ViewGroup.LayoutParams(
-        ConstraintLayout.LayoutParams.MATCH_PARENT,
-        ConstraintLayout.LayoutParams.WRAP_CONTENT
-    )
-}
-```
+    ```kotlin
+    val editText = EditText(this).apply {
+        id = View.generateViewId()
+        hint = "Teléfono"
+        layoutParams = ViewGroup.LayoutParams(
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
+    }
+    ```
 
 2. Definimos un ___TransitionSet___ con animaciones tanto para el nuevo _EditText_ como para el _botón_ que desaparecerá y corremos nuestro *delayed transition*.
 
@@ -420,9 +405,9 @@ val editText = EditText(this).apply {
 
 
 
-Los resultados de las dos transiciones se visualizan así:
+6. Los resultados de las dos transiciones se visualizan así:
 
-<img src="Images/no-scene.gif" width="75%">
+    <img src="Images/no-scene.gif" width="75%">
 
 
 
@@ -455,74 +440,70 @@ Para este ejemplo modificamos la clase ___ActivitiesTransitionActivity___. Defin
 
 
 
-Inflamos nuestro recurso mediante la siguiente línea:
+1. Inflamos nuestro recurso mediante la siguiente línea:
 
-```kotlin
-val transitionXml = TransitionInflater.from(this).inflateTransition(R.transition.transition_set_activity)
-```
+    ```kotlin
+    val transitionXml = TransitionInflater.from(this).inflateTransition(R.transition.transition_set_activity)
+    ```
 
-Ahora, requerimos definir la transición de salida para este activity (la transición a ejecutar cuando este arranque otro _activity_). 
+2. Ahora, requerimos definir la transición de salida para este activity (la transición a ejecutar cuando este arranque otro _activity_). 
 
-```kotlin
-window.exitTransition = transitionXml
-```
+    ```kotlin
+    window.exitTransition = transitionXml
+    ```
 
-Ahora solo resta escribir el código para abrir nuestro _activity_ al pulsar el botón de iniciar sesión, agregando una opción extra para que la transición se lleve a cabo.
+3. Ahora solo resta escribir el código para abrir nuestro _activity_ al pulsar el botón de iniciar sesión, agregando una opción extra para que la transición se lleve a cabo.
 
-```kotlin
-binding.btnLogin.setOnClickListener {
-    val intent = Intent(this, TransitionedActivity::class.java)
-    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-}
-```
+    ```kotlin
+    binding.btnLogin.setOnClickListener {
+        val intent = Intent(this, TransitionedActivity::class.java)
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+    }
+    ```
 
-Si ejecutamos ahora y pulsamos al botón de iniciar sesión, la transición de salida de este activity se ejecutará, sin embargo, para la transición de entrada de ___TransitionedActivity___, sólo se muestra un _fade_ genérico, por lo que aquí también personalizamos su animación.
+4. Si ejecutamos ahora y pulsamos al botón de iniciar sesión, la transición de salida de este activity se ejecutará, sin embargo, para la transición de entrada de ___TransitionedActivity___, sólo se muestra un _fade_ genérico, por lo que aquí también personalizamos su animación.
 
-```kotlin
-val transition = Slide(Gravity.TOP)
-transition.duration = 500
-window.enterTransition = transition
-```
+    ```kotlin
+    val transition = Slide(Gravity.TOP)
+    transition.duration = 500
+    window.enterTransition = transition
+    ```
 
-Esto hará que todas las _Views_ entren desde abajo hacia arriba en 0.5 segundos.
-
-
-
-Ejecutamos el código, podemos ver que ahora ambas transiciones se ejecutan. Si se observa bien, podemos observar que algunos elementos como el _action bar_ o el _status bar_ también son afectados por los _transitions_, por lo que debemos excluirlos de la transición en ambos lados.
+    Esto hará que todas las _Views_ entren desde abajo hacia arriba en 0.5 segundos.
 
 
 
-En ___ActivitiesTransitionActivity___, la restricción quedaría así:
+5. Ejecutamos el código, podemos ver que ahora ambas transiciones se ejecutan. Si se observa bien, podemos observar que algunos elementos como el _action bar_ o el _status bar_ también son afectados por los _transitions_, por lo que debemos excluirlos de la transición en ambos lados.
 
-```kotlin
-val transitionXml = TransitionInflater
-    .from(this).inflateTransition(R.transition.transition_set_activity).apply {
+
+
+    En ___ActivitiesTransitionActivity___, la restricción quedaría así:
+
+    ```kotlin
+    val transitionXml = TransitionInflater
+        .from(this).inflateTransition(R.transition.transition_set_activity).apply {
+            excludeTarget(window.decorView.findViewById<View>(R.id.action_bar_container), true)
+            excludeTarget(android.R.id.statusBarBackground, true)
+            excludeTarget(android.R.id.navigationBarBackground, true)
+        }
+    ```
+
+
+
+    Mientras que en ___TransitionedActivity___, la transición tendría esta forma:
+
+    ```kotlin
+    val transition = Slide(Gravity.TOP).apply {
+        duration = 500
         excludeTarget(window.decorView.findViewById<View>(R.id.action_bar_container), true)
         excludeTarget(android.R.id.statusBarBackground, true)
         excludeTarget(android.R.id.navigationBarBackground, true)
     }
-```
+    ```
 
+6. El resultado queda así:
 
-
-Mientras que en ___TransitionedActivity___, la transición tendría esta forma:
-
-```kotlin
-val transition = Slide(Gravity.TOP).apply {
-    duration = 500
-    excludeTarget(window.decorView.findViewById<View>(R.id.action_bar_container), true)
-    excludeTarget(android.R.id.statusBarBackground, true)
-    excludeTarget(android.R.id.navigationBarBackground, true)
-}
-```
-
-
-
-El resultado queda así:
-
-
-
-<img src="Images/activities-transition.gif" width="75%">
+    <img src="Images/activities-transition.gif" width="75%">
 
 
 

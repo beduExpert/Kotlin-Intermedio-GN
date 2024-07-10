@@ -2,14 +2,14 @@
 
 [`Kotlin Avanzado`](../../Readme.md) > [`Sesión 05`](../Readme.md) > `Reto 2`
 
-## Reto 2: Animators
+## Reto 2: Transitions
 
 <div style="text-align: justify;">
 
 
 ### 1. Objetivos :dart:
 
-- Aplicar el conocimiento de Animators
+- Crear una transición utilizando cualquiera de las propiedades revisadas
 
 ### 2. Requisitos :clipboard:
 

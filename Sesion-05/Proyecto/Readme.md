@@ -15,11 +15,11 @@
 
 ### 3. Desarrollo :computer:
 
-En esta parte del proyecto, implementaras algunas animaciones y transiciones a la aplicación.
+En esta parte del proyecto, implementarás algunas animaciones y transiciones a tu aplicación.
 
-Puedes aplicar estás animaciones en cualquier elemento gráfico que consideres adecuado, por ejemplo cada que el usuario de clic en un elemento del RecyclerView.
+Puedes usar estás animaciones en cualquier elemento gráfico que consideres adecuado, por ejemplo cada que el usuario de clic en un elemento del RecyclerView.
 
-Las transiciones las puedes mostrar cuando naveges entre los fragments y/o activities.
+Las transiciones las puedes mostrar cuando navegues entre los fragments y/o activities.
 
 ### Lineamientos
 

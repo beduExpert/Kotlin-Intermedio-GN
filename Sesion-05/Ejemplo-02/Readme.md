@@ -18,7 +18,7 @@
 
 ### 3. Desarrollo :computer:
 
-El siguiente ejemplo consiste en realizar una serie de animaciones a partir de que jugador da clic.
+El siguiente ejemplo consiste en realizar una serie de animaciones a partir de que el jugador da clic.
 
 Para realizarlo primero debemos conocer algunos conceptos, los cuales se muestran a continuación.
 
@@ -35,7 +35,7 @@ Para realizarlo primero debemos conocer algunos conceptos, los cuales se muestra
 
 - Value Animators
 
-    La clase ___ValueAnimator___ es una extensión 100% utilizable de la calse ___Animation___. Esta calcula los valores de la propiedad animada, y comunica las actualizaciones de dicho valor a través de un listener, donde podremos actualizar la propiedad de nuestro objeto a animar y hacer acciones extras.  
+    La clase ___ValueAnimator___ es una extensión 100% utilizable de la clase ___Animation___. Ésta calcula los valores de la propiedad animada, y comunica las actualizaciones de dicho valor a través de un listener, donde podremos actualizar la propiedad de nuestro objeto a animar y realizar acciones extras.  
 
     Vamos a animar un barrel roll (giro) mediante ___rotation___.
 
@@ -43,15 +43,17 @@ Para realizarlo primero debemos conocer algunos conceptos, los cuales se muestra
 
 - Interpoladores
 
-    Una interpolación es el proceso de obtener puntos dentro de un rango de valores a partir de otros puntos. Los ___Interpolator___ son clases que interpolan valores con respecto del tiempo a partir de un rango de valores. Los interpoladores nos permitirán determinar el movimiento de una animación.
+    Una interpolación es el proceso de obtener puntos dentro de un rango de valores, a partir de otros puntos. Los _Interpolator_ son clases que interpolan valores con respecto del tiempo, a partir de un rango de valores. . Los interpoladores nos permitirán determinar el movimiento de una animación.
 
     <img src="Images/anim-curves.png" width="70%">
 
-    Ejemplos de curvas de animación con valores interpolados.
+    _Imagen. Ejemplos de curvas de animación con valores interpolados._
 
 - ObjectAnimator
 
     Un ___ObjectAnimator___ es una clase que hereda de ___ValueAnimator___ y a diferencia de este último, solo requerimos pasar como parámetro el nombre de la propiedad a animar, sin requerir un listener. Esta clase se ocupa la mayor parte del tiempo, a menos que querramos realizar acciones personalizadas al actualizarse un valor de animación.
+
+---
 
 <br/>
 
