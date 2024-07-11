@@ -2,13 +2,13 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 07`](../Readme.md) > `Ejemplo 1`
 
 
-## Ejemplo 1: Tipos de Menu en Android
+## Ejemplo 1: Tipos de Menú en Android
 
 ### 1. Objetivos :dart:
 
-- Crear menus de opciones utilizando las clases dedicadas a esto incluidas en el SDK de Android.
-- Entender los elementos que conforman los tipos de menu.
-- Aprender a definir y crear algunos tipos de menus en Android: Popup, Contextual y Opciones.
+- Definir algunos tipos de menús en Android: Popup, Contextual y Opciones.
+- Comprender los elementos que conforman los tipos de menú.
+- Crear menús de opciones utilizando las clases dedicadas a esto incluidas en el SDK de Android.
 
 ### 2. Requisitos :clipboard:
 
@@ -19,10 +19,10 @@
 
 ### 3. Desarrollo :computer:
 
-Los Menus de opciones en Android pertenecen a una interfaz llamada de la misma manera, [Menu](
+Los Menús de opciones en Android pertenecen a una interfaz llamada de la misma manera, [Menú](
 https://developer.android.com/reference/kotlin/android/view/Menu?hl=es#).
 
-> interface Menu
+> interface Menú
 
 Esta interfaz es usada para definir dos tipos de menú, El ContextMenu y el SubMenu.
 
@@ -30,7 +30,7 @@ La manera mas simple de agregar un menú es "inflando" un archivo XML utilizando
 
 Y para recibir la acción de selección de alguna opción, nos basaremos en los métodos `onOptionsItemSelected(MenuItem)` y `onContextItemSelected(MenuItem)`.
 
-Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso de Context Menus y CheckMarks en el caso de Option Menus.
+Hay algunas funcionalidades que no son soportadas. Por ejemplo iconos en el caso de Context Menús y CheckMarks en el caso de Option Menús.
 
 
 #### Definiendo un menú en XML
@@ -39,7 +39,7 @@ Para definir un menú, creamos un archivo XML dentro del directorio del proyecto
 
 El menú estará conformado por los siguientes elementos:
 
-- `<menu>` define un **Menu**. Un elemento `<menu>` es el contenedor general y puede tener uno o más elementos `<item>`y `<group>`.
+- `<menu>` define un **Menú**. Un elemento `<menu>` es el contenedor general y puede tener uno o más elementos `<item>`y `<group>`.
 
 
 - `<item>` crea un **MenuItem**, que representa un único elemento en un menú. Este elemento puede contener un elemento `<menu>` anidado para crear un submenú.
@@ -63,9 +63,11 @@ Ejemplo de menú en xml:
 </menu>
 ```
 
-En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para ver mas sobre esta opción ver la [documentación](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
+En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"`. Esto indica que se mostrará el menú si hay espacio en pantalla. Para saber más sobre esta opción, puedes consultar este [link](https://developer.android.com/guide/topics/resources/menu-resource?hl=es).
 
-### OPTIONS MENU
+### OPTIONS MENÚ
+
+El options menu en Android representa el menú de acciones globales que se integra en la App Bar de tus actividades. Su propósito es brindarle al usuario acciones que son relevantes al contexto de la actividad o fragmento actual.
 
 1. Creamos un nuevo proyecto.
 
@@ -73,13 +75,13 @@ En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"
 
     ![Elemento de Menu](./images/res_icon.png)
 
-    Para crear los menus, creamos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos `New > Directory`, escribimos **Menu**.
+    Para crear los menús, creamos un nuevo directorio. Click derecho sobre `res` y dando click derecho, elegimos `New > Directory`, escribimos **Menú**.
 
-    En la carpeta generada, damos click derecho y elegimos `New > Menu Resource File`, para agregar el elemento de Menu, escribimos un nombre y lo creamos.
+    En la carpeta generada, damos click derecho y elegimos `New > Menu Resource File`, para agregar el elemento de Menú, escribimos un nombre y lo creamos.
 
     ![Elemento de Menu](./images/res_menu.png)
 
-    En este archivo en XML escribimos los elementos del Menu de Opciones.
+    En este archivo en XML escribimos los elementos del Menú de Opciones.
 
     ```
     <?xml version="1.0" encoding="utf-8"?>
@@ -100,7 +102,7 @@ En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"
 
     ![Elemento de Menu](./images/2.gif)
 
-3. Ahora, agregamos un Submenu. Para lograr esto, escribimos dentro de Item un bloque de Menu con Items en el interior, estos Items serán las opciones del submenú.
+3. Ahora, agregamos un Submenu. Para lograr esto, escribimos dentro de Item un bloque de Menú con Items en el interior, estos Items serán las opciones del submenú, dentro de cada item puedes agregar un icono con _android:icon="@drawable/ic_launcher"_.
 
     ```xml
     <item android:id="@+id/item3"
@@ -143,11 +145,13 @@ En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"
     ![MainActivity](./images/4.png)
 
 
-### CONTEXTUAL MENU
+### CONTEXTUAL MENÚ
+
+Un menú contextual (también llamado menú emergente) es un menú dentro de una interfaz gráfica de usuario o GUI que aparece en la interacción con el usuario, como por ejemplo cuando se mantiene pulsado sobre un texto.
 
 1. Creamos un nuevo proyecto, en el cuál nos dirigimos al `activity_mail.xml`. Agregamos un Elemento de Layout como un TextView.
 
-2. Creamos un directorio de Menu  y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etc.
+2. Creamos un directorio de Menú  y agregamos un Menu Resource File llamado `menu_context`. Este menú tendra las opciones de click derecho como Cortar, Copiar, Pegar, etc.
 
     ![MainActivity](./images/5.png)
 
@@ -171,13 +175,15 @@ En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"
     ![MainActivity](./images/6.gif)
 
 
-### POPUP MENU
+### POPUP MENÚ
+
+El PopupMenu en Android es un menú que se ancla a un View para que aparezca por debajo de este en caso de existir el espacio para ello
 
 1. Creamos un proyecto nuevo, nos dirigimos al `activity_main.xml` y agregamos un botón.
 
     Este **botón** servirá para lanzar el PopUp Menu.
 
-    Creamos un Directorio de Menu y un Menu Item en XML con las opciones que necesitemos. 
+    Creamos un Directorio de Menú y un Menu Item en XML con las opciones que necesitemos. 
 
     Esta implementación sera similar al Context Menu.
 
@@ -207,9 +213,9 @@ En este código, se observa una propiedad llamada `android:showAsAction="ifRoom"
 
 
 
-#### Referencias: 
+#### Referencias:
 
-> https://developer.android.com/guide/topics/ui/menus?hl=es#xml
+> AndroidDevelopers n.d., [Agregar menús](https://developer.android.com/develop/ui/views/components/menus?hl=es#xml)
 
 
 [`Anterior`](../Readme.md) | [`Siguiente`](../Reto-01/Readme.md)

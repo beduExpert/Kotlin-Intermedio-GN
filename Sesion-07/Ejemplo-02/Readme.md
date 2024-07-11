@@ -2,13 +2,13 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 07`](../Readme.md) > `Ejemplo 2`
 
 
-## Ejemplo 2: Menus y Eventos
+## Ejemplo 2: Menús y Eventos
 
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Implementar acciones al seleccionar las opciones de los menus creados en la Sesion-01.
+- Implementar acciones al seleccionar las opciones de los menús creados en la Sesion-01.
 
 ### 2. Requisitos :clipboard:
 
@@ -20,7 +20,7 @@
 
 ### 3. Desarrollo :computer:
 
-#### OPTIONS MENU
+#### OPTIONS MENÚ
 
 Retomamos el Ejemplo de [options_menu](./options_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
@@ -35,7 +35,7 @@ Retomamos el Ejemplo de [options_menu](./options_menu), pero esta vez agregamos 
     }
     ```
 
-2. Luego, comparamos cada `id` dentro del Menu.
+2. Luego, comparamos cada `id` dentro del Menú.
 
     ```java
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -74,7 +74,7 @@ Retomamos el Ejemplo de [options_menu](./options_menu), pero esta vez agregamos 
     ```
 
 
-#### CONTEXTUAL MENU
+#### CONTEXTUAL MENÚ
 
 Retomamos el Ejemplo de [context_menu](./context_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
@@ -96,7 +96,7 @@ Retomamos el Ejemplo de [context_menu](./context_menu), pero esta vez agregamos 
 2. Implementa el resto de opciones, reutilizando el código del ejemplo previo.
 
 
-#### POPUP MENU
+#### POPUP MENÚ
 
 Retomamos el Ejemplo de [popup_menu](./popup_menu), pero esta vez agregamos funcionalidad a las opciones de menú.
 
@@ -135,7 +135,7 @@ Este código difiere debido a que implementamos un closure para el popMenu, dent
 
 #### Referencias: 
 
-> https://developer.android.com/guide/topics/ui/menus?hl=es#xml
+> AndroidDevelopers n.d., [Agregar menús](https://developer.android.com/develop/ui/views/components/menus?hl=es#xml)
 
 [`Anterior`](../Reto-01/Readme.md) | [`Siguiente`](../Reto-02/Readme.md)
 

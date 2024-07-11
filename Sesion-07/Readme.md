@@ -1,7 +1,7 @@
 [`Kotlin-Intermedio`](../Readme.md) > `Sesión 7`
 
 
-## Sesión 7: Menus
+## Sesión 7: Menús
 
 > <div style="text-align: justify;">
   
@@ -9,11 +9,8 @@
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
-- Definir elementos de Menús de manera gráfica así como con código.
-- Manejar eventos y cambio de elementos en tiempo de ejecución.
-- Menús contextuales y grupos de Menús.
-- Implementar ActionModes.
-
+- Cambiar la redacción del texto:
+- Implementaremos los tres tipos de menú en Android: Popup, Contextual y Opciones, abarcando desde la interfaz gráfica con grupos de elementos, hasta la creación mediante código.
 
 
 ### 2. Contenido :blue_book:
@@ -22,7 +19,7 @@
 
 <img src="images/dots.jpg" align="right" height="150"> 
 
-#### <ins>Tipos de menus en Android</ins>
+#### <ins>Tipos de menús en Android</ins>
 
 Implementación de los tres tipos de menú en Android. Abarcando desde la interfáz grafica con grupos de elementos, hasta la creación mediante código. Los menús vistos: Popup, Contextual y Opciones.
 
@@ -31,22 +28,24 @@ Implementación de los tres tipos de menú en Android. Abarcando desde la interf
 
 ---
 
-<img src="images/context.png" align="right" height="150"> 
+<img src="images/context.png" align="right" height="180"> 
 
-#### <ins>Menus y Eventos</ins>
+<br/>
 
-Crearemos menus que sean capaces de ejecutar acciones.
+#### <ins>Menús y Eventos</ins>
+
+Crearemos menús que sean capaces de ejecutar acciones.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 2`**](Reto-02/Readme.md)
 
 ---
 
-<img src="images/action_modes.png" align="right" height="150"> 
+<img src="images/action_modes.png" align="right" height="70"> 
 
-#### <ins>Implementación de ActionModes </ins>
+#### <ins>Action Modes</ins>
 
-Crearemos menus contextuales flotantes.
+Implementaremos Action Modes para crear menús contextuales flotantes.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 - [**`RETO 3`**](Reto-03/Readme.md)
@@ -56,7 +55,7 @@ Crearemos menus contextuales flotantes.
 
 ### 3. Proyecto :hammer:
 
-Con lo aprendido en esta sesión, continúa con la implementación de ___Menús_ en tu proyecto.
+Con lo aprendido en esta sesión, continúa con la implementación de _Menús_ en tu proyecto.
 
 - [**`PROYECTO SESIÓN 7`**](Proyecto/Readme.md)
 

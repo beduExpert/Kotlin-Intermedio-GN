@@ -1,12 +1,12 @@
 [`Kotlin Intermedio`](../../Readme.md) > [`Sesión 07`](../Readme.md) > `Proyecto`
 
-## Proyecto: Menus y RecyclerView
+## Proyecto: Menús y RecyclerView
 
 > <div style="text-align: justify;">
 
 ### 1. Objetivos :dart:
 
-- Implementar el uso de Menus Contextuales y Menus Flotantes.
+- Implementar el uso de Menús Contextuales y Menús Flotantes.
 
 ### 2. Requisitos :clipboard:
 
@@ -51,15 +51,17 @@ En las opciones de cada campo de texto, implementa un menú contextual con opcio
 
 1. Implementa al menos dos vistas en el proyecto.
 2. Cualquier forma de implementación de _recyclerview_ es válida.
-3. Usa almenos dos tipos de menus contextuales en el proyecto, con opciones propias.
+3. Usa almenos dos tipos de menús contextuales en el proyecto, con opciones propias.
 4. Uno de los menús sera creado por XML y otro sin XML.
 
 
 #### Checklist
 
-- [ ] Dos opciones diferentes de menu
-- [ ] Un menu creado por XML
-- [ ] Un menu creado sin XML
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
+- [ ] Dos opciones diferentes de menú
+- [ ] Un menú creado por XML
+- [ ] Un menú creado sin XML
 
 
 [`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../../Sesion-08/Readme.md)

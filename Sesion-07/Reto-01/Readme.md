@@ -8,7 +8,7 @@
 
 ### 1. Objetivos :dart:
 
-- Agregar mas elementos a los menus de opciones
+- Agregar mas elementos a los menús de opciones
 
 ### 2. Requisitos :clipboard:
 
@@ -21,13 +21,17 @@
 
 Ahora toca poner en marca lo que aprendiste en el ejemplo anterior.
 
-Para completar este reto realiza los siguientes puntos: 
-- Agrega un CheckBox en cada elemento de menú.
-- Mostrar iconos en cada opción de menú.
-- Agrega tantas opciones quieras, pero crea agrupaciones.
+Para completar este reto realiza los siguientes puntos:
+
+1. Agrega un CheckBox en cada elemento del menú.
 
     ![Elemento de Menu](./images/1.png)
+
+2. Habilita la función mostrar iconos en cada opción de menú.
+
     ![Elemento de Menu](./images/2.png)
+
+3. Agrega tantas opciones quieras, siempre creando agrupaciones.
 
 
 [`Anterior`](../Ejemplo-01/Readme.md) | [`Siguiente`](../Ejemplo-02/Readme.md)

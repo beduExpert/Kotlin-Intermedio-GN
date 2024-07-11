@@ -8,7 +8,7 @@
 
 ### 1. Objetivos :dart:
 
-- Agregar mas elementos a los menus de opciones
+- Agregar funcionalidades a los elementos en los menús de opciones
 
 ### 2. Requisitos :clipboard:
 

@@ -7,7 +7,8 @@
 
 ### 1. Objetivos :dart:
 
-- Aprender a implementar contextual menus reutilizables para Views y Activities.
+- Identificar el Action Mode Primario y flotante
+- Implementar Contextual menus reutilizables para Views y Activities.
 
 ### 2. Requisitos :clipboard:
 
@@ -19,12 +20,11 @@
 
 #### ActionMode
 
-Recordando los menus contextuales, aquellos que se enfocan sobre elementos de UI que especifiquemos. Encontramos los ActionMode, estos son una implementacion similar al contextual menu, veamos.
+Recordando que los menús contextuales son aquellos que se enfocan sobre los elementos de UI que especifiquemos, encontramos los ActionMode. Estos son una implementación similar al contextual menu, veamos:
 
 ![imagen](images/1.png)
 
-Como se muestra en la imagen, tenemos dos tipos.
-Primaria y Flotante.
+Como se muestra en la imagen, tenemos dos tipos: Primaria y Flotante.
 
 En la Primaria los elementos se muestran en el action bar. En el caso de Flotating, el toolbar es mostrado sobre la vista de manera flotante. Es importante mencionar que solo se podra ocultar este menú de manera programada.
 
@@ -48,7 +48,7 @@ Vemos el parámetro `ActionMode.Callback`, este hace referencia a un lifecycle d
 
 Todo esto con el fin de manipular el ciclo de vida.
 
-Tenemos cuatro funciones par aimplementar en el Callback.
+Tenemos cuatro funciones para implementar en el Callback.
 
 	- onCreateActionMode
 	- onPrepareActionMode
@@ -70,7 +70,7 @@ La cuál te dará la posición en la pantalla para el elemento flotante.
 ## Comenzamos
 
 
-1. Como ya hemos visto, creamos un directorio para Menu y un archivo xml.
+1. Como ya hemos visto, creamos un directorio para Menú y un archivo xml.
 En el Activity Main xml agregamos un elemento de UI como un TextView.
 Igualmente, agregamos dos iconos de tu elección a la carpeta Drawable.
 
@@ -156,7 +156,7 @@ Declaramos una variable global para ActionModes.
     ![imagen](images/3.gif)
 
 
-6. Ahora bien, agregamos un poco de funcionalidad al seleccionar uno de los botones del menu de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado.
+6. Ahora bien, agregamos un poco de funcionalidad al seleccionar uno de los botones del menú de opciones. Al seleccionar alguno de ellos, se cambiará el titulo mostrado.
 
     ```java
     inner class ActionModeCallback: ActionMode.Callback {
