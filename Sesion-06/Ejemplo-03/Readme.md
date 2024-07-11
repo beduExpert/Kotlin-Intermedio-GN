@@ -6,7 +6,10 @@
 
 ### 1. Objetivos :dart:
 
-- Estilizar una aplicación.
+- Identificar los elementos para implementar un Theme en la aplicación
+- Explorar la herramienta Colortool
+- Identificar los estilos para Text Fields
+- Crear una Toolbar
 
 ### 2. Requisitos :clipboard:
 
@@ -29,8 +32,6 @@ En este ejemplo, aplicaremos un _Theme_ personalizado a nuestra aplicación, par
 
 
     <img src="images/3.png" width="65%">
-
-    La página de _Color Tool_ ya viene configurada en [Este enlace]https://material.io/resources/color/#!/?view.left=0&view.right=0&secondary.color=FF1744&primary.color=212121
 
     El sitio web muestra una serie de implementaciones de la paleta de colores en los elementos de la UI. Nos basamos en las siguientes sugerencias:
 
@@ -234,7 +235,7 @@ En este ejemplo, aplicaremos un _Theme_ personalizado a nuestra aplicación, par
     <img src="images/9.png" width="35%">
 
 
-5. La app está lista, pero qué pasa si quisiéramos tener una versión alterna de nuestro _AppTheme_? creamos uno nuevo:
+5. La app está lista, pero ¿Qué pasa si quisiéramos tener una versión alterna de nuestro _AppTheme_? creamos uno nuevo:
 
     ```xml
     <style name="AppTheme.RedBlue" parent="Theme.MaterialComponents.Light.NoActionBar">\

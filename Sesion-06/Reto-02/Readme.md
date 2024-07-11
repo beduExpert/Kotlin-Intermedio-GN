@@ -31,7 +31,7 @@ Para completar este reto utiliza el proyecto del [Ejemplo 3](../Ejemplo-03/Readm
 
      <image src="images/2.png" width="35%">
 
-2. Genera un nuevo ___Dark Theme___. Utilizando lo visto en el ejemplo 3 de está sesión.
+2. Genera un nuevo ___Dark Theme___. Utilizando colores grises, negros que son suaves a la vista en un ambiente oscuro.
 
 
 <details><summary>Solución</summary>

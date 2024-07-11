@@ -6,7 +6,8 @@
 
 ### 1. Objetivos :dart:
 
-- Implementar _Components_ de Material Design en nuestra interfaz.
+- Identificar Components básicos: CardView, TextInputLayout, wrapper, MaterialButton, Slider y Checkbox.
+- Aplicar Components básicos a nuestro layout y asignarles funcionalidad.
 
 ### 2. Requisitos :clipboard:
 
@@ -14,8 +15,6 @@
 2. Seguir las instrucciones para esta sesión.
 
 ### 3. Desarrollo :computer:
-
-La meta de este ejemplo: Agregar algunos de los components básicos a nuestro _layout_ y asignarles funcionalidad.
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity) con "Groovy DSL".
 
@@ -42,11 +41,11 @@ La meta de este ejemplo: Agregar algunos de los components básicos a nuestro _l
     </com.google.android.material.textfield.TextInputLayout>
     ```
 
-    Este componente es un _wrapper_ que contiene un EditText, y provee de un _label_ el la parte superior igual al hint del _EditText_ cuando el usuario ingresa un texto. El _EditText_ que utilizamos es un ___TextInputEditText___, también perteneciente a la librería de material design.
+    Este componente es un wrapper (Envuelve a otro componente) que contiene un EditText. Provee de un label en la parte superior, igual al hint del EditText cuando el usuario ingresa un texto. El EditText que utilizamos es un TextInputEditText, también perteneciente a la librería de Material design.
 
-    Podemos agregar un _EditText_ simple para resaltar la diferencia entre estods dos.
+    Podemos agregar un _EditText_ simple para resaltar la diferencia entre estos dos.
 
-3. El xml anterior presentó error, ya que no hemos importado la librería, para agregarla damos clic en el error y luego en **Add dependency on com.google.android.material:material**
+3. El xml anterior presentó error, ya que no hemos importado la librería. Para agregarla damos clic en el error y luego en **Add dependency on com.google.android.material:material**
 
     <img src="images/001.png" width="60%">
 
@@ -133,7 +132,7 @@ La meta de este ejemplo: Agregar algunos de los components básicos a nuestro _l
 
 7. Por último, exploramos un componente bastante característico en _material design_: El CardView. De acuerdo al sitio oficial:
 
-    > Cards contain content and actions about a single subject.
+    > Contienen contenido y acciones sobre un solo tema.
 
     Estos elementos pueden ser una representación gráfica de un objeto o una lista de objetos, como productos, ciudades, contactos, etc. y dentro de ellas se pueden detonar acciones mediante botones.
 

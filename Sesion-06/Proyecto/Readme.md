@@ -44,6 +44,8 @@ Los puntos a cubrir en este proyecto son los siguientes:
 
 #### Checklist
 
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
 - [ ] CardView en un RecyclerView
 - [ ] DrawerNavigation con opciones acordes al proyecto
 - [ ] App bar funcional

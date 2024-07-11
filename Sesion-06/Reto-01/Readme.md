@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Implementar Material Design en un ejemplo.
+- Crear Cardview, implementando Material Design.
 
 ### 2. Requisitos :clipboard:
 
@@ -16,7 +16,7 @@
 
 Ahora pondrás en práctica lo visto durante el ejemplo anterior.
 
-Para completar este reto generá una nueva pantalla que contenga 4 CardView, puedes agregar los 4 cards o implementarlos con un RecyclerView.
+Para completar este reto generás una nueva pantalla que contenga cuatro CardView.  Puedes agregar los 4 cards o implementarlos con un RecyclerView.
 
 El listado quedará de la siguiente forma:
 

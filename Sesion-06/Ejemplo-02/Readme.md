@@ -17,8 +17,17 @@
 
 Implementaremos ahora dos _componets_ importantes para material design: Appbar y Navigation Drawer.
 
-* En [Este enlace](https://material.io/components/app-bars-top) podemos leer acerca de las App bars.
-* En [Este enlace](https://material.io/components/navigation-drawer) podemos leer acerca de las Navigation Drawers.
+- **Appbar**
+    
+    También llamada action bar, es la barra de título y herramientas que aparece en la parte superior de la gran mayoría de aplicaciones actuales de la plataforma Android.
+
+    Normalmente muestra el título de la aplicación o la actividad en la que nos encontramos, una serie de botones de acción, y un menú desplegable (menú de overflow) donde se incluyen más acciones que no tienen espacio para mostrarse como botón o simplemente no se quieren mostrar como tal.
+
+- **Navigation Drawer**
+
+    Panel deslizante cuyo objetivo es dotar al usuario con una navegación más cómoda entre las opciones populares de tu aplicación.
+
+    Existen dos formas para visualizar su contenido: La primera es deslizando desde el borde izquierdo de la pantalla hacia la derecha. Y la segunda al presionar el ícono de la Action Bar.
 
 #### App bar
 
@@ -119,7 +128,7 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
 
 #### Navigation drawer
 
-7. Comenzamos por crear el menú que irá dentro del layout, creando el ___drawer_menu.xml___ dentro del directorio _menu_.
+1. Comenzamos por crear el menú que irá dentro del layout, creando el ___drawer_menu.xml___ dentro del directorio _menu_.
 
     ```xml
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -165,7 +174,7 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
     </menu>
     ```
 
-8. Ahora, creamos el _layout_ ___drawer_header.xml___ del _header_ de nuestro Drawer.
+2. Ahora, creamos el _layout_ ___drawer_header.xml___ del _header_ de nuestro Drawer.
 
     ```xml
     <LinearLayout
@@ -195,7 +204,7 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
     </LinearLayout>
     ```
 
-9. Nuestro _activity_main.xml_ será modificado de tal forma que el _LinearLayout_ quede envuelto por nuestra clase ___DrawerLayout___
+3. Nuestro _activity_main.xml_ será modificado de tal forma que el _LinearLayout_ quede envuelto por nuestra clase ___DrawerLayout___
 
     ```xml
     <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -267,7 +276,7 @@ Implementaremos ahora dos _componets_ importantes para material design: Appbar y
     </androidx.drawerlayout.widget.DrawerLayout>
     ```
 
-10. Ahora relacionamos nuestro _AppBar_ con nuestro _NavigationDrawer_, por lo que hacemos un método para hacer la configuración necesaria:
+4. Ahora relacionamos nuestro _AppBar_ con nuestro _NavigationDrawer_, por lo que hacemos un método para hacer la configuración necesaria:
 
     ```kotlin
     private fun setupDrawer(toolbar: Toolbar){
