@@ -31,7 +31,14 @@ Se recalca que es conveniente desarrollar el flujo más simple en la aplicación
     Por ejemplo una vez que el usuario llene los formularios de Inicio de sesión o registro, puedes simular que ya entró a la pantalla principal como si realmente hubiera iniciado sesión y/o creado su cuenta. 
 2. Maqueta el o los _layouts_ con el _Viewgroup_ ___ConstraintLayout___.
 3. Agrega a cada _layout_ por lo menos 3 Views, y es sugerido que la distribución de las _Views_ no sea lineal.
-4. Implementa en las Activites alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones). 
+4. Implementa en las Activites alguna funcionalidad, como simular un servicio web y/o declarar listeners de botones (se vale investigar _Views_ no vistas en las sesiones).
+
+#### Checklist
+
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
+- [ ] Nueva pantalla "Activity" diferente a iniciar sesión y crear cuenta
+- [ ] Pantalla que utilice ConstraintLayout con al menos 3 views
 
 
 [`Anterior`](../Ejemplo-05/Readme.md) | [`Siguiente`](../../Sesion-03/Readme.md)

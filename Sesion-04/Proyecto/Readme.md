@@ -43,10 +43,8 @@ El uso del ___DialogFrament___ es permitido en este módulo, en [Este artículo]
 
 #### Checklist
 
-- [ ] Pantalla iniciar sesión
-- [ ] Pantalla crear cuenta
-- [ ] Pantalla que utilice ConstraintLayout con al menos 3 views
-- [ ] Pantalla que incluya RecyclerView con una lista de elementos, donde se pueda dar clic a los elementos y ver más información
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
 - [ ] Por lo menos dos fragments
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-05/Readme.md)

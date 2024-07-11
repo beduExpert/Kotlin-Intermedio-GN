@@ -30,6 +30,8 @@ Las transiciones las puedes mostrar cuando navegues entre los fragments y/o acti
 
 #### Checklist
 
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
 - [ ] Dos transiciones al navegar entre pantallas
 - [ ] Dos animaciones en dos elementos gráficos
 

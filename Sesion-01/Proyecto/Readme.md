@@ -81,6 +81,13 @@ Campos:
 - Botón de regresar
 - Botón de crear cuenta
 
+#### Checklist
+
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
+- [ ] Pantalla iniciar sesión
+- [ ] Pantalla crear cuenta
+
 <br/>
 
 [`Anterior`](../Ejemplo-03/Readme.md) | [`Siguiente`](../../Sesion-02/Readme.md)

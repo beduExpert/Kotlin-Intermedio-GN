@@ -30,6 +30,11 @@ En general, la implementación de una lista en el proyeto es esencial y práctic
 3. Cada elemento deberá tener en su _layout_ al menos dos textos y una imagen.
 4. Preferentemente, la distribución del _layout_ no debe ser lineal.
 
+#### Checklist
+
+Asegúrate de que tu entregable contiene cada uno de los elementos enlistados a continuación:
+
+- [ ] Pantalla que incluya RecyclerView con una lista de elementos, donde se pueda dar clic a los elementos y ver más información
 
 [`Anterior`](../Reto-03/Readme.md) | [`Siguiente`](../../Sesion-04/Readme.md)
 
