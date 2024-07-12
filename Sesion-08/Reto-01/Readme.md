@@ -10,11 +10,11 @@
 
 ### 2. Requisitos :clipboard:
 
-1. Android Studio instalado
+- Android Studio instalado
 
 ### 3. Desarrollo :computer:
 
-Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
+Tomamos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y haremos le unas modificaciones:
 
 - Tanto la versión _free_ como _paid_ utilizarán el formulario, que estará ahora en un fragment ___fragment_login.xml___, que el ___activity_main.xml___ incluirá.
 - Al dar click al login en _free_, un ___Toast___ nos advertirá que es la versión gratuita.
@@ -22,7 +22,7 @@ Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y ha
 - Los recursos que se ocupen únicamente en un flavor, se deben declarar en el directorio correspondiente (por ejemplo, los _strings_).
 - La versión pagada debe enviar un mensaje como este (si los campos tienen texto) 
  
- <img src="images/1.png" width="33%">
+    <img src="images/1.png" width="33%">
  
 
 #### Tips:
@@ -32,11 +32,10 @@ Tomaremos el ejercicio realizado en el [Ejemplo 2](../Sesion-08/Ejemplo-02) y ha
 
 <details><summary>Solución</summary>
 
-en _free > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
+En _free > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
 
 ```kotlin
-   class LoginFragment : Fragment() {
-
+class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -53,14 +52,16 @@ en _free > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
     }
 }
 ```
-en _free > res > values > strings.xml_
+
+En _free > res > values > strings.xml_
 
 ```xml
 <resources>
     <string name="free_version">Versión gratuita</string>
 </resources>
 ```
-en _paid > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
+
+En _paid > java > org > bedu > buildvariant_, crear _LoginFragment.kt_
 
 ```kotlin
 class LoginFragment : Fragment() {
@@ -95,7 +96,7 @@ class LoginFragment : Fragment() {
 }
 ```
 
-en _paid > res > values > strings.xml_
+En _paid > res > values > strings.xml_
 
 ```xml
 <resources>
