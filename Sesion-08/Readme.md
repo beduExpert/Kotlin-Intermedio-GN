@@ -11,6 +11,12 @@
 
 La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una de las grandes ventajas de la tienda oficial en Android es que hay muchos tipos de apps diferentes, también de multitud de estudios y desarrolladores. Esto permite que desarrolladores pequeños, que están empezando, puedan publicar sus aplicaciones en la tienda sin demasiados problemas.
 
+Para realizar el lanzamiento de una app en Google Play debemos realizar una serie de pasos, la mayoría de ellos se realizan sobre el gradle.
+
+Gradle es un sistema de automatización de construcción de código de software que construye sobre los conceptos de Apache Ant y Apache Maven e introduce un lenguaje específico del dominio (DSL) basado en Groovy en vez de la forma XML utilizada por Apache Maven para declarar la configuración de proyecto.
+
+En este Gradle se especifican librerías, nombre de la app, versiones, entre otras configuraciones del proyecto.
+
 
 ### 1. Objetivos :dart: 
 
@@ -18,10 +24,10 @@ La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una 
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
-- Ejecutar pasos previos de configuración.
+- Definir y ejecutar los pasos previos de configuración
 - Crear un archivo apk a partir del proyecto finalizado.
-- Probar aplicación y crear un app bundle
-- Preparar para lanzamiento a producción
+- Evaluar el funcionamiento de la aplicación y crear un App Bundle.
+- Analizar y preparar todos los elementos necesarios para el lanzamiento de la aplicación.
 
 
 ### 2. Contenido :blue_book:
@@ -32,7 +38,9 @@ La cantidad de aplicaciones disponibles en Google Play no deja de aumentar. Una 
 
 #### <ins>Configuración de gradle</ins>
 
-Realizaremos todos los preparativos en los archivos _gradle_ para tener un lanzamiento de la app exitosa.
+Realizaremos todos los preparativos en los archivos gradle, para tener un lanzamiento exitoso de la app, así como revisaremos como **ofuscar** nuestro código.
+
+Ofuscar se refiere al acto de realizar un cambio no destructivo, ya sea en el código fuente de un programa informático, cuando el programa está en forma compilada o binaria. Es decir, se cambia el código, manteniendo el funcionamiento original, para dificultar su entendimiento. De esta forma se dificulta los intentos de ingeniería inversa y desensamblado que tienen la intención de obtener una forma de código fuente cercana a la forma original.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 
@@ -42,7 +50,7 @@ Realizaremos todos los preparativos en los archivos _gradle_ para tener un lanza
 
 #### <ins>Build variants</ins>
 
-Crearemos diferentes versiones de una aplicación y aprenderemos para qué sirve esta utilidad.
+Construir variantes de una aplicación tiene distintas utilidades, por ejemplo: tener una versión gratuita y una versión de pago. En este ejemplo crearemos diferentes versiones de una aplicación y reflexionaremos en torno a las ventajas de esta utilidad.
 
 - [**`EJEMPLO 2`**](Ejemplo-02/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)
@@ -53,7 +61,7 @@ Crearemos diferentes versiones de una aplicación y aprenderemos para qué sirve
 
 #### <ins>Firma de aplicación</ins>
 
-Generaremos un apk de prueba para instalarlo en un dispositivo. Compilaremos un archivo .aab y probaremos su funcionalidad mediante _buildtool_. Firmaremos nuestra aplicación de release y la probaremos en busqueda de algún defecto.
+Los formatos Android App Bundle (.aab) y Android Package (.apk) son imprescindible para subir una aplicación a tienda. En este ejercicio generaremos un apk de prueba para instalarlo en un dispositivo. Compilaremos un archivo .aab y probaremos su funcionalidad mediante buildtool. Firmaremos nuestra aplicación de release y la probaremos en búsqueda de algún defecto.
 
 - [**`EJEMPLO 3`**](Ejemplo-03/Readme.md)
 

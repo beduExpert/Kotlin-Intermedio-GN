@@ -6,9 +6,9 @@
 
 ### 1. Objetivos :dart:
 
-- Manifestar la versión de compilación a utilizar
-- Declarar la configuración de los build types
-- Ofuscar el código para reducir el tamaño de la app
+- Identificar el proceso para manifestar la versión de compilación a utilizar
+- Definir el proceso para declarar la configuración de los build types
+- Aplicar el proceso para asegurar la integridad y seguridad del código (ofuscar) para reducir el tamaño de la app
 
 ### 2. Requisitos :clipboard:
 
@@ -18,6 +18,8 @@
 ### 3. Desarrollo :computer:
 
 Antes de liberar una aplicación, hay una serie de pasos que se tienen qué realizar para obtener un despliegue exitoso.
+
+Los cuales se muestran a continuación:
 
 1. Abre __Android Studio__ y crea un nuevo proyecto con Activity Vacía (Empty Activity).
 

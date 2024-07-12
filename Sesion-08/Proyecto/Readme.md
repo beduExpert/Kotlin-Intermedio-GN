@@ -6,10 +6,10 @@
 
 ### 1. Objetivos :dart:
 
-- Generar variantes de nuestra aplicación.
-- Configurar lo básico en gradle.
-- Hacer pruebas con nuestra aplicación de _debug_.
-- Lanzar una versión de Release de nuestra aplicación.
+- Generar variantes en tu aplicación, integrando distintos elementos.
+- Configurar los elementos básicos en Gradle .
+- Realizar pruebas en la aplicación de debug para tu aplicación
+- Implementar el proceso de lanzamiento para desplegar una versión Release de tu aplicación.
 
 ### 2. Requisitos :clipboard:
 

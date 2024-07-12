@@ -6,10 +6,13 @@
 
 ### 1. Objetivos :dart:
 
+- Identificar las características de seguridad para subir una aplicación a Google Play
 - Generar una aplicación de debug.
+- Identificar las características y estructura de formatos .aab y .apk
+- Generar formatos .aab y apk con su keystore.
 - Realizar pruebas con un .aab.
-- Crear la llave para la firma de aplicaciones _release_.
-- Firmar nuestra aplicación para su subida a tienda.
+- Crear la llave para la firma de aplicaciones release.
+- Firmar nuestra aplicación para ser subida a tienda
 
 ### 2. Requisitos :clipboard:
 

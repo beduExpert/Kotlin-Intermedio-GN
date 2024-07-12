@@ -6,8 +6,9 @@
 
 ### 1. Objetivos :dart:
 
-- Crear distintas versiones de la aplicación de acuerdo a una propiedad
-- Poder compilar una versión _debug_ de nuestra aplicación
+- Aplicar los principios de desarrollo para crear diferentes versiones de la aplicación, de acuerdo a una propiedad.
+- Ejecutar el proceso de compilación para producir una versión debug de la aplicación.
+
 
 ### 2. Requisitos :clipboard:
 
