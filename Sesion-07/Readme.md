@@ -10,8 +10,7 @@
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 
 - Cambiar la redacción del texto:
-- Implementaremos los tres tipos de menú en Android: Popup, Contextual y Opciones, abarcando desde la interfaz gráfica con grupos de elementos, hasta la creación mediante código.
-
+- Manejar eventos y cambio de elementos en tiempo de ejecución.
 
 ### 2. Contenido :blue_book:
 
@@ -21,7 +20,7 @@
 
 #### <ins>Tipos de menús en Android</ins>
 
-Implementación de los tres tipos de menú en Android. Abarcando desde la interfáz grafica con grupos de elementos, hasta la creación mediante código. Los menús vistos: Popup, Contextual y Opciones.
+Implementaremos los tres tipos de menú en Android: Popup, Contextual y Opciones, abarcando desde la interfaz gráfica con grupos de elementos, hasta la creación mediante código.
 
 - [**`EJEMPLO 1`**](Ejemplo-01/Readme.md)
 - [**`RETO 1`**](Reto-01/Readme.md)

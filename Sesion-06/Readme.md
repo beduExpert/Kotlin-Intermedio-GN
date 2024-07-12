@@ -61,7 +61,7 @@ Los estilos son recursos que permiten definir una serie de atributos visuales y 
 
 ### 3. Proyecto :hammer:
 
-Adaptaremos nuestro proyecto al _guideline_ de Material Design sustituyendo _Components_ y personalizando nuestros _Themes_. Implementaremos _Components_ avanzados como una _Appbar_ y crearemos trancisiones animadas.
+Adaptaremos nuestro proyecto al _guideline_ de Material Design sustituyendo _Components_ y personalizando nuestros _Themes_. Implementaremos _Components_ avanzados como una _Appbar_ y crearemos transiciones animadas.
 
 - [**`PROYECTO SESIÓN 6`**](Proyecto/Readme.md)
 
